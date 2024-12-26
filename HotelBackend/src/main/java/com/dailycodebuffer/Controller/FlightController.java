@@ -1,5 +1,6 @@
 package com.dailycodebuffer.Controller;
 
+import com.dailycodebuffer.Model.Airline;
 import com.dailycodebuffer.Model.Row;
 import com.dailycodebuffer.Model.Seat;
 import com.dailycodebuffer.Repository.AircraftModelRepo;
@@ -7,6 +8,8 @@ import com.dailycodebuffer.Request.AircraftModel;
 import com.dailycodebuffer.Request.Flight;
 import com.dailycodebuffer.Model.User;
 import com.dailycodebuffer.Repository.FlightRepo;
+import com.dailycodebuffer.Request.Flights;
+import com.dailycodebuffer.Response.DefaultResponse;
 import com.dailycodebuffer.Response.FlightResponse;
 import com.dailycodebuffer.Service.AircraftModelService;
 import com.dailycodebuffer.Service.FlightRowService;
@@ -38,6 +41,14 @@ public class FlightController {
     @Autowired
     private FlightRowService flightRowService;
 
+    private DefaultResponse messageMaker(String message, HttpStatus status, int statusCode) {
+        DefaultResponse response = new DefaultResponse();
+        response.setMessage(message);
+        response.setStatus(String.valueOf(status));
+        response.setStatusCode(statusCode);
+        return response;
+    }
+
     private List<Row> flightSeats(List<Long> seats, Flight flight) {
         List<Row> rows = new ArrayList<>();
 
@@ -54,7 +65,7 @@ public class FlightController {
                 seat.setSeatStatus("AVAILABLE");
                 seat.setSeatType("ECONOMY");
                 seat.setSeatPrice(100L);
-                seat.setSeatClass("ECONOMY");
+                seat.setSeatClass("AISLE");
                 seat.setFood("NONE");
 
                 seatsList.add(seat);
@@ -73,23 +84,58 @@ public class FlightController {
             User user = userService.FindUserByJwt(jwt);
 
             if (user.getRole().toString().equals("ROLE_AIRLINE")) {
+                Airline airline = user.getAirline();
                 AircraftModel aircraftModel = aircraftModelService.getAircraftModelByName(flight.getAircraftModel());
                 if (aircraftModel == null) {
-                    return new ResponseEntity<>("Aircraft model not found", HttpStatus.BAD_REQUEST);
+                    DefaultResponse response = messageMaker("Aircraft model not found", HttpStatus.BAD_REQUEST, 400);
+                    return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
                 }
 
-                System.out.println(aircraftModel.getSeats());
                 List<Row> rows = flightSeats(aircraftModel.getSeats(), flight);
                 flight.setRows(rows);
                 flightRepository.save(flight);
-                return new ResponseEntity<>("Flight added", HttpStatus.OK);
+
+                DefaultResponse response = messageMaker("Flight added", HttpStatus.OK, 200);
+                return new ResponseEntity<>(response, HttpStatus.OK);
             }
             else {
-                return new ResponseEntity<>("Unauthorized", HttpStatus.UNAUTHORIZED);
+                DefaultResponse response = messageMaker("Unauthorized", HttpStatus.UNAUTHORIZED, 401);
+                return new ResponseEntity<>(response, HttpStatus.UNAUTHORIZED);
             }
         }
         catch(Exception e) {
-            return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
+            DefaultResponse response = messageMaker(e.getMessage(), HttpStatus.BAD_REQUEST, 400);
+            return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
+        }
+    }
+
+    @PostMapping("/addflights")
+    public ResponseEntity<?> addFlights(@RequestHeader("Authorization") String jwt, @RequestBody Flights flights) {
+        try {
+            User user = userService.FindUserByJwt(jwt);
+
+            if (user.getRole().toString().equals("ROLE_AIRLINE")) {
+                Airline airline = user.getAirline();
+                for (Flight flight : flights.getFlights()) {
+                    AircraftModel aircraftModel = aircraftModelService.getAircraftModelByName(flight.getAircraftModel());
+
+                    List<Row> rows = flightSeats(aircraftModel.getSeats(), flight);
+                    flight.setRows(rows);
+                    flight.setAirline(airline);
+                    flightRepository.save(flight);
+                }
+
+                DefaultResponse response = messageMaker("Flights added", HttpStatus.OK, 200);
+                return new ResponseEntity<>(response, HttpStatus.OK);
+            }
+            else {
+                DefaultResponse response = messageMaker("Unauthorized", HttpStatus.UNAUTHORIZED, 401);
+                return new ResponseEntity<>(response, HttpStatus.UNAUTHORIZED);
+            }
+        }
+        catch(Exception e) {
+            DefaultResponse response = messageMaker(e.getMessage(), HttpStatus.BAD_REQUEST, 400);
+            return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
         }
     }
 
@@ -99,23 +145,21 @@ public class FlightController {
             User user = userService.FindUserByJwt(jwt);
 
             if (user.getRole().toString().equals("ROLE_AIRLINE")) {
-                List<Flight> flights = flightRepository.findAll();
+                Airline airline = user.getAirline();
+
+                List<Flight> flights = airline.getFlights();
                 FlightResponse flightResponse = new FlightResponse();
                 flightResponse.setFlights(flights);
 
-                for (Flight flight : flights) {
-                    List<Row> rows = new ArrayList<>();
-                    rows = flightRowService.getRowsByFlightId(flight.getId());
-                    flight.setRows(rows);
-                }
                 return new ResponseEntity<>(flightResponse, HttpStatus.OK);
             }
             else {
-                return new ResponseEntity<>("Unauthorized", HttpStatus.UNAUTHORIZED);
+                return new ResponseEntity<>(flightRepository.findAll(), HttpStatus.OK);
             }
         }
         catch(Exception e) {
-            return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
+            DefaultResponse response = messageMaker(e.getMessage(), HttpStatus.BAD_REQUEST, 400);
+            return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
         }
     }
 
@@ -128,7 +172,8 @@ public class FlightController {
                 Optional<Flight> flight = flightRepository.findById(id);
 
                 if (flight.isEmpty()) {
-                    return new ResponseEntity<>("Flight not found", HttpStatus.BAD_REQUEST);
+                    DefaultResponse response = messageMaker("Flight not found", HttpStatus.BAD_REQUEST, 400);
+                    return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
                 }
                 else{
                     List<Row> rows = new ArrayList<>();
@@ -139,11 +184,52 @@ public class FlightController {
                 }
             }
             else {
-                return new ResponseEntity<>("Unauthorized", HttpStatus.UNAUTHORIZED);
+                DefaultResponse response = messageMaker("Unauthorized", HttpStatus.UNAUTHORIZED, 401);
+                return new ResponseEntity<>(response, HttpStatus.UNAUTHORIZED);
             }
         }
         catch(Exception e) {
-            return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
+            DefaultResponse response = messageMaker(e.getMessage(), HttpStatus.BAD_REQUEST, 400);
+            return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
+        }
+    }
+
+    @PutMapping("/updateflight")
+    public ResponseEntity<?> updateFlight(@RequestHeader("Authorization") String jwt, @RequestBody Flight flight) {
+        try{
+            User user = userService.FindUserByJwt(jwt);
+
+            if (user.getRole().toString().equals("ROLE_AIRLINE")){
+                Optional<Flight> flight1 = flightRepository.findById(flight.getId());
+
+                if (flight1.isEmpty()){
+                    DefaultResponse response = messageMaker("Flight not found", HttpStatus.BAD_REQUEST, 400);
+                    return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
+                }
+                else{
+                    flightRepository.delete(flight1.get());
+
+                    AircraftModel aircraftModel = aircraftModelService.getAircraftModelByName(flight.getAircraftModel());
+                    if (aircraftModel == null) {
+                        DefaultResponse response = messageMaker("Aircraft model not found", HttpStatus.BAD_REQUEST, 400);
+                        return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
+                    }
+
+                    List<Row> rows = flightSeats(aircraftModel.getSeats(), flight);
+                    flight.setRows(rows);
+                    flightRepository.save(flight);
+                    DefaultResponse response = messageMaker("Flight updated", HttpStatus.OK, 200);
+                    return new ResponseEntity<>(response, HttpStatus.OK);
+                }
+            }
+            else{
+                DefaultResponse response = messageMaker("Unauthorized", HttpStatus.UNAUTHORIZED, 401);
+                return new ResponseEntity<>(response, HttpStatus.UNAUTHORIZED);
+            }
+        }
+        catch(Exception e) {
+            DefaultResponse response = messageMaker(e.getMessage(), HttpStatus.BAD_REQUEST, 400);
+            return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
         }
     }
 }

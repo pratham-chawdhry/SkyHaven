@@ -1,7 +1,10 @@
 package com.dailycodebuffer.Request;
 
+import com.dailycodebuffer.Model.Airline;
+import com.dailycodebuffer.Model.Airlines;
 import com.dailycodebuffer.Model.Row;
 import com.dailycodebuffer.Model.Seat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.Setter;
@@ -25,5 +28,11 @@ public class Flight {
 
     @Setter
     @OneToMany(mappedBy = "flight", cascade = CascadeType.ALL)
+    @JsonIgnore
     private List<Row> rows = new ArrayList<>();
+
+    @ManyToOne
+    @JoinColumn(name = "airline_id", nullable = false)
+    @JsonIgnore
+    private Airline airline;
 }

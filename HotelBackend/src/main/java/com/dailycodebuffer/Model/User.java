@@ -3,11 +3,7 @@ package com.dailycodebuffer.Model;
 import java.util.List;
 
 import jakarta.annotation.Generated;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.*;
 import lombok.Data;
 @Data
 @Entity
@@ -20,4 +16,10 @@ public class User {
     private String password;
     private boolean isActive;
     private USER_ROLE role;
+
+    private String airlineCode;
+
+    @ManyToOne
+    @JoinColumn(name = "airline_id", nullable = true)
+    private Airline airline;
 }

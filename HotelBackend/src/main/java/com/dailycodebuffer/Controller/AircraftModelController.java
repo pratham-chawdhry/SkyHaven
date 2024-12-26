@@ -3,6 +3,7 @@ package com.dailycodebuffer.Controller;
 import com.dailycodebuffer.Model.User;
 import com.dailycodebuffer.Repository.AircraftModelRepo;
 import com.dailycodebuffer.Request.AircraftModel;
+import com.dailycodebuffer.Response.DefaultResponse;
 import com.dailycodebuffer.Service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -20,6 +21,14 @@ public class AircraftModelController {
     @Autowired
     private AircraftModelRepo aircraftModelRepository;
 
+    private DefaultResponse messageMaker(String message, HttpStatus status, int statusCode) {
+        DefaultResponse response = new DefaultResponse();
+        response.setMessage(message);
+        response.setStatus(String.valueOf(status));
+        response.setStatusCode(statusCode);
+        return response;
+    }
+
     @PostMapping("/add/aircraftmodel")
     public ResponseEntity<?> addAircraftModel(@RequestHeader("Authorization") String jwt, @RequestBody AircraftModel aircraftModel) {
         try {
@@ -27,14 +36,18 @@ public class AircraftModelController {
 
             if (user.getRole().toString().equals("ROLE_ADMIN")) {
                 aircraftModelRepository.save(aircraftModel);
-                return new ResponseEntity<>("Aircraft Model added", HttpStatus.OK);
+
+                DefaultResponse message = messageMaker("Aircraft Model added", HttpStatus.OK, 200);
+                return new ResponseEntity<>(message, HttpStatus.OK);
             }
             else {
-                return new ResponseEntity<>("Unauthorized", HttpStatus.UNAUTHORIZED);
+                DefaultResponse message = messageMaker("Unauthorized", HttpStatus.UNAUTHORIZED, 401);
+                return new ResponseEntity<>(message, HttpStatus.UNAUTHORIZED);
             }
         }
         catch(Exception e) {
-            return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
+            DefaultResponse message = messageMaker(e.getMessage(), HttpStatus.BAD_REQUEST, 400);
+            return new ResponseEntity<>(message, HttpStatus.BAD_REQUEST);
         }
     }
 
@@ -48,11 +61,13 @@ public class AircraftModelController {
                 return new ResponseEntity<>(aircraftModels, HttpStatus.OK);
             }
             else {
-                return new ResponseEntity<>("Unauthorized", HttpStatus.UNAUTHORIZED);
+                DefaultResponse message = messageMaker("Unauthorized", HttpStatus.UNAUTHORIZED, 401);
+                return new ResponseEntity<>(message, HttpStatus.UNAUTHORIZED);
             }
         }
         catch(Exception e) {
-            return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
+            DefaultResponse message = messageMaker(e.getMessage(), HttpStatus.BAD_REQUEST, 400);
+            return new ResponseEntity<>(message, HttpStatus.BAD_REQUEST);
         }
     }
 }

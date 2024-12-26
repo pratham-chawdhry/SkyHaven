@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+import com.dailycodebuffer.Model.Airline;
+import com.dailycodebuffer.Repository.AirlineRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -43,6 +45,9 @@ public class AuthController {
     @Autowired
     private CustomUserDetailService customUserDetailService;
 
+    @Autowired
+    private AirlineRepo airlineRepo;
+
     @PostMapping("/signup")
     public ResponseEntity<AuthResponse>createUserHandler(@RequestBody User user) throws Exception{
         System.out.println(user.getEmail());
@@ -57,6 +62,13 @@ public class AuthController {
         System.out.println(user.getPassword());
         user2.setPassword(passwordEncoder.encode(user.getPassword()));
         user2.setActive(true);
+
+        if (user.getRole().equals(USER_ROLE.ROLE_AIRLINE)){
+            Airline airline = new Airline();
+            airline = airlineRepo.findByAirlineCode(user.getAirlineCode());
+            user2.setAirline(airline);
+        }
+
         User saved_user = userRepository.save(user2);
         List<GrantedAuthority> authorities = new ArrayList<>();
         authorities.add(new SimpleGrantedAuthority(saved_user.getRole().toString()));
