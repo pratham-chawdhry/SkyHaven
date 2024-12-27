@@ -1,0 +1,67 @@
+[
+    {
+        "email": "1@gmail.com",
+        "password": "1",
+        "role" : "ROLE_ADMIN"
+    },
+    {
+        "email": "UA1@gmail.com",
+        "password": "UA1",
+        "role" : "ROLE_AIRLINE",
+        "airlineCode" : "UA"
+    },
+    {
+        "email": "UA2@gmail.com",
+        "password": "UA2",
+        "role" : "ROLE_AIRLINE",
+        "airlineCode" : "UA"
+    },
+    {
+        "email": "BA1@gmail.com",
+        "password": "BA1",
+        "role" : "ROLE_AIRLINE",
+        "airlineCode" : "BA"
+    },
+    {
+        "email": "BA2@gmail.com",
+        "password": "BA2",
+        "role" : "ROLE_AIRLINE",
+        "airlineCode" : "BA"
+    },
+    {
+        "email" : "WN1@gmail.com",
+        "password" : "WN1",
+        "role" : "ROLE_AIRLINE",
+        "airlineCode" : "WN"
+    },
+    {
+        "email" : "WN2@gmail.com",
+        "password" : "WN2",
+        "role" : "ROLE_AIRLINE",
+        "airlineCode" : "WN"
+    },
+    {
+        "email" : "EK1@gmail.com",
+        "password" : "EK1",
+        "role" : "ROLE_AIRLINE",
+        "airlineCode" : "EK"
+    },
+    {
+        "email" : "EK2@gmail.com",
+        "password" : "EK2",
+        "role" : "ROLE_AIRLINE",
+        "airlineCode" : "EK"
+    },
+    {
+        "email" : "DL1@gmail.com",
+        "password" : "DL1",
+        "role" : "ROLE_AIRLINE",
+        "airlineCode" : "DL"
+    },
+    {
+        "email" : "DL2@gmail.com",
+        "password" : "DL2",
+        "role" : "ROLE_AIRLINE",
+        "airlineCode" : "DL"
+    }
+]

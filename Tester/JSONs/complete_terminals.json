@@ -1,0 +1,558 @@
+[
+    {
+        "terminalName": "Domestic Terminal",
+        "iataCode": "ATL"
+    },
+    {
+        "terminalName": "Maynard H. Jackson Jr. International Terminal",
+        "iataCode": "ATL"
+    },
+    {
+        "terminalName": "Terminal 1",
+        "iataCode": "PEK"
+    },
+    {
+        "terminalName": "Terminal 2",
+        "iataCode": "PEK"
+    },
+    {
+        "terminalName": "Terminal 3",
+        "iataCode": "PEK"
+    },
+    {
+        "terminalName": "Terminal 1",
+        "iataCode": "DXB"
+    },
+    {
+        "terminalName": "Terminal 2",
+        "iataCode": "DXB"
+    },
+    {
+        "terminalName": "Terminal 3",
+        "iataCode": "DXB"
+    },
+    {
+        "terminalName": "Terminal 1",
+        "iataCode": "LAX"
+    },
+    {
+        "terminalName": "Terminal 2",
+        "iataCode": "LAX"
+    },
+    {
+        "terminalName": "Terminal 3",
+        "iataCode": "LAX"
+    },
+    {
+        "terminalName": "Terminal 4",
+        "iataCode": "LAX"
+    },
+    {
+        "terminalName": "Terminal 5",
+        "iataCode": "LAX"
+    },
+    {
+        "terminalName": "Terminal 6",
+        "iataCode": "LAX"
+    },
+    {
+        "terminalName": "Terminal 7",
+        "iataCode": "LAX"
+    },
+    {
+        "terminalName": "Terminal 8",
+        "iataCode": "LAX"
+    },
+    {
+        "terminalName": "Tom Bradley International Terminal",
+        "iataCode": "LAX"
+    },
+    {
+        "terminalName": "Terminal 1",
+        "iataCode": "HND"
+    },
+    {
+        "terminalName": "Terminal 2",
+        "iataCode": "HND"
+    },
+    {
+        "terminalName": "Terminal 3",
+        "iataCode": "HND"
+    },
+    {
+        "terminalName": "Terminal 1",
+        "iataCode": "ORD"
+    },
+    {
+        "terminalName": "Terminal 2",
+        "iataCode": "ORD"
+    },
+    {
+        "terminalName": "Terminal 3",
+        "iataCode": "ORD"
+    },
+    {
+        "terminalName": "Terminal 5",
+        "iataCode": "ORD"
+    },
+    {
+        "terminalName": "Terminal 2",
+        "iataCode": "LHR"
+    },
+    {
+        "terminalName": "Terminal 3",
+        "iataCode": "LHR"
+    },
+    {
+        "terminalName": "Terminal 4",
+        "iataCode": "LHR"
+    },
+    {
+        "terminalName": "Terminal 5",
+        "iataCode": "LHR"
+    },
+    {
+        "terminalName": "Terminal 1",
+        "iataCode": "PVG"
+    },
+    {
+        "terminalName": "Terminal 2",
+        "iataCode": "PVG"
+    },
+    {
+        "terminalName": "Terminal 1",
+        "iataCode": "CDG"
+    },
+    {
+        "terminalName": "Terminal 2 (2A to 2G)",
+        "iataCode": "CDG"
+    },
+    {
+        "terminalName": "Terminal 3",
+        "iataCode": "CDG"
+    },
+    {
+        "terminalName": "Terminal A",
+        "iataCode": "DFW"
+    },
+    {
+        "terminalName": "Terminal B",
+        "iataCode": "DFW"
+    },
+    {
+        "terminalName": "Terminal C",
+        "iataCode": "DFW"
+    },
+    {
+        "terminalName": "Terminal D",
+        "iataCode": "DFW"
+    },
+    {
+        "terminalName": "Terminal E",
+        "iataCode": "DFW"
+    },
+    {
+        "terminalName": "Terminal 1",
+        "iataCode": "CAN"
+    },
+    {
+        "terminalName": "Terminal 2",
+        "iataCode": "CAN"
+    },
+    {
+        "terminalName": "Terminal 1",
+        "iataCode": "FRA"
+    },
+    {
+        "terminalName": "Terminal 2",
+        "iataCode": "FRA"
+    },
+    {
+        "terminalName": "Main Terminal",
+        "iataCode": "IST"
+    },
+    {
+        "terminalName": "Terminal 1",
+        "iataCode": "SIN"
+    },
+    {
+        "terminalName": "Terminal 2",
+        "iataCode": "SIN"
+    },
+    {
+        "terminalName": "Terminal 3",
+        "iataCode": "SIN"
+    },
+    {
+        "terminalName": "Terminal 4",
+        "iataCode": "SIN"
+    },
+    {
+        "terminalName": "Terminal 1",
+        "iataCode": "ICN"
+    },
+    {
+        "terminalName": "Terminal 2",
+        "iataCode": "ICN"
+    },
+    {
+        "terminalName": "Jeppesen Terminal",
+        "iataCode": "DEN"
+    },
+    {
+        "terminalName": "Terminal 1",
+        "iataCode": "CGK"
+    },
+    {
+        "terminalName": "Terminal 2",
+        "iataCode": "CGK"
+    },
+    {
+        "terminalName": "Terminal 3",
+        "iataCode": "CGK"
+    },
+    {
+        "terminalName": "Main Terminal",
+        "iataCode": "BKK"
+    },
+    {
+        "terminalName": "Main Terminal",
+        "iataCode": "KUL"
+    },
+    {
+        "terminalName": "klia2",
+        "iataCode": "KUL"
+    },
+    {
+        "terminalName": "Terminal 1",
+        "iataCode": "MAD"
+    },
+    {
+        "terminalName": "Terminal 2",
+        "iataCode": "MAD"
+    },
+    {
+        "terminalName": "Terminal 3",
+        "iataCode": "MAD"
+    },
+    {
+        "terminalName": "Terminal 4",
+        "iataCode": "MAD"
+    },
+    {
+        "terminalName": "Terminal 4S",
+        "iataCode": "MAD"
+    },
+    {
+        "terminalName": "Single Terminal",
+        "iataCode": "AMS"
+    },
+    {
+        "terminalName": "Terminal 1",
+        "iataCode": "HKG"
+    },
+    {
+        "terminalName": "Terminal 2",
+        "iataCode": "HKG"
+    },
+    {
+        "terminalName": "Terminal 1",
+        "iataCode": "CTU"
+    },
+    {
+        "terminalName": "Terminal 2",
+        "iataCode": "CTU"
+    },
+    {
+        "terminalName": "Terminal 1",
+        "iataCode": "LAS"
+    },
+    {
+        "terminalName": "Terminal 3",
+        "iataCode": "LAS"
+    },
+    {
+        "terminalName": "Single Terminal",
+        "iataCode": "CLT"
+    },
+    {
+        "terminalName": "Terminal 1",
+        "iataCode": "SHA"
+    },
+    {
+        "terminalName": "Terminal 2",
+        "iataCode": "SHA"
+    },
+    {
+        "terminalName": "North Terminal",
+        "iataCode": "MIA"
+    },
+    {
+        "terminalName": "Central Terminal",
+        "iataCode": "MIA"
+    },
+    {
+        "terminalName": "South Terminal",
+        "iataCode": "MIA"
+    },
+    {
+        "terminalName": "Terminal 3",
+        "iataCode": "PHX"
+    },
+    {
+        "terminalName": "Terminal 4",
+        "iataCode": "PHX"
+    },
+    {
+        "terminalName": "Terminal A",
+        "iataCode": "MCO"
+    },
+    {
+        "terminalName": "Terminal B",
+        "iataCode": "MCO"
+    },
+    {
+        "terminalName": "Terminal A",
+        "iataCode": "EWR"
+    },
+    {
+        "terminalName": "Terminal B",
+        "iataCode": "EWR"
+    },
+    {
+        "terminalName": "Terminal C",
+        "iataCode": "EWR"
+    },
+    {
+        "terminalName": "Terminal 1",
+        "iataCode": "BOM"
+    },
+    {
+        "terminalName": "Terminal 2",
+        "iataCode": "BOM"
+    },
+    {
+        "terminalName": "Terminal 1",
+        "iataCode": "DEL"
+    },
+    {
+        "terminalName": "Terminal 2",
+        "iataCode": "DEL"
+    },
+    {
+        "terminalName": "Terminal 3",
+        "iataCode": "DEL"
+    },
+    {
+        "terminalName": "Terminal 1",
+        "iataCode": "YYZ"
+    },
+    {
+        "terminalName": "Terminal 3",
+        "iataCode": "YYZ"
+    },
+    {
+        "terminalName": "Terminal 1 (Lindbergh)",
+        "iataCode": "MSP"
+    },
+    {
+        "terminalName": "Terminal 2 (Humphrey)",
+        "iataCode": "MSP"
+    },
+    {
+        "terminalName": "McNamara Terminal",
+        "iataCode": "DTW"
+    },
+    {
+        "terminalName": "North Terminal",
+        "iataCode": "DTW"
+    },
+    {
+        "terminalName": "Terminal A",
+        "iataCode": "BOS"
+    },
+    {
+        "terminalName": "Terminal B",
+        "iataCode": "BOS"
+    },
+    {
+        "terminalName": "Terminal C",
+        "iataCode": "BOS"
+    },
+    {
+        "terminalName": "Terminal E",
+        "iataCode": "BOS"
+    },
+    {
+        "terminalName": "Terminal A",
+        "iataCode": "IAH"
+    },
+    {
+        "terminalName": "Terminal B",
+        "iataCode": "IAH"
+    },
+    {
+        "terminalName": "Terminal C",
+        "iataCode": "IAH"
+    },
+    {
+        "terminalName": "Terminal D",
+        "iataCode": "IAH"
+    },
+    {
+        "terminalName": "Terminal E",
+        "iataCode": "IAH"
+    },
+    {
+        "terminalName": "Single Terminal",
+        "iataCode": "SEA"
+    },
+    {
+        "terminalName": "Terminal A East",
+        "iataCode": "PHL"
+    },
+    {
+        "terminalName": "Terminal A West",
+        "iataCode": "PHL"
+    },
+    {
+        "terminalName": "Terminal B",
+        "iataCode": "PHL"
+    },
+    {
+        "terminalName": "Terminal C",
+        "iataCode": "PHL"
+    },
+    {
+        "terminalName": "Terminal D",
+        "iataCode": "PHL"
+    },
+    {
+        "terminalName": "Terminal E",
+        "iataCode": "PHL"
+    },
+    {
+        "terminalName": "Terminal F",
+        "iataCode": "PHL"
+    },
+    {
+        "terminalName": "Terminal 1",
+        "iataCode": "JFK"
+    },
+    {
+        "terminalName": "Terminal 2",
+        "iataCode": "JFK"
+    },
+    {
+        "terminalName": "Terminal 4",
+        "iataCode": "JFK"
+    },
+    {
+        "terminalName": "Terminal 5",
+        "iataCode": "JFK"
+    },
+    {
+        "terminalName": "Terminal 7",
+        "iataCode": "JFK"
+    },
+    {
+        "terminalName": "Terminal 8",
+        "iataCode": "JFK"
+    },
+    {
+        "terminalName": "Terminal 1",
+        "iataCode": "SFO"
+    },
+    {
+        "terminalName": "Terminal 2",
+        "iataCode": "SFO"
+    },
+    {
+        "terminalName": "Terminal 3",
+        "iataCode": "SFO"
+    },
+    {
+        "terminalName": "International Terminal",
+        "iataCode": "SFO"
+    },
+    {
+        "terminalName": "Terminal 1",
+        "iataCode": "TFU"
+    },
+    {
+        "terminalName": "Terminal 2",
+        "iataCode": "TFU"
+    },
+    {
+        "terminalName": "Main Terminal",
+        "iataCode": "PKX"
+    },
+    {
+        "terminalName": "North Terminal",
+        "iataCode": "LGW"
+    },
+    {
+        "terminalName": "South Terminal",
+        "iataCode": "LGW"
+    },
+    {
+        "terminalName": "Terminal 1",
+        "iataCode": "MUC"
+    },
+    {
+        "terminalName": "Terminal 2",
+        "iataCode": "MUC"
+    },
+    {
+        "terminalName": "Terminal 1",
+        "iataCode": "BCN"
+    },
+    {
+        "terminalName": "Terminal 2",
+        "iataCode": "BCN"
+    },
+    {
+        "terminalName": "Domestic Terminal",
+        "iataCode": "YVR"
+    },
+    {
+        "terminalName": "International Terminal",
+        "iataCode": "YVR"
+    },
+    {
+        "terminalName": "Terminal 1 (International)",
+        "iataCode": "SYD"
+    },
+    {
+        "terminalName": "Terminal 2 (Domestic)",
+        "iataCode": "SYD"
+    },
+    {
+        "terminalName": "Terminal 3 (Domestic)",
+        "iataCode": "SYD"
+    },
+    {
+        "terminalName": "Terminal 1 (Domestic)",
+        "iataCode": "MEL"
+    },
+    {
+        "terminalName": "Terminal 2 (International)",
+        "iataCode": "MEL"
+    },
+    {
+        "terminalName": "Terminal 3 (Domestic)",
+        "iataCode": "MEL"
+    },
+    {
+        "terminalName": "Terminal 4 (Domestic)",
+        "iataCode": "MEL"
+    },
+    {
+        "terminalName": "Domestic Terminal",
+        "iataCode": "AKL"
+    },
+    {
+        "terminalName": "International Terminal",
+        "iataCode": "AKL"
+    }
+]

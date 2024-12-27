@@ -50,4 +50,7 @@ public class Flight{
     @JoinColumn(name = "airline_id", nullable = false)
     @JsonManagedReference
     private Airline airline;
+
+    @OneToMany(mappedBy = "flight", cascade = CascadeType.ALL)
+    private List<FlightCabin> flightCabins = new ArrayList<>();
 }

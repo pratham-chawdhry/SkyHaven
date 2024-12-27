@@ -9,6 +9,7 @@ import com.dailycodebuffer.Response.Flight;
 import com.dailycodebuffer.Model.User;
 import com.dailycodebuffer.Repository.FlightRepo;
 import com.dailycodebuffer.Response.DefaultResponse;
+import com.dailycodebuffer.Response.FlightCabin;
 import com.dailycodebuffer.Response.Terminal;
 import com.dailycodebuffer.Service.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -94,12 +95,23 @@ public class FlightController {
                 flight.setFlightNumber(flightRequest.getFlightNumber());
                 flight.setAircraftModel(flightRequest.getAircraftModel());
 
+
                 Airline airline = user.getAirline();
                 AircraftModel aircraftModel = aircraftModelService.getAircraftModelByName(flight.getAircraftModel());
                 if (aircraftModel == null) {
                     DefaultResponse response = messageMaker("Aircraft model not found", HttpStatus.BAD_REQUEST, 400);
                     return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
                 }
+
+                List<FlightCabin> flightCabins = new ArrayList<>();
+
+                for (FlightCabinRequest flightCabinRequest : flightRequest.getFlightCabins()) {
+                    FlightCabin flightCabin = getFlightCabin(flightCabinRequest, airline);
+
+                    flightCabins.add(flightCabin);
+                }
+
+                flight.setFlightCabins(flightCabins);
 
                 Airport airportArrival = airportService.getAirportByIata(flightRequest.getAirportArrival());
 
@@ -168,6 +180,16 @@ public class FlightController {
                     flight.setFlightNumber(flightRequest.getFlightNumber());
                     flight.setAircraftModel(flightRequest.getAircraftModel());
 
+                    List<FlightCabin> flightCabins = new ArrayList<>();
+
+                    for (FlightCabinRequest flightCabinRequest : flightRequest.getFlightCabins()) {
+                        FlightCabin flightCabin = getFlightCabin(flightCabinRequest, airline);
+
+                        flightCabins.add(flightCabin);
+                    }
+
+                    flight.setFlightCabins(flightCabins);
+
                     AircraftModel aircraftModel = aircraftModelService.getAircraftModelByName(flight.getAircraftModel());
                     if (aircraftModel == null) {
                         DefaultResponse response = messageMaker("Aircraft model not found for" + String.valueOf(flight.getFlightNumber()), HttpStatus.BAD_REQUEST, 400);
@@ -215,6 +237,18 @@ public class FlightController {
             DefaultResponse response = messageMaker(e.getMessage(), HttpStatus.BAD_REQUEST, 400);
             return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
         }
+    }
+
+    private static FlightCabin getFlightCabin(FlightCabinRequest flightCabinRequest, Airline airline) {
+        FlightCabin flightCabin = new FlightCabin();
+
+        flightCabin.setCabinCode(flightCabinRequest.getCabinCode());
+        flightCabin.setCabinName(flightCabinRequest.getCabinName());
+        flightCabin.setDisabled(flightCabin.getDisabled());
+        flightCabin.setStartRow(flightCabin.getStartRow());
+        flightCabin.setEndRow(flightCabin.getEndRow());
+        flightCabin.setAirline(airline);
+        return flightCabin;
     }
 
     @GetMapping("/getflights")

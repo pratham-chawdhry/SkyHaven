@@ -1,0 +1,452 @@
+[
+    {
+        "airportName": "Hartsfield\u2013Jackson Atlanta International Airport",
+        "city": "Atlanta",
+        "state": "Georgia",
+        "country": "USA",
+        "iataCode": "ATL",
+        "timezone": "America/New_York",
+        "dst": "Y"
+    },
+    {
+        "airportName": "Beijing Capital International Airport",
+        "city": "Beijing",
+        "state": "",
+        "country": "China",
+        "iataCode": "PEK",
+        "timezone": "Asia/Shanghai",
+        "dst": "N"
+    },
+    {
+        "airportName": "Dubai International Airport",
+        "city": "Dubai",
+        "state": "",
+        "country": "UAE",
+        "iataCode": "DXB",
+        "timezone": "Asia/Dubai",
+        "dst": "N"
+    },
+    {
+        "airportName": "Los Angeles International Airport",
+        "city": "Los Angeles",
+        "state": "California",
+        "country": "USA",
+        "iataCode": "LAX",
+        "timezone": "America/Los_Angeles",
+        "dst": "Y"
+    },
+    {
+        "airportName": "Tokyo Haneda Airport",
+        "city": "Tokyo",
+        "state": "",
+        "country": "Japan",
+        "iataCode": "HND",
+        "timezone": "Asia/Tokyo",
+        "dst": "N"
+    },
+    {
+        "airportName": "Chicago O'Hare International Airport",
+        "city": "Chicago",
+        "state": "Illinois",
+        "country": "USA",
+        "iataCode": "ORD",
+        "timezone": "America/Chicago",
+        "dst": "Y"
+    },
+    {
+        "airportName": "London Heathrow Airport",
+        "city": "London",
+        "state": "",
+        "country": "UK",
+        "iataCode": "LHR",
+        "timezone": "Europe/London",
+        "dst": "Y"
+    },
+    {
+        "airportName": "Shanghai Pudong International Airport",
+        "city": "Shanghai",
+        "state": "",
+        "country": "China",
+        "iataCode": "PVG",
+        "timezone": "Asia/Shanghai",
+        "dst": "N"
+    },
+    {
+        "airportName": "Charles de Gaulle Airport",
+        "city": "Paris",
+        "state": "",
+        "country": "France",
+        "iataCode": "CDG",
+        "timezone": "Europe/Paris",
+        "dst": "Y"
+    },
+    {
+        "airportName": "Dallas/Fort Worth International Airport",
+        "city": "Dallas",
+        "state": "Texas",
+        "country": "USA",
+        "iataCode": "DFW",
+        "timezone": "America/Chicago",
+        "dst": "Y"
+    },
+    {
+        "airportName": "Guangzhou Baiyun International Airport",
+        "city": "Guangzhou",
+        "state": "",
+        "country": "China",
+        "iataCode": "CAN",
+        "timezone": "Asia/Shanghai",
+        "dst": "N"
+    },
+    {
+        "airportName": "Frankfurt am Main Airport",
+        "city": "Frankfurt",
+        "state": "",
+        "country": "Germany",
+        "iataCode": "FRA",
+        "timezone": "Europe/Berlin",
+        "dst": "Y"
+    },
+    {
+        "airportName": "Istanbul Airport",
+        "city": "Istanbul",
+        "state": "",
+        "country": "Turkey",
+        "iataCode": "IST",
+        "timezone": "Europe/Istanbul",
+        "dst": "N"
+    },
+    {
+        "airportName": "Singapore Changi Airport",
+        "city": "Singapore",
+        "state": "",
+        "country": "Singapore",
+        "iataCode": "SIN",
+        "timezone": "Asia/Singapore",
+        "dst": "N"
+    },
+    {
+        "airportName": "Incheon International Airport",
+        "city": "Incheon",
+        "state": "",
+        "country": "South Korea",
+        "iataCode": "ICN",
+        "timezone": "Asia/Seoul",
+        "dst": "N"
+    },
+    {
+        "airportName": "Denver International Airport",
+        "city": "Denver",
+        "state": "Colorado",
+        "country": "USA",
+        "iataCode": "DEN",
+        "timezone": "America/Denver",
+        "dst": "Y"
+    },
+    {
+        "airportName": "Soekarno\u2013Hatta International Airport",
+        "city": "Jakarta",
+        "state": "",
+        "country": "Indonesia",
+        "iataCode": "CGK",
+        "timezone": "Asia/Jakarta",
+        "dst": "N"
+    },
+    {
+        "airportName": "Suvarnabhumi Airport",
+        "city": "Bangkok",
+        "state": "",
+        "country": "Thailand",
+        "iataCode": "BKK",
+        "timezone": "Asia/Bangkok",
+        "dst": "N"
+    },
+    {
+        "airportName": "Kuala Lumpur International Airport",
+        "city": "Kuala Lumpur",
+        "state": "",
+        "country": "Malaysia",
+        "iataCode": "KUL",
+        "timezone": "Asia/Kuala_Lumpur",
+        "dst": "N"
+    },
+    {
+        "airportName": "Adolfo Su\u00e1rez Madrid\u2013Barajas Airport",
+        "city": "Madrid",
+        "state": "",
+        "country": "Spain",
+        "iataCode": "MAD",
+        "timezone": "Europe/Madrid",
+        "dst": "Y"
+    },
+    {
+        "airportName": "Amsterdam Airport Schiphol",
+        "city": "Amsterdam",
+        "state": "",
+        "country": "Netherlands",
+        "iataCode": "AMS",
+        "timezone": "Europe/Amsterdam",
+        "dst": "Y"
+    },
+    {
+        "airportName": "Hong Kong International Airport",
+        "city": "Hong Kong",
+        "state": "",
+        "country": "Hong Kong",
+        "iataCode": "HKG",
+        "timezone": "Asia/Hong_Kong",
+        "dst": "N"
+    },
+    {
+        "airportName": "Chengdu Shuangliu International Airport",
+        "city": "Chengdu",
+        "state": "",
+        "country": "China",
+        "iataCode": "CTU",
+        "timezone": "Asia/Shanghai",
+        "dst": "N"
+    },
+    {
+        "airportName": "Harry Reid International Airport",
+        "city": "Las Vegas",
+        "state": "Nevada",
+        "country": "USA",
+        "iataCode": "LAS",
+        "timezone": "America/Los_Angeles",
+        "dst": "Y"
+    },
+    {
+        "airportName": "Charlotte Douglas International Airport",
+        "city": "Charlotte",
+        "state": "North Carolina",
+        "country": "USA",
+        "iataCode": "CLT",
+        "timezone": "America/New_York",
+        "dst": "Y"
+    },
+    {
+        "airportName": "Shanghai Hongqiao International Airport",
+        "city": "Shanghai",
+        "state": "",
+        "country": "China",
+        "iataCode": "SHA",
+        "timezone": "Asia/Shanghai",
+        "dst": "N"
+    },
+    {
+        "airportName": "Miami International Airport",
+        "city": "Miami",
+        "state": "Florida",
+        "country": "USA",
+        "iataCode": "MIA",
+        "timezone": "America/New_York",
+        "dst": "Y"
+    },
+    {
+        "airportName": "Phoenix Sky Harbor International Airport",
+        "city": "Phoenix",
+        "state": "Arizona",
+        "country": "USA",
+        "iataCode": "PHX",
+        "timezone": "America/Phoenix",
+        "dst": "N"
+    },
+    {
+        "airportName": "Orlando International Airport",
+        "city": "Orlando",
+        "state": "Florida",
+        "country": "USA",
+        "iataCode": "MCO",
+        "timezone": "America/New_York",
+        "dst": "Y"
+    },
+    {
+        "airportName": "Newark Liberty International Airport",
+        "city": "Newark",
+        "state": "New Jersey",
+        "country": "USA",
+        "iataCode": "EWR",
+        "timezone": "America/New_York",
+        "dst": "Y"
+    },
+    {
+        "airportName": "Chhatrapati Shivaji Maharaj International Airport",
+        "city": "Mumbai",
+        "state": "",
+        "country": "India",
+        "iataCode": "BOM",
+        "timezone": "Asia/Kolkata",
+        "dst": "N"
+    },
+    {
+        "airportName": "Indira Gandhi International Airport",
+        "city": "Delhi",
+        "state": "",
+        "country": "India",
+        "iataCode": "DEL",
+        "timezone": "Asia/Kolkata",
+        "dst": "N"
+    },
+    {
+        "airportName": "Toronto Pearson International Airport",
+        "city": "Toronto",
+        "state": "",
+        "country": "Canada",
+        "iataCode": "YYZ",
+        "timezone": "America/Toronto",
+        "dst": "Y"
+    },
+    {
+        "airportName": "Minneapolis\u2013Saint Paul International Airport",
+        "city": "Minneapolis",
+        "state": "Minnesota",
+        "country": "USA",
+        "iataCode": "MSP",
+        "timezone": "America/Chicago",
+        "dst": "Y"
+    },
+    {
+        "airportName": "Detroit Metropolitan Airport",
+        "city": "Detroit",
+        "state": "Michigan",
+        "country": "USA",
+        "iataCode": "DTW",
+        "timezone": "America/Detroit",
+        "dst": "Y"
+    },
+    {
+        "airportName": "Boston Logan International Airport",
+        "city": "Boston",
+        "state": "Massachusetts",
+        "country": "USA",
+        "iataCode": "BOS",
+        "timezone": "America/New_York",
+        "dst": "Y"
+    },
+    {
+        "airportName": "George Bush Intercontinental Airport",
+        "city": "Houston",
+        "state": "Texas",
+        "country": "USA",
+        "iataCode": "IAH",
+        "timezone": "America/Chicago",
+        "dst": "Y"
+    },
+    {
+        "airportName": "Seattle\u2013Tacoma International Airport",
+        "city": "Seattle",
+        "state": "Washington",
+        "country": "USA",
+        "iataCode": "SEA",
+        "timezone": "America/Los_Angeles",
+        "dst": "Y"
+    },
+    {
+        "airportName": "Philadelphia International Airport",
+        "city": "Philadelphia",
+        "state": "Pennsylvania",
+        "country": "USA",
+        "iataCode": "PHL",
+        "timezone": "America/New_York",
+        "dst": "Y"
+    },
+    {
+        "airportName": "John F. Kennedy International Airport",
+        "city": "New York",
+        "state": "New York",
+        "country": "USA",
+        "iataCode": "JFK",
+        "timezone": "America/New_York",
+        "dst": "Y"
+    },
+    {
+        "airportName": "San Francisco International Airport",
+        "city": "San Francisco",
+        "state": "California",
+        "country": "USA",
+        "iataCode": "SFO",
+        "timezone": "America/Los_Angeles",
+        "dst": "Y"
+    },
+    {
+        "airportName": "Chengdu Tianfu International Airport",
+        "city": "Chengdu",
+        "state": "",
+        "country": "China",
+        "iataCode": "TFU",
+        "timezone": "Asia/Shanghai",
+        "dst": "N"
+    },
+    {
+        "airportName": "Beijing Daxing International Airport",
+        "city": "Beijing",
+        "state": "",
+        "country": "China",
+        "iataCode": "PKX",
+        "timezone": "Asia/Shanghai",
+        "dst": "N"
+    },
+    {
+        "airportName": "London Gatwick Airport",
+        "city": "London",
+        "state": "",
+        "country": "UK",
+        "iataCode": "LGW",
+        "timezone": "Europe/London",
+        "dst": "Y"
+    },
+    {
+        "airportName": "Munich Airport",
+        "city": "Munich",
+        "state": "",
+        "country": "Germany",
+        "iataCode": "MUC",
+        "timezone": "Europe/Berlin",
+        "dst": "Y"
+    },
+    {
+        "airportName": "Barcelona\u2013El Prat Airport",
+        "city": "Barcelona",
+        "state": "",
+        "country": "Spain",
+        "iataCode": "BCN",
+        "timezone": "Europe/Madrid",
+        "dst": "Y"
+    },
+    {
+        "airportName": "Vancouver International Airport",
+        "city": "Vancouver",
+        "state": "",
+        "country": "Canada",
+        "iataCode": "YVR",
+        "timezone": "America/Vancouver",
+        "dst": "Y"
+    },
+    {
+        "airportName": "Sydney Kingsford Smith Airport",
+        "city": "Sydney",
+        "state": "",
+        "country": "Australia",
+        "iataCode": "SYD",
+        "timezone": "Australia/Sydney",
+        "dst": "Y"
+    },
+    {
+        "airportName": "Melbourne Airport",
+        "city": "Melbourne",
+        "state": "",
+        "country": "Australia",
+        "iataCode": "MEL",
+        "timezone": "Australia/Melbourne",
+        "dst": "Y"
+    },
+    {
+        "airportName": "Auckland Airport",
+        "city": "Auckland",
+        "state": "",
+        "country": "New Zealand",
+        "iataCode": "AKL",
+        "timezone": "Pacific/Auckland",
+        "dst": "Y"
+    }
+]

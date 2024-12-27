@@ -1,11 +1,12 @@
-package com.dailycodebuffer.Model;
+package com.dailycodebuffer.Response;
 
+import com.dailycodebuffer.Model.Airline;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
 
 @Data
+@Entity
 public class AirlineCabin {
     @Id
     @GeneratedValue
@@ -13,4 +14,9 @@ public class AirlineCabin {
 
     private String cabinName;
     private String cabinCode;
+
+    @ManyToOne
+    @JoinColumn(name = "airline_id", nullable = true)
+    @JsonIgnore
+    private Airline airline;
 }
