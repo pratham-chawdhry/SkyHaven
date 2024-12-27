@@ -1,4 +1,4 @@
-package com.dailycodebuffer.Request;
+package com.dailycodebuffer.Response;
 
 import lombok.Data;
 

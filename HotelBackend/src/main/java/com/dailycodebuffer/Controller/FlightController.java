@@ -4,16 +4,13 @@ import com.dailycodebuffer.Model.Airline;
 import com.dailycodebuffer.Model.Row;
 import com.dailycodebuffer.Model.Seat;
 import com.dailycodebuffer.Repository.AircraftModelRepo;
-import com.dailycodebuffer.Request.AircraftModel;
-import com.dailycodebuffer.Request.Flight;
+import com.dailycodebuffer.Request.*;
+import com.dailycodebuffer.Response.Flight;
 import com.dailycodebuffer.Model.User;
 import com.dailycodebuffer.Repository.FlightRepo;
-import com.dailycodebuffer.Request.Flights;
 import com.dailycodebuffer.Response.DefaultResponse;
-import com.dailycodebuffer.Response.FlightResponse;
-import com.dailycodebuffer.Service.AircraftModelService;
-import com.dailycodebuffer.Service.FlightRowService;
-import com.dailycodebuffer.Service.UserService;
+import com.dailycodebuffer.Response.Terminal;
+import com.dailycodebuffer.Service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -40,6 +37,12 @@ public class FlightController {
 
     @Autowired
     private FlightRowService flightRowService;
+
+    @Autowired
+    private AirportService airportService;
+
+    @Autowired
+    private TerminalService terminalService;
 
     private DefaultResponse messageMaker(String message, HttpStatus status, int statusCode) {
         DefaultResponse response = new DefaultResponse();
@@ -79,11 +82,18 @@ public class FlightController {
     }
 
     @PostMapping("/addflight")
-    public ResponseEntity<?> addFlight(@RequestHeader("Authorization") String jwt, @RequestBody Flight flight) {
+    public ResponseEntity<?> addFlight(@RequestHeader("Authorization") String jwt, @RequestBody FlightRequest flightRequest) {
         try {
             User user = userService.FindUserByJwt(jwt);
 
             if (user.getRole().toString().equals("ROLE_AIRLINE")) {
+                Flight flight = new Flight();
+                flight.setFlightNumber(flightRequest.getFlightNumber());
+                flight.setArrivalTime(flightRequest.getArrivalTime());
+                flight.setDepartureTime(flightRequest.getDepartureTime());
+                flight.setFlightNumber(flightRequest.getFlightNumber());
+                flight.setAircraftModel(flightRequest.getAircraftModel());
+
                 Airline airline = user.getAirline();
                 AircraftModel aircraftModel = aircraftModelService.getAircraftModelByName(flight.getAircraftModel());
                 if (aircraftModel == null) {
@@ -91,7 +101,41 @@ public class FlightController {
                     return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
                 }
 
+                Airport airportArrival = airportService.getAirportByIata(flightRequest.getAirportArrival());
+
+                if (airportArrival == null) {
+                    DefaultResponse response = messageMaker("Airport arrival not found", HttpStatus.BAD_REQUEST, 400);
+                    return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
+                }
+
+                Airport airportDeparture = airportService.getAirportByIata(flightRequest.getAirportDeparture());
+
+                if (airportDeparture == null) {
+                    DefaultResponse response = messageMaker("Airport departure not found", HttpStatus.BAD_REQUEST, 400);
+                    return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
+                }
+
+                Terminal terminalArrival = terminalService.getTerminalByIataCodeAndTerminalName(flightRequest.getAirportArrival(), flightRequest.getTerminalArrival());
+
+                if (terminalArrival == null) {
+                    DefaultResponse response = messageMaker("Terminal arrival not found", HttpStatus.BAD_REQUEST, 400);
+                    return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
+                }
+                Terminal terminalDeparture = terminalService.getTerminalByIataCodeAndTerminalName(flightRequest.getAirportDeparture(), flightRequest.getTerminalArrival());
+
+                if (terminalDeparture == null) {
+                    DefaultResponse response = messageMaker("Terminal departure not found", HttpStatus.BAD_REQUEST, 400);
+                    return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
+                }
+
                 List<Row> rows = flightSeats(aircraftModel.getSeats(), flight);
+
+                flight.setTerminalArrival(terminalArrival);
+                flight.setTerminalDeparture(terminalDeparture);
+                flight.setAirportArrival(airportArrival);
+                flight.setAirportDeparture(airportDeparture);
+                flight.setAirline(airline);
+
                 flight.setRows(rows);
                 flightRepository.save(flight);
 
@@ -110,18 +154,52 @@ public class FlightController {
     }
 
     @PostMapping("/addflights")
-    public ResponseEntity<?> addFlights(@RequestHeader("Authorization") String jwt, @RequestBody Flights flights) {
+    public ResponseEntity<?> addFlights(@RequestHeader("Authorization") String jwt, @RequestBody FlightRequest[] flightsRequest) {
         try {
             User user = userService.FindUserByJwt(jwt);
 
             if (user.getRole().toString().equals("ROLE_AIRLINE")) {
                 Airline airline = user.getAirline();
-                for (Flight flight : flights.getFlights()) {
+                for (FlightRequest flightRequest : flightsRequest) {
+                    Flight flight = new Flight();
+                    flight.setFlightNumber(flightRequest.getFlightNumber());
+                    flight.setArrivalTime(flightRequest.getArrivalTime());
+                    flight.setDepartureTime(flightRequest.getDepartureTime());
+                    flight.setFlightNumber(flightRequest.getFlightNumber());
+                    flight.setAircraftModel(flightRequest.getAircraftModel());
+
                     AircraftModel aircraftModel = aircraftModelService.getAircraftModelByName(flight.getAircraftModel());
+                    if (aircraftModel == null) {
+                        DefaultResponse response = messageMaker("Aircraft model not found for" + String.valueOf(flight.getFlightNumber()), HttpStatus.BAD_REQUEST, 400);
+                        return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
+                    }
+
+                    Airport airportArrival = airportService.getAirportByIata(flightRequest.getAirportArrival());
+
+                    if (airportArrival == null) {
+                        DefaultResponse response = messageMaker("Airport arrival not found for" + String.valueOf(flight.getFlightNumber()), HttpStatus.BAD_REQUEST, 400);
+                        return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
+                    }
+
+                    Airport airportDeparture = airportService.getAirportByIata(flightRequest.getAirportDeparture());
+
+                    if (airportDeparture == null) {
+                        DefaultResponse response = messageMaker("Airport departure not found" + String.valueOf(flight.getFlightNumber()), HttpStatus.BAD_REQUEST, 400);
+                        return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
+                    }
+
+                    Terminal terminalArrival = terminalService.getTerminalByIataCodeAndTerminalName(flightRequest.getAirportArrival(), flightRequest.getTerminalArrival());
+                    Terminal terminalDeparture = terminalService.getTerminalByIataCodeAndTerminalName(flightRequest.getAirportDeparture(), flightRequest.getTerminalArrival());
 
                     List<Row> rows = flightSeats(aircraftModel.getSeats(), flight);
-                    flight.setRows(rows);
+
+                    flight.setTerminalDeparture(terminalDeparture);
+                    flight.setTerminalArrival(terminalArrival);
+                    flight.setAirportArrival(airportArrival);
+                    flight.setAirportDeparture(airportDeparture);
                     flight.setAirline(airline);
+
+                    flight.setRows(rows);
                     flightRepository.save(flight);
                 }
 
@@ -148,10 +226,10 @@ public class FlightController {
                 Airline airline = user.getAirline();
 
                 List<Flight> flights = airline.getFlights();
-                FlightResponse flightResponse = new FlightResponse();
-                flightResponse.setFlights(flights);
+//                Flights flightResponse = new Flights();
+//                flightResponse.setFlights(flights);
 
-                return new ResponseEntity<>(flightResponse, HttpStatus.OK);
+                return new ResponseEntity<>(flights, HttpStatus.OK);
             }
             else {
                 return new ResponseEntity<>(flightRepository.findAll(), HttpStatus.OK);

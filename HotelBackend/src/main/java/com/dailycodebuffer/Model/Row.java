@@ -1,6 +1,6 @@
 package com.dailycodebuffer.Model;
 
-import com.dailycodebuffer.Request.Flight;
+import com.dailycodebuffer.Response.Flight;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;

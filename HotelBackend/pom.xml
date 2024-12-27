@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.example</groupId>
-    <artifactId>Language_Learning_App</artifactId>
+    <artifactId>Sky_Haven</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>Language_Learning_App</name>
-    <description>Language_Learning_App</description>
+    <name>Sky_Haven</name>
+    <description>Sky_Haven</description>
     <url/>
     <licenses>
         <license/>
@@ -99,6 +99,11 @@
             <groupId>io.jsonwebtoken</groupId>
             <artifactId>jjwt-jackson</artifactId>
             <version>0.11.1</version>
+        </dependency>
+        <dependency>
+            <groupId>it.ozimov</groupId>
+            <artifactId>spring-boot-freemarker-email</artifactId>
+            <version>1.0.0</version>
         </dependency>
     </dependencies>
 

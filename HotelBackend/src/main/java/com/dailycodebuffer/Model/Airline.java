@@ -1,6 +1,7 @@
 package com.dailycodebuffer.Model;
 
-import com.dailycodebuffer.Request.Flight;
+import com.dailycodebuffer.Response.Flight;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -24,8 +25,10 @@ public class Airline {
     private String description;
 
     @OneToMany(mappedBy = "airline")
+    @JsonIgnore
     private List<User> users;
 
     @OneToMany(mappedBy = "airline", cascade = CascadeType.ALL)
+    @JsonIgnore
     private List<Flight> flights;
 }
