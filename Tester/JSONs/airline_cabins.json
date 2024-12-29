@@ -1,0 +1,20 @@
+{
+  "cabins": [
+    {
+      "cabinName": "First Class",
+      "cabinCode": "FIR"
+    },
+    {
+      "cabinName": "Business Class",
+      "cabinCode": "BUS"
+    },
+    {
+      "cabinName": "Premium Economy",
+      "cabinCode": "PRE"
+    },
+    {
+      "cabinName": "Economy Class",
+      "cabinCode": "ECO"
+    }
+  ]
+}

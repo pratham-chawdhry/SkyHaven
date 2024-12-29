@@ -9,4 +9,5 @@ public class FlightCabinRequest {
     private String disabled;
     private Long startRow;
     private Long endRow;
+    private Long price;
 }

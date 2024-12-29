@@ -10,5 +10,4 @@ import lombok.Data;
 public class AirlineCabinRequest {
     private String cabinName;
     private String cabinCode;
-    private Airline airline;
 }

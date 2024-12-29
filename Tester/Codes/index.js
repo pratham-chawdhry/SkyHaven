@@ -1,7 +1,6 @@
 const fetch = require('node-fetch');  
 const fs = require('fs');  
 
-let token = []
 let environment = "http://localhost:8080";
 
 let object = {
@@ -15,7 +14,7 @@ let object = {
     terminal: "/addterminals",
 };
 
-function headerCreator(token) {
+async function headerCreator(token) {
     let header = {
         "Content-Type": "application/json",
         "Authorization": `Bearer ${token}`
@@ -30,14 +29,16 @@ const airlines = require('../JSONs/airlines.json');
 const airports = require('../JSONs/airports.json');
 const flights = require('../JSONs/flight_requests.json');
 const terminals = require('../JSONs/complete_terminals.json');
+const airline_cabins = require('../JSONs/airline_cabins.json');
 
 let signUpUrl = `${environment}${object.signUp}`;
 let signInUrl = `${environment}${object.signIn}`;
 let aircraftUrl = `${environment}${object.addAircraftModel}`;
 let airlineUrl = `${environment}${object.airline}`;
 let airportUrl = `${environment}${object.airport}`;
-let flightUrl = `${environment}${object.flight}`;
+let flightUrl = `${environment}${object.flights}`;
 let terminalUrl = `${environment}${object.terminal}`;
+let airlineCabinUrl = `${environment}${object.airlineCabin}`;
 
 async function signUp(url, header, data) {
     try {
@@ -152,7 +153,7 @@ async function processPostRequests(url, header, data) {
     }
 }
 
-async function processAircraftModels(url, header, aircraft_models) {
+async function processAircraftModels(url, token, aircraft_models) {
     for (let i = 0; i < aircraft_models.length; i++) {
         try {
             let aircraftModelResponse = await processPostRequests(url, header, aircraft_models[i]);
@@ -180,20 +181,76 @@ async function processTerminals(url, header, terminals) {
     await processPostRequests(url, header, terminals);
 }
 
+async function processAirlineCabins(url, header, airline_cabins) {
+    for (let i = 0; i < airline_cabins.airlines.length; i++) {
+        try {
+            let userName = 2 * i + 1;
+            let tokenUser = token[userName].token;
+
+            // console.log(token[userName]);
+            header = await headerCreator(tokenUser);
+            let airlineCabinResponse = await processPostRequests(url, header, airline_cabins.airlines[i].cabins);
+        }
+        catch (error) {
+        }
+    }
+}
+
+let token = [];
+let adminArray = [];
+let userArray = [];
+let header;
+
+async function split(users){
+    for (let i = 0; i < users.length; i++) {
+        if (users[i].role === "ROLE_ADMIN") {
+            adminArray.push(users[i]);
+        }
+        else {
+            userArray.push(users[i]);
+        }
+    }
+}
+
+
+async function processFlightRequests(url, header, flights){
+    for (let i = 1; i < token.length; i++) {
+        try {
+            let userName = i;
+            let tokenUser = token[userName].token;
+
+            let flightsArray = flights.slice((i - 1) * 500, i * 500);
+
+            header = await headerCreator(tokenUser);
+            let airlineCabinResponse = await processPostRequests(url, header, flightsArray);
+        }
+        catch (error) {
+        }
+    }
+}
+
+
 async function main() {
     console.log(users);
     let userHeader = {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
     }
-    await processSignUpsSignIns(signUpUrl, signInUrl, userHeader, users);
-    console.log(token[0].token);
-    // console.log(token);
-    header = headerCreator(token[0].token);
-    console.log(header);
+
+    await split(users);
+    await processSignUpsSignIns(signUpUrl, signInUrl, userHeader, adminArray);
+    header = await headerCreator(token[0].token);
     await processAircraftModels(aircraftUrl, header, aircraft_models);
     await processAirlines(airlineUrl, header, airlines);
     await processAirports(airportUrl, header, airports);
     await processTerminals(terminalUrl, header, terminals);
+
+    await processSignUpsSignIns(signUpUrl, signInUrl, userHeader, userArray);
+
+    console.log(token);
+    await processAirlineCabins(airlineCabinUrl, token, airline_cabins);
+
+    // console.log(flights);
+    await processFlightRequests(flightUrl, token, flights);
 }
 
 main().catch((error) => console.error('Error:', error));

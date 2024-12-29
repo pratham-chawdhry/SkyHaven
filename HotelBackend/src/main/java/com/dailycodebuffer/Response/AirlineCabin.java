@@ -15,8 +15,8 @@ public class AirlineCabin {
     private String cabinName;
     private String cabinCode;
 
-    @ManyToOne
-    @JoinColumn(name = "airline_id", nullable = true)
-    @JsonIgnore
-    private Airline airline;
+    @Override
+    public String toString() {
+        return "AirlineCabin [id=" + id + ", cabinName=" + cabinName + ", cabinCode=" + cabinCode + "]";
+    }
 }

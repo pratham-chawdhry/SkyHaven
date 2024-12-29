@@ -3,6 +3,7 @@ package com.dailycodebuffer.Controller;
 import com.dailycodebuffer.Model.Airline;
 import com.dailycodebuffer.Model.User;
 import com.dailycodebuffer.Repository.AirlineCabinRepo;
+import com.dailycodebuffer.Repository.AirlineRepo;
 import com.dailycodebuffer.Request.AirlineCabinRequest;
 import com.dailycodebuffer.Response.AirlineCabin;
 import com.dailycodebuffer.Response.DefaultResponse;
@@ -21,6 +22,9 @@ public class AirlineCabinController {
     @Autowired
     private AirlineCabinRepo airlineCabinRepo;
 
+    @Autowired
+    private AirlineRepo airlineRepo;
+
     private DefaultResponse messageMaker(String message, HttpStatus status, int statusCode) {
         DefaultResponse response = new DefaultResponse();
         response.setMessage(message);
@@ -38,7 +42,6 @@ public class AirlineCabinController {
                 Airline airline = user.getAirline();
 
                 AirlineCabin airlineCabin = new AirlineCabin();
-                airlineCabin.setAirline(airline);
                 airlineCabin.setCabinName(airlineCabinRequest.getCabinName());
                 airlineCabin.setCabinCode(airlineCabinRequest.getCabinCode());
 
@@ -61,14 +64,18 @@ public class AirlineCabinController {
             User user = userService.FindUserByJwt(jwt);
 
             if (user.getRole().toString().equals("ROLE_AIRLINE")){
+                String airlineCode = user.getAirline().getAirlineCode();
+
+                System.out.println(airlineCode);
+
                 Airline airline = user.getAirline();
 
                 for (AirlineCabinRequest airlineCabinRequest : airlineCabinRequests){
                     AirlineCabin airlineCabin = new AirlineCabin();
-                    airlineCabin.setAirline(airline);
                     airlineCabin.setCabinName(airlineCabinRequest.getCabinName());
                     airlineCabin.setCabinCode(airlineCabinRequest.getCabinCode());
 
+                    System.out.println(airlineCabin);
                     airlineCabinRepo.save(airlineCabin);
                 }
 
@@ -83,47 +90,16 @@ public class AirlineCabinController {
         }
     }
 
-    @GetMapping
+    @GetMapping("/airlinecabins")
     public ResponseEntity<?> getAirlineCabins(@RequestHeader("Authorization") String jwt) {
         try{
             User user = userService.FindUserByJwt(jwt);
 
-            if (user.getRole().toString().equals("ROLE_AIRLINE")){
-                Airline airline = user.getAirline();
-
-                return ResponseEntity.status(HttpStatus.OK).body(airlineCabinRepo.findByAirline(airline));
+            if (user.getRole().toString().equals("ROLE_USER")){
+                return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(messageMaker("Unauthorized", HttpStatus.UNAUTHORIZED, 401));
             }
-            else if (user.getRole().toString().equals("ROLE_ADMIN")){
+            else{
                 return ResponseEntity.status(HttpStatus.OK).body(airlineCabinRepo.findAll());
-            }
-            else{
-                return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(messageMaker("Unauthorized", HttpStatus.UNAUTHORIZED, 401));
-            }
-        }
-        catch(Exception e){
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(messageMaker("Internal Server Error", HttpStatus.INTERNAL_SERVER_ERROR, 500));
-        }
-    }
-
-    @GetMapping("/airlinecabin/{cabinId}")
-    public ResponseEntity<?> getAirlineCabin(@RequestHeader("Authorization") String jwt, @PathVariable Long cabinId) {
-        try{
-            User user = userService.FindUserByJwt(jwt);
-
-            if (user.getRole().toString().equals("ROLE_AIRLINE")){
-                Airline airline = user.getAirline();
-
-                AirlineCabin airlineCabin = airlineCabinRepo.findByAirlineAndId(airline, cabinId);
-
-                if (airlineCabin == null){
-                    return ResponseEntity.status(HttpStatus.NOT_FOUND).body(messageMaker("Airline Cabin not found", HttpStatus.NOT_FOUND, 404));
-                }
-                else{
-                    return ResponseEntity.status(HttpStatus.OK).body(airlineCabin);
-                }
-            }
-            else{
-                return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(messageMaker("Unauthorized", HttpStatus.UNAUTHORIZED, 401));
             }
         }
         catch(Exception e){

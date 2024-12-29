@@ -34,11 +34,12 @@ public class Airline {
     @JsonIgnore
     private List<Flight> flights;
 
-    @OneToMany(mappedBy = "airline")
-    @JsonIgnore
-    private List<AirlineCabin> classes;
-
     @OneToMany(mappedBy = "airline", cascade = CascadeType.ALL)
     @JsonIgnore
     private List<FlightCabin> flightCabins;
+
+    @Override
+    public String toString() {
+        return "Airline [id=" + id + ", airlineName=" + airlineName + ", airlineCode=" + airlineCode + "]";
+    }
 }

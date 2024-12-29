@@ -19,7 +19,7 @@ public class UserServiceImpl implements UserService {
     public User FindUserByJwt(String jwt) throws Exception {
         try{
             String email = jwtProvider.GetEmailfromJwt(jwt);
-            User user = userRepository.findByEmail(email);
+            User user = FindUserByEmail(email);
             if (user == null){
                 throw new Exception("User not found");
             }

@@ -33,4 +33,9 @@ public class Terminal {
     @OneToMany(mappedBy = "terminalDeparture")
     @JsonBackReference
     private List<Flight> flightsDeparture = new ArrayList<>();
+
+    @Override
+    public String toString() {
+        return "Terminal [id=" + terminalId + ", terminalName=" + terminalName + "]";
+    }
 }

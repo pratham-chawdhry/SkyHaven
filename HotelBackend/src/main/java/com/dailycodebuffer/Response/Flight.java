@@ -53,4 +53,18 @@ public class Flight{
 
     @OneToMany(mappedBy = "flight", cascade = CascadeType.ALL)
     private List<FlightCabin> flightCabins = new ArrayList<>();
+
+    @Override
+    public String toString() {
+        return "Flight [id=" + id +
+                ", terminalArrival=" + terminalArrival +
+                ", airportArrival=" + airportArrival +
+                ", terminalDeparture=" + terminalDeparture +
+                ", airportDeparture=" + airportDeparture +
+                ", arrivalTime=" + arrivalTime +
+                ", departureTime=" + departureTime +
+                ", flightNumber=" + flightNumber +
+                ", aircraftModel=" + aircraftModel +
+                ", airline=" + airline + "]";
+    }
 }

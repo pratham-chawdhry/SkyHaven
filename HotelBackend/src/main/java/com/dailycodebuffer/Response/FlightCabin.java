@@ -17,6 +17,7 @@ public class FlightCabin {
     private String disabled;
     private Long startRow;
     private Long endRow;
+    private Long price;
 
     @ManyToOne
     @JoinColumn(name = "airline_id", nullable = true)
@@ -25,5 +26,14 @@ public class FlightCabin {
 
     @ManyToOne
     @JoinColumn(name = "flight_id", referencedColumnName = "id")
+    @JsonIgnore
     private Flight flight;
+
+    @Override
+    public String toString() {
+        return "FlightCabin [flightCabinId=" + flightCabinId +
+                "cabinName=" + cabinName + ", cabinCode=" + cabinCode +
+                "disabled=" + disabled + ", startRow=" + startRow +
+                ", + endRow=" + endRow + ", airline=" + airline + ", flight=" + flight + "]";
+    }
 }

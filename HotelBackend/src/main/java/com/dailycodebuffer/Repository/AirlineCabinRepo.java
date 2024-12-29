@@ -7,7 +7,4 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface AirlineCabinRepo extends JpaRepository<AirlineCabin, Long> {
-    public AirlineCabin findByAirlineAndId(Airline airline, Long cabinId);
-
-    public AirlineCabin[] findByAirline(Airline airline);
 }

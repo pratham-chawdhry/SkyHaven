@@ -49,38 +49,60 @@ public class AuthController {
     private AirlineRepo airlineRepo;
 
     @PostMapping("/signup")
-    public ResponseEntity<AuthResponse>createUserHandler(@RequestBody User user) throws Exception{
+    public ResponseEntity<AuthResponse> createUserHandler(@RequestBody User user) throws Exception {
         System.out.println(user.getEmail());
-        User user1 = userRepository.findByEmail(user.getEmail());
-        if (user1 != null){
+        User existingUser = userRepository.findByEmail(user.getEmail());
+        if (existingUser != null) {
             throw new Exception("Email already exists");
         }
+
         User user2 = new User();
         user2.setEmail(user.getEmail());
         user2.setUsername(user.getUsername());
         user2.setRole(user.getRole());
-        System.out.println(user.getPassword());
         user2.setPassword(passwordEncoder.encode(user.getPassword()));
         user2.setActive(true);
+        user2.setAirlineCode(user.getAirlineCode());
 
-        if (user.getRole().equals(USER_ROLE.ROLE_AIRLINE)){
-            Airline airline = new Airline();
-            airline = airlineRepo.findByAirlineCode(user.getAirlineCode());
+        if (user.getRole().equals(USER_ROLE.ROLE_AIRLINE)) {
+            Airline airline = airlineRepo.findByAirlineCode(user.getAirlineCode());
+            if (airline == null) {
+                throw new Exception("Airline not found for code: " + user.getAirlineCode());
+            }
             user2.setAirline(airline);
+
+            // Ensure the relationship is updated
+            List<User> users = airline.getUsers();
+            if (users == null) {
+                users = new ArrayList<>();
+            }
+            users.add(user2);
+            airline.setUsers(users);
         }
 
-        User saved_user = userRepository.save(user2);
+        User savedUser = userRepository.save(user2);
+
         List<GrantedAuthority> authorities = new ArrayList<>();
-        authorities.add(new SimpleGrantedAuthority(saved_user.getRole().toString()));
-        UserDetails userDetails = new org.springframework.security.core.userdetails.User(user.getEmail(), user.getPassword(), authorities);
-        Authentication authentication = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
+        authorities.add(new SimpleGrantedAuthority(savedUser.getRole().toString()));
+        UserDetails userDetails = new org.springframework.security.core.userdetails.User(
+                savedUser.getEmail(),
+                savedUser.getPassword(),
+                authorities
+        );
+        Authentication authentication = new UsernamePasswordAuthenticationToken(
+                userDetails,
+                null,
+                userDetails.getAuthorities()
+        );
         SecurityContextHolder.getContext().setAuthentication(authentication);
+
         String jwt = jwtProvider.generateToken(authentication);
+
         AuthResponse authResponse = new AuthResponse();
         authResponse.setToken(jwt);
-        System.out.println(user.getRole());
         authResponse.setRole(user.getRole());
         authResponse.setMessage("Signup successful");
+
         return new ResponseEntity<>(authResponse, HttpStatus.CREATED);
     }
 

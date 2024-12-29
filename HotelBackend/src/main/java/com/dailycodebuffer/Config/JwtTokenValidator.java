@@ -46,21 +46,24 @@ public class JwtTokenValidator extends OncePerRequestFilter{
             jwt = jwt.substring(7);
             try {
                 SecretKey secretKey = Keys.hmacShaKeyFor(JwtConstant.SECRET_KEY.getBytes()); // This line is used to create a secret key.
+                System.out.println(secretKey);
                 Claims claims = Jwts.parserBuilder()
                         .setSigningKey(secretKey)
                         .build()
                         .parseClaimsJws(jwt)
                         .getBody(); // This line is used to parse the JWT and get the claims.
                 String email = String.valueOf(claims.get("email"));
+                System.out.println(email);
                 String authorities=String.valueOf(claims.get("authorities"));
+                System.out.println(authorities);
                 List<GrantedAuthority> authorityList = AuthorityUtils.commaSeparatedStringToAuthorityList(authorities);
                 Authentication authentication = new UsernamePasswordAuthenticationToken(email, null, authorityList);
                 SecurityContextHolder.getContext().setAuthentication(authentication); // This line is used to set the authentication in the security context. //oh then this authentication is used in the controller to get the user details.
                 filterChain.doFilter(request, response); // is this required? // Yes, this line is used to allow the request to proceed. but authentication is already set in the security context. //then also we need to call this line? // Yes, this line is used to allow the request to proceed.
-            } catch (Exception e){
-                throw new BadCredentialsException("Invalid token");
-            }
+            } catch (Exception e) {
+            throw new RuntimeException(e.getMessage(), e);
         }
+    }
         else{
             throw new BadCredentialsException("Token not found");
         }

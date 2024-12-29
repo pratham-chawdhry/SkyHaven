@@ -37,4 +37,9 @@ public class Airport {
     @OneToMany(mappedBy = "airport")
     @JsonIgnore
     private List<Terminal> terminals = new ArrayList<>();
+
+    @Override
+    public String toString() {
+        return "Airport [id=" + airport_id + ", airportName=" + airportName + ", city=" + city + ", state=" + state + ", country=" + country + ", iataCode" + iataCode + "timezone" + timezone + "dst" + dst + "]";
+    }
 }
