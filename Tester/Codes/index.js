@@ -247,7 +247,7 @@ async function main() {
     await processSignUpsSignIns(signUpUrl, signInUrl, userHeader, userArray);
 
     console.log(token);
-    await processAirlineCabins(airlineCabinUrl, token, airline_cabins);
+    // await processAirlineCabins(airlineCabinUrl, token, airline_cabins);
 
     // console.log(flights);
     await processFlightRequests(flightUrl, token, flights);

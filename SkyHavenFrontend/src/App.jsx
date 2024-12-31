@@ -7,6 +7,9 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import SignIn from './pages/auth/SignIn';
 import SignUp from './pages/auth/SignUp';
+import Airlines from './pages/tables/Airlines';
+import Flights from './pages/tables/Flights'
+import Airports from './pages/tables/Airports'
 
 function App() {
   return (
@@ -14,13 +17,16 @@ function App() {
       <BrowserRouter>
         <div className="min-h-screen bg-gray-50 flex flex-col">
           <Navbar />
-          <main className="flex-grow">
+          <div className="flex-grow">
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/auth/signin" element={<SignIn />} />
               <Route path="/auth/signup" element={<SignUp />} />
+              <Route path="/airlines/table" element={<Airlines />} />
+              <Route path="/flights/table" element={<Flights />} />
+              <Route path="/airports/table" element={<Airports />} />
             </Routes>
-          </main>
+          </div>
           <Footer/>
         </div>
       </BrowserRouter>

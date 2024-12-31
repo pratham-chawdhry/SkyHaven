@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 
 import Features from '../components/Features';
-import Testimonials from '../components/testimonials/Testimonial';
-import PopularDestinations from '../components/destinations/PopularDestinations';
+import Testimonials from '../components/Testimonial';
+import PopularDestinations from '../components/PopularDestinations';
 import SearchForm from '../components/SearchForm';
 
 const Home = () => {

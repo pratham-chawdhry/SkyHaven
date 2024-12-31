@@ -3,6 +3,7 @@ package com.dailycodebuffer.Request;
 import com.dailycodebuffer.Response.Flight;
 import com.dailycodebuffer.Response.Terminal;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -35,7 +36,7 @@ public class Airport {
     private List<Flight> flightsDeparture = new ArrayList<>();
 
     @OneToMany(mappedBy = "airport")
-    @JsonIgnore
+    @JsonManagedReference
     private List<Terminal> terminals = new ArrayList<>();
 
     @Override
