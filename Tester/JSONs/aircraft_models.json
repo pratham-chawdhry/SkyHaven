@@ -1,57 +1,14 @@
 [
     {
-        "aircraftModelName": "Airbus A380",
-        "seats": [
-            4,
-            4,
-            4,
-            4,
-            4,
-            4,
-            4
-        ]
+        "aircraftModelName": "Airbus A380"
     },
     {
-        "aircraftModelName": "Airbus A320",
-        "seats": [
-            8,
-            8,
-            8,
-            8,
-            8,
-            8,
-            8,
-            8,
-            8,
-            8
-        ]
+        "aircraftModelName": "Airbus A320"
     },
     {
         "aircraftModelName": "Boeing 777",
-        "seats": [
-            10,
-            10,
-            10,
-            10,
-            10,
-            10,
-            10,
-            10
-        ]
     },
     {
         "aircraftModelName": "Boeing 737",
-        "seats": [
-            6,
-            6,
-            6,
-            6,
-            6,
-            6,
-            6,
-            6,
-            6,
-            6
-        ]
     }
 ]

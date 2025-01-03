@@ -1,4 +1,8 @@
-.ReactModal__Content.ReactModal__Content--after-open {
-    width: 500px;
-    
+/* .ReactModal__Content.ReactModal__Content--after-open {
+    width: 500px; 
+}
+ */
+
+.ReactModal__Overlay.ReactModal__Overlay--after-open {
+    z-index: 10;
 }

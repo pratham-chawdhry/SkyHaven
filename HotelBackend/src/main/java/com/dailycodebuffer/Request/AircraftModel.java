@@ -14,5 +14,5 @@ public class AircraftModel {
     @GeneratedValue
     private Long id;
     private String aircraftModelName;
-    private List<Long> seats;
+//    private List<Long> seats;
 }

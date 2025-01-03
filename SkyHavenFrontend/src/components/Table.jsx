@@ -11,6 +11,7 @@ const getNestedValue = (obj, attribute) => {
 export default function Table({ data, columnName, currentPage, rowsPerPage, handlePageChange }) {
   const slicedData = data.slice(currentPage * rowsPerPage, (currentPage + 1) * rowsPerPage);
 
+  console.log(data, slicedData);
   return (
     <div
       style={{
@@ -47,7 +48,9 @@ export default function Table({ data, columnName, currentPage, rowsPerPage, hand
           </tr>
         </thead>
         <tbody>
-          {slicedData.map((row, index) => (
+          {slicedData.map((row, index) => {
+            console.log(row);
+            return(
             <tr className="flex-col justify-center" key={index}>
               <td
                 className="py-2 justify-center ml-10"
@@ -60,7 +63,9 @@ export default function Table({ data, columnName, currentPage, rowsPerPage, hand
                   <input type="checkbox" className="w-3 h-3" />
                 </div>
               </td>
-              {columnName.map((column, columnIndex) => (
+              {columnName.map((column, columnIndex) => {
+                console.log(column);
+                return (
                 <td key={columnIndex} className="py-2 justify-center text-center">
                   <div style={column.cellStyle} className={column.cellClassName}>
                     {column.renderCell ? (
@@ -74,7 +79,7 @@ export default function Table({ data, columnName, currentPage, rowsPerPage, hand
                     )}
                   </div>
                 </td>
-              ))}
+              )})}
               <td className="py-2 px-2 justify-center">
                 <div className="text-center">
                   <button className="bg-blue-600 text-white py-2 px-2 rounded-lg text-lg font-semibold hover:bg-blue-700 transition-colors transform hover:scale-[1.02] duration-200 shadow-lg hover:shadow-xl">
@@ -83,7 +88,7 @@ export default function Table({ data, columnName, currentPage, rowsPerPage, hand
                 </div>
               </td>
             </tr>
-          ))}
+          )})}
         </tbody>
       </table>
     </div>

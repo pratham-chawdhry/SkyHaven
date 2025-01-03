@@ -10,6 +10,8 @@ import SignUp from './pages/auth/SignUp';
 import Airlines from './pages/tables/Airlines';
 import Flights from './pages/tables/Flights'
 import Airports from './pages/tables/Airports'
+import Seats from './components/Seat'
+import AddFlights from './pages/add/addFlightFormat'
 
 function App() {
   return (
@@ -25,9 +27,11 @@ function App() {
               <Route path="/airlines/table" element={<Airlines />} />
               <Route path="/flights/table" element={<Flights />} />
               <Route path="/airports/table" element={<Airports />} />
+              <Route path="/seats" element={<Seats />} />
+              <Route path="/flights/add" element={<AddFlights />} />
             </Routes>
           </div>
-          <Footer/>
+          {/* <Footer/> */}
         </div>
       </BrowserRouter>
     </LocalizationProvider>
