@@ -3,6 +3,7 @@ package com.dailycodebuffer.Response;
 import com.dailycodebuffer.Model.Airline;
 import com.dailycodebuffer.Model.Row;
 import com.dailycodebuffer.Request.Airport;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;

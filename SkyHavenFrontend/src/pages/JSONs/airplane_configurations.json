@@ -1,0 +1,4457 @@
+[
+    {
+        "id": 1,
+        "aisles": 1,
+        "airline": {
+            "id": 1,
+            "airlineName": "United Airlines",
+            "airlineCode": "UA",
+            "data": null,
+            "description": "United Airlines, Inc. is a major American airline headquartered in Chicago, Illinois. It was founded in 1926 and has since grown to become one of the largest airlines in the world, offering domestic and international flights to numerous destinations. United Airlines is known for its broad network, fleet diversity, and partnerships with global airline alliances such as Star Alliance. It provides a wide range of services to passengers, including various classes of service, in-flight entertainment, and loyalty programs such as MileagePlus, offering frequent flyers the chance to earn miles for travel rewards."
+        },
+        "cabinClasses": [
+            {
+                "id": 1,
+                "cabinName": "First Class",
+                "cabinCode": "FIR",
+                "disabled": false,
+                "seating": [
+                    {
+                        "id": 1,
+                        "numberOfRows": 4,
+                        "startRow": 1,
+                        "endRow": 4,
+                        "aislePrice": 10,
+                        "middlePrice": 10,
+                        "windowPrice": 10,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            2,
+                            2,
+                            2
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "cabinName": "Business Class",
+                "cabinCode": "BUS",
+                "disabled": false,
+                "seating": [
+                    {
+                        "id": 2,
+                        "numberOfRows": 3,
+                        "startRow": 5,
+                        "endRow": 7,
+                        "aislePrice": 180,
+                        "middlePrice": 180,
+                        "windowPrice": 180,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            1,
+                            1,
+                            1
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 3,
+                "cabinName": "Premium Economy Class",
+                "cabinCode": "PRE",
+                "disabled": false,
+                "seating": [
+                    {
+                        "id": 3,
+                        "numberOfRows": 3,
+                        "startRow": 8,
+                        "endRow": 10,
+                        "aislePrice": 30,
+                        "middlePrice": 30,
+                        "windowPrice": 30,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            2,
+                            2,
+                            2
+                        ]
+                    },
+                    {
+                        "id": 4,
+                        "numberOfRows": 1,
+                        "startRow": 11,
+                        "endRow": 11,
+                        "aislePrice": 10,
+                        "middlePrice": 10,
+                        "windowPrice": 10,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            3,
+                            3,
+                            3
+                        ]
+                    },
+                    {
+                        "id": 5,
+                        "numberOfRows": 7,
+                        "startRow": 12,
+                        "endRow": 18,
+                        "aislePrice": 90,
+                        "middlePrice": 90,
+                        "windowPrice": 90,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            0,
+                            2,
+                            0
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 4,
+                "cabinName": "Economy Class",
+                "cabinCode": "ECO",
+                "disabled": false,
+                "seating": [
+                    {
+                        "id": 6,
+                        "numberOfRows": 7,
+                        "startRow": 19,
+                        "endRow": 25,
+                        "aislePrice": 0,
+                        "middlePrice": 0,
+                        "windowPrice": 0,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            2,
+                            2,
+                            2
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "aisles": 2,
+        "airline": {
+            "id": 1,
+            "airlineName": "United Airlines",
+            "airlineCode": "UA",
+            "data": null,
+            "description": "United Airlines, Inc. is a major American airline headquartered in Chicago, Illinois. It was founded in 1926 and has since grown to become one of the largest airlines in the world, offering domestic and international flights to numerous destinations. United Airlines is known for its broad network, fleet diversity, and partnerships with global airline alliances such as Star Alliance. It provides a wide range of services to passengers, including various classes of service, in-flight entertainment, and loyalty programs such as MileagePlus, offering frequent flyers the chance to earn miles for travel rewards."
+        },
+        "cabinClasses": [
+            {
+                "id": 5,
+                "cabinName": "First Class",
+                "cabinCode": "FIR",
+                "disabled": false,
+                "seating": [
+                    {
+                        "id": 7,
+                        "numberOfRows": 9,
+                        "startRow": 1,
+                        "endRow": 9,
+                        "aislePrice": 45,
+                        "middlePrice": 45,
+                        "windowPrice": 45,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            1,
+                            1,
+                            1
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 6,
+                "cabinName": "Business Class",
+                "cabinCode": "BUS",
+                "disabled": true,
+                "seating": [
+                    {
+                        "id": 8,
+                        "numberOfRows": 6,
+                        "startRow": 10,
+                        "endRow": 15,
+                        "aislePrice": 75,
+                        "middlePrice": 75,
+                        "windowPrice": 75,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            2,
+                            2,
+                            2
+                        ]
+                    },
+                    {
+                        "id": 9,
+                        "numberOfRows": 4,
+                        "startRow": 16,
+                        "endRow": 19,
+                        "aislePrice": 75,
+                        "middlePrice": 75,
+                        "windowPrice": 75,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            3,
+                            0,
+                            3
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 7,
+                "cabinName": "Premium Economy Class",
+                "cabinCode": "PRE",
+                "disabled": true,
+                "seating": [
+                    {
+                        "id": 10,
+                        "numberOfRows": 9,
+                        "startRow": 20,
+                        "endRow": 28,
+                        "aislePrice": 0,
+                        "middlePrice": 0,
+                        "windowPrice": 0,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            1,
+                            1,
+                            1
+                        ]
+                    },
+                    {
+                        "id": 11,
+                        "numberOfRows": 5,
+                        "startRow": 29,
+                        "endRow": 33,
+                        "aislePrice": 150,
+                        "middlePrice": 150,
+                        "windowPrice": 150,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            0,
+                            2,
+                            0
+                        ]
+                    },
+                    {
+                        "id": 12,
+                        "numberOfRows": 9,
+                        "startRow": 34,
+                        "endRow": 42,
+                        "aislePrice": 180,
+                        "middlePrice": 180,
+                        "windowPrice": 180,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            3,
+                            0,
+                            3
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 8,
+                "cabinName": "Economy Class",
+                "cabinCode": "ECO",
+                "disabled": true,
+                "seating": [
+                    {
+                        "id": 13,
+                        "numberOfRows": 7,
+                        "startRow": 43,
+                        "endRow": 49,
+                        "aislePrice": 75,
+                        "middlePrice": 75,
+                        "windowPrice": 75,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            3,
+                            0,
+                            3
+                        ]
+                    },
+                    {
+                        "id": 14,
+                        "numberOfRows": 1,
+                        "startRow": 50,
+                        "endRow": 50,
+                        "aislePrice": 120,
+                        "middlePrice": 120,
+                        "windowPrice": 120,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            1,
+                            1,
+                            1
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "aisles": 2,
+        "airline": {
+            "id": 1,
+            "airlineName": "United Airlines",
+            "airlineCode": "UA",
+            "data": null,
+            "description": "United Airlines, Inc. is a major American airline headquartered in Chicago, Illinois. It was founded in 1926 and has since grown to become one of the largest airlines in the world, offering domestic and international flights to numerous destinations. United Airlines is known for its broad network, fleet diversity, and partnerships with global airline alliances such as Star Alliance. It provides a wide range of services to passengers, including various classes of service, in-flight entertainment, and loyalty programs such as MileagePlus, offering frequent flyers the chance to earn miles for travel rewards."
+        },
+        "cabinClasses": [
+            {
+                "id": 9,
+                "cabinName": "First Class",
+                "cabinCode": "FIR",
+                "disabled": false,
+                "seating": [
+                    {
+                        "id": 15,
+                        "numberOfRows": 3,
+                        "startRow": 1,
+                        "endRow": 3,
+                        "aislePrice": 100,
+                        "middlePrice": 100,
+                        "windowPrice": 100,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            2,
+                            2,
+                            2
+                        ]
+                    },
+                    {
+                        "id": 16,
+                        "numberOfRows": 6,
+                        "startRow": 4,
+                        "endRow": 9,
+                        "aislePrice": 45,
+                        "middlePrice": 45,
+                        "windowPrice": 45,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            0,
+                            2,
+                            0
+                        ]
+                    },
+                    {
+                        "id": 17,
+                        "numberOfRows": 7,
+                        "startRow": 10,
+                        "endRow": 16,
+                        "aislePrice": 90,
+                        "middlePrice": 90,
+                        "windowPrice": 90,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            3,
+                            0,
+                            3
+                        ]
+                    },
+                    {
+                        "id": 18,
+                        "numberOfRows": 10,
+                        "startRow": 17,
+                        "endRow": 26,
+                        "aislePrice": 150,
+                        "middlePrice": 150,
+                        "windowPrice": 150,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            0,
+                            2,
+                            0
+                        ]
+                    },
+                    {
+                        "id": 19,
+                        "numberOfRows": 5,
+                        "startRow": 27,
+                        "endRow": 31,
+                        "aislePrice": 120,
+                        "middlePrice": 120,
+                        "windowPrice": 120,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            2,
+                            2,
+                            2
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 10,
+                "cabinName": "Business Class",
+                "cabinCode": "BUS",
+                "disabled": false,
+                "seating": [
+                    {
+                        "id": 20,
+                        "numberOfRows": 1,
+                        "startRow": 32,
+                        "endRow": 32,
+                        "aislePrice": 0,
+                        "middlePrice": 0,
+                        "windowPrice": 0,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            1,
+                            1,
+                            1
+                        ]
+                    },
+                    {
+                        "id": 21,
+                        "numberOfRows": 2,
+                        "startRow": 33,
+                        "endRow": 34,
+                        "aislePrice": 0,
+                        "middlePrice": 0,
+                        "windowPrice": 0,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            3,
+                            3,
+                            3
+                        ]
+                    },
+                    {
+                        "id": 22,
+                        "numberOfRows": 6,
+                        "startRow": 35,
+                        "endRow": 40,
+                        "aislePrice": 10,
+                        "middlePrice": 10,
+                        "windowPrice": 10,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            1,
+                            1,
+                            1
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 11,
+                "cabinName": "Premium Economy Class",
+                "cabinCode": "PRE",
+                "disabled": true,
+                "seating": [
+                    {
+                        "id": 23,
+                        "numberOfRows": 4,
+                        "startRow": 41,
+                        "endRow": 44,
+                        "aislePrice": 0,
+                        "middlePrice": 0,
+                        "windowPrice": 0,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            0,
+                            2,
+                            0
+                        ]
+                    },
+                    {
+                        "id": 24,
+                        "numberOfRows": 6,
+                        "startRow": 45,
+                        "endRow": 50,
+                        "aislePrice": 30,
+                        "middlePrice": 30,
+                        "windowPrice": 30,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            1,
+                            1,
+                            1
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 12,
+                "cabinName": "Economy Class",
+                "cabinCode": "ECO",
+                "disabled": false,
+                "seating": [
+                    {
+                        "id": 25,
+                        "numberOfRows": 10,
+                        "startRow": 51,
+                        "endRow": 60,
+                        "aislePrice": 10,
+                        "middlePrice": 10,
+                        "windowPrice": 10,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            3,
+                            0,
+                            3
+                        ]
+                    },
+                    {
+                        "id": 26,
+                        "numberOfRows": 10,
+                        "startRow": 61,
+                        "endRow": 70,
+                        "aislePrice": 30,
+                        "middlePrice": 30,
+                        "windowPrice": 30,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            3,
+                            0,
+                            3
+                        ]
+                    },
+                    {
+                        "id": 27,
+                        "numberOfRows": 1,
+                        "startRow": 71,
+                        "endRow": 71,
+                        "aislePrice": 100,
+                        "middlePrice": 100,
+                        "windowPrice": 100,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            2,
+                            2,
+                            2
+                        ]
+                    },
+                    {
+                        "id": 28,
+                        "numberOfRows": 6,
+                        "startRow": 72,
+                        "endRow": 77,
+                        "aislePrice": 10,
+                        "middlePrice": 10,
+                        "windowPrice": 10,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            0,
+                            2,
+                            0
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "aisles": 1,
+        "airline": {
+            "id": 1,
+            "airlineName": "United Airlines",
+            "airlineCode": "UA",
+            "data": null,
+            "description": "United Airlines, Inc. is a major American airline headquartered in Chicago, Illinois. It was founded in 1926 and has since grown to become one of the largest airlines in the world, offering domestic and international flights to numerous destinations. United Airlines is known for its broad network, fleet diversity, and partnerships with global airline alliances such as Star Alliance. It provides a wide range of services to passengers, including various classes of service, in-flight entertainment, and loyalty programs such as MileagePlus, offering frequent flyers the chance to earn miles for travel rewards."
+        },
+        "cabinClasses": [
+            {
+                "id": 13,
+                "cabinName": "First Class",
+                "cabinCode": "FIR",
+                "disabled": true,
+                "seating": [
+                    {
+                        "id": 29,
+                        "numberOfRows": 1,
+                        "startRow": 1,
+                        "endRow": 1,
+                        "aislePrice": 90,
+                        "middlePrice": 90,
+                        "windowPrice": 90,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            2,
+                            2,
+                            2
+                        ]
+                    },
+                    {
+                        "id": 30,
+                        "numberOfRows": 5,
+                        "startRow": 2,
+                        "endRow": 6,
+                        "aislePrice": 15,
+                        "middlePrice": 15,
+                        "windowPrice": 15,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            0,
+                            2,
+                            0
+                        ]
+                    },
+                    {
+                        "id": 31,
+                        "numberOfRows": 1,
+                        "startRow": 7,
+                        "endRow": 7,
+                        "aislePrice": 15,
+                        "middlePrice": 15,
+                        "windowPrice": 15,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            3,
+                            0,
+                            3
+                        ]
+                    },
+                    {
+                        "id": 32,
+                        "numberOfRows": 4,
+                        "startRow": 8,
+                        "endRow": 11,
+                        "aislePrice": 0,
+                        "middlePrice": 0,
+                        "windowPrice": 0,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            3,
+                            0,
+                            3
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 14,
+                "cabinName": "Business Class",
+                "cabinCode": "BUS",
+                "disabled": false,
+                "seating": [
+                    {
+                        "id": 33,
+                        "numberOfRows": 5,
+                        "startRow": 12,
+                        "endRow": 16,
+                        "aislePrice": 90,
+                        "middlePrice": 90,
+                        "windowPrice": 90,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            0,
+                            2,
+                            0
+                        ]
+                    },
+                    {
+                        "id": 34,
+                        "numberOfRows": 7,
+                        "startRow": 17,
+                        "endRow": 23,
+                        "aislePrice": 100,
+                        "middlePrice": 100,
+                        "windowPrice": 100,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            3,
+                            3,
+                            3
+                        ]
+                    },
+                    {
+                        "id": 35,
+                        "numberOfRows": 2,
+                        "startRow": 24,
+                        "endRow": 25,
+                        "aislePrice": 100,
+                        "middlePrice": 100,
+                        "windowPrice": 100,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            0,
+                            2,
+                            0
+                        ]
+                    },
+                    {
+                        "id": 36,
+                        "numberOfRows": 10,
+                        "startRow": 26,
+                        "endRow": 35,
+                        "aislePrice": 60,
+                        "middlePrice": 60,
+                        "windowPrice": 60,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            2,
+                            2,
+                            2
+                        ]
+                    },
+                    {
+                        "id": 37,
+                        "numberOfRows": 9,
+                        "startRow": 36,
+                        "endRow": 44,
+                        "aislePrice": 180,
+                        "middlePrice": 180,
+                        "windowPrice": 180,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            3,
+                            0,
+                            3
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 15,
+                "cabinName": "Premium Economy Class",
+                "cabinCode": "PRE",
+                "disabled": false,
+                "seating": [
+                    {
+                        "id": 38,
+                        "numberOfRows": 7,
+                        "startRow": 45,
+                        "endRow": 51,
+                        "aislePrice": 150,
+                        "middlePrice": 150,
+                        "windowPrice": 150,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            3,
+                            0,
+                            3
+                        ]
+                    },
+                    {
+                        "id": 39,
+                        "numberOfRows": 3,
+                        "startRow": 52,
+                        "endRow": 54,
+                        "aislePrice": 10,
+                        "middlePrice": 10,
+                        "windowPrice": 10,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            3,
+                            0,
+                            3
+                        ]
+                    },
+                    {
+                        "id": 40,
+                        "numberOfRows": 3,
+                        "startRow": 55,
+                        "endRow": 57,
+                        "aislePrice": 45,
+                        "middlePrice": 45,
+                        "windowPrice": 45,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            3,
+                            3,
+                            3
+                        ]
+                    },
+                    {
+                        "id": 41,
+                        "numberOfRows": 4,
+                        "startRow": 58,
+                        "endRow": 61,
+                        "aislePrice": 180,
+                        "middlePrice": 180,
+                        "windowPrice": 180,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            2,
+                            2,
+                            2
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 16,
+                "cabinName": "Economy Class",
+                "cabinCode": "ECO",
+                "disabled": true,
+                "seating": [
+                    {
+                        "id": 42,
+                        "numberOfRows": 5,
+                        "startRow": 62,
+                        "endRow": 66,
+                        "aislePrice": 10,
+                        "middlePrice": 10,
+                        "windowPrice": 10,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            3,
+                            0,
+                            3
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "aisles": 2,
+        "airline": {
+            "id": 3,
+            "airlineName": "British Airways",
+            "airlineCode": "BA",
+            "data": null,
+            "description": "British Airways (BA) is the flag carrier airline of the United Kingdom, headquartered in London. With a history dating back to 1974, British Airways is one of the largest and most prominent airlines globally. The airline operates an extensive international network, with a focus on connecting London to major cities around the world, as well as offering transatlantic services to North America and beyond. BA is part of the International Airlines Group (IAG), one of the world’s largest airline groups, and it serves both business and leisure travelers. British Airways is also known for its premium services, including its first-class lounges, in-flight entertainment, and exclusive loyalty program, Avios."
+        },
+        "cabinClasses": [
+            {
+                "id": 17,
+                "cabinName": "First Class",
+                "cabinCode": "FIR",
+                "disabled": true,
+                "seating": [
+                    {
+                        "id": 43,
+                        "numberOfRows": 9,
+                        "startRow": 1,
+                        "endRow": 9,
+                        "aislePrice": 10,
+                        "middlePrice": 10,
+                        "windowPrice": 10,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            3,
+                            0,
+                            3
+                        ]
+                    },
+                    {
+                        "id": 44,
+                        "numberOfRows": 1,
+                        "startRow": 10,
+                        "endRow": 10,
+                        "aislePrice": 15,
+                        "middlePrice": 15,
+                        "windowPrice": 15,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            3,
+                            3,
+                            3
+                        ]
+                    },
+                    {
+                        "id": 45,
+                        "numberOfRows": 7,
+                        "startRow": 11,
+                        "endRow": 17,
+                        "aislePrice": 15,
+                        "middlePrice": 15,
+                        "windowPrice": 15,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            1,
+                            1,
+                            1
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 18,
+                "cabinName": "Business Class",
+                "cabinCode": "BUS",
+                "disabled": true,
+                "seating": [
+                    {
+                        "id": 46,
+                        "numberOfRows": 8,
+                        "startRow": 18,
+                        "endRow": 25,
+                        "aislePrice": 0,
+                        "middlePrice": 0,
+                        "windowPrice": 0,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            2,
+                            2,
+                            2
+                        ]
+                    },
+                    {
+                        "id": 47,
+                        "numberOfRows": 9,
+                        "startRow": 26,
+                        "endRow": 34,
+                        "aislePrice": 60,
+                        "middlePrice": 60,
+                        "windowPrice": 60,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            2,
+                            2,
+                            2
+                        ]
+                    },
+                    {
+                        "id": 48,
+                        "numberOfRows": 4,
+                        "startRow": 35,
+                        "endRow": 38,
+                        "aislePrice": 90,
+                        "middlePrice": 90,
+                        "windowPrice": 90,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            3,
+                            0,
+                            3
+                        ]
+                    },
+                    {
+                        "id": 49,
+                        "numberOfRows": 2,
+                        "startRow": 39,
+                        "endRow": 40,
+                        "aislePrice": 120,
+                        "middlePrice": 120,
+                        "windowPrice": 120,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            1,
+                            1,
+                            1
+                        ]
+                    },
+                    {
+                        "id": 50,
+                        "numberOfRows": 9,
+                        "startRow": 41,
+                        "endRow": 49,
+                        "aislePrice": 0,
+                        "middlePrice": 0,
+                        "windowPrice": 0,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            3,
+                            0,
+                            3
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 19,
+                "cabinName": "Premium Economy Class",
+                "cabinCode": "PRE",
+                "disabled": false,
+                "seating": [
+                    {
+                        "id": 51,
+                        "numberOfRows": 7,
+                        "startRow": 50,
+                        "endRow": 56,
+                        "aislePrice": 150,
+                        "middlePrice": 150,
+                        "windowPrice": 150,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            3,
+                            0,
+                            3
+                        ]
+                    },
+                    {
+                        "id": 52,
+                        "numberOfRows": 7,
+                        "startRow": 57,
+                        "endRow": 63,
+                        "aislePrice": 90,
+                        "middlePrice": 90,
+                        "windowPrice": 90,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            1,
+                            1,
+                            1
+                        ]
+                    },
+                    {
+                        "id": 53,
+                        "numberOfRows": 9,
+                        "startRow": 64,
+                        "endRow": 72,
+                        "aislePrice": 100,
+                        "middlePrice": 100,
+                        "windowPrice": 100,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            3,
+                            0,
+                            3
+                        ]
+                    },
+                    {
+                        "id": 54,
+                        "numberOfRows": 5,
+                        "startRow": 73,
+                        "endRow": 77,
+                        "aislePrice": 0,
+                        "middlePrice": 0,
+                        "windowPrice": 0,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            0,
+                            2,
+                            0
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 20,
+                "cabinName": "Economy Class",
+                "cabinCode": "ECO",
+                "disabled": true,
+                "seating": [
+                    {
+                        "id": 55,
+                        "numberOfRows": 2,
+                        "startRow": 78,
+                        "endRow": 79,
+                        "aislePrice": 15,
+                        "middlePrice": 15,
+                        "windowPrice": 15,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            3,
+                            0,
+                            3
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "aisles": 2,
+        "airline": {
+            "id": 3,
+            "airlineName": "British Airways",
+            "airlineCode": "BA",
+            "data": null,
+            "description": "British Airways (BA) is the flag carrier airline of the United Kingdom, headquartered in London. With a history dating back to 1974, British Airways is one of the largest and most prominent airlines globally. The airline operates an extensive international network, with a focus on connecting London to major cities around the world, as well as offering transatlantic services to North America and beyond. BA is part of the International Airlines Group (IAG), one of the world’s largest airline groups, and it serves both business and leisure travelers. British Airways is also known for its premium services, including its first-class lounges, in-flight entertainment, and exclusive loyalty program, Avios."
+        },
+        "cabinClasses": [
+            {
+                "id": 21,
+                "cabinName": "First Class",
+                "cabinCode": "FIR",
+                "disabled": true,
+                "seating": [
+                    {
+                        "id": 56,
+                        "numberOfRows": 7,
+                        "startRow": 1,
+                        "endRow": 7,
+                        "aislePrice": 30,
+                        "middlePrice": 30,
+                        "windowPrice": 30,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            0,
+                            2,
+                            0
+                        ]
+                    },
+                    {
+                        "id": 57,
+                        "numberOfRows": 2,
+                        "startRow": 8,
+                        "endRow": 9,
+                        "aislePrice": 100,
+                        "middlePrice": 100,
+                        "windowPrice": 100,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            2,
+                            2,
+                            2
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 22,
+                "cabinName": "Business Class",
+                "cabinCode": "BUS",
+                "disabled": true,
+                "seating": [
+                    {
+                        "id": 58,
+                        "numberOfRows": 5,
+                        "startRow": 10,
+                        "endRow": 14,
+                        "aislePrice": 90,
+                        "middlePrice": 90,
+                        "windowPrice": 90,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            3,
+                            0,
+                            3
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 23,
+                "cabinName": "Premium Economy Class",
+                "cabinCode": "PRE",
+                "disabled": false,
+                "seating": [
+                    {
+                        "id": 59,
+                        "numberOfRows": 6,
+                        "startRow": 15,
+                        "endRow": 20,
+                        "aislePrice": 0,
+                        "middlePrice": 0,
+                        "windowPrice": 0,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            3,
+                            3,
+                            3
+                        ]
+                    },
+                    {
+                        "id": 60,
+                        "numberOfRows": 3,
+                        "startRow": 21,
+                        "endRow": 23,
+                        "aislePrice": 0,
+                        "middlePrice": 0,
+                        "windowPrice": 0,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            3,
+                            0,
+                            3
+                        ]
+                    },
+                    {
+                        "id": 61,
+                        "numberOfRows": 8,
+                        "startRow": 24,
+                        "endRow": 31,
+                        "aislePrice": 60,
+                        "middlePrice": 60,
+                        "windowPrice": 60,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            3,
+                            0,
+                            3
+                        ]
+                    },
+                    {
+                        "id": 62,
+                        "numberOfRows": 7,
+                        "startRow": 32,
+                        "endRow": 38,
+                        "aislePrice": 30,
+                        "middlePrice": 30,
+                        "windowPrice": 30,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            3,
+                            0,
+                            3
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 24,
+                "cabinName": "Economy Class",
+                "cabinCode": "ECO",
+                "disabled": true,
+                "seating": [
+                    {
+                        "id": 63,
+                        "numberOfRows": 1,
+                        "startRow": 39,
+                        "endRow": 39,
+                        "aislePrice": 180,
+                        "middlePrice": 180,
+                        "windowPrice": 180,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            3,
+                            0,
+                            3
+                        ]
+                    },
+                    {
+                        "id": 64,
+                        "numberOfRows": 6,
+                        "startRow": 40,
+                        "endRow": 45,
+                        "aislePrice": 90,
+                        "middlePrice": 90,
+                        "windowPrice": 90,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            3,
+                            0,
+                            3
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "aisles": 1,
+        "airline": {
+            "id": 3,
+            "airlineName": "British Airways",
+            "airlineCode": "BA",
+            "data": null,
+            "description": "British Airways (BA) is the flag carrier airline of the United Kingdom, headquartered in London. With a history dating back to 1974, British Airways is one of the largest and most prominent airlines globally. The airline operates an extensive international network, with a focus on connecting London to major cities around the world, as well as offering transatlantic services to North America and beyond. BA is part of the International Airlines Group (IAG), one of the world’s largest airline groups, and it serves both business and leisure travelers. British Airways is also known for its premium services, including its first-class lounges, in-flight entertainment, and exclusive loyalty program, Avios."
+        },
+        "cabinClasses": [
+            {
+                "id": 25,
+                "cabinName": "First Class",
+                "cabinCode": "FIR",
+                "disabled": true,
+                "seating": [
+                    {
+                        "id": 65,
+                        "numberOfRows": 9,
+                        "startRow": 1,
+                        "endRow": 9,
+                        "aislePrice": 90,
+                        "middlePrice": 90,
+                        "windowPrice": 90,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            1,
+                            1,
+                            1
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 26,
+                "cabinName": "Business Class",
+                "cabinCode": "BUS",
+                "disabled": true,
+                "seating": [
+                    {
+                        "id": 66,
+                        "numberOfRows": 10,
+                        "startRow": 10,
+                        "endRow": 19,
+                        "aislePrice": 75,
+                        "middlePrice": 75,
+                        "windowPrice": 75,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            1,
+                            1,
+                            1
+                        ]
+                    },
+                    {
+                        "id": 67,
+                        "numberOfRows": 4,
+                        "startRow": 20,
+                        "endRow": 23,
+                        "aislePrice": 15,
+                        "middlePrice": 15,
+                        "windowPrice": 15,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            1,
+                            1,
+                            1
+                        ]
+                    },
+                    {
+                        "id": 68,
+                        "numberOfRows": 8,
+                        "startRow": 24,
+                        "endRow": 31,
+                        "aislePrice": 30,
+                        "middlePrice": 30,
+                        "windowPrice": 30,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            0,
+                            2,
+                            0
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 27,
+                "cabinName": "Premium Economy Class",
+                "cabinCode": "PRE",
+                "disabled": true,
+                "seating": [
+                    {
+                        "id": 69,
+                        "numberOfRows": 5,
+                        "startRow": 32,
+                        "endRow": 36,
+                        "aislePrice": 30,
+                        "middlePrice": 30,
+                        "windowPrice": 30,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            3,
+                            3,
+                            3
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 28,
+                "cabinName": "Economy Class",
+                "cabinCode": "ECO",
+                "disabled": true,
+                "seating": [
+                    {
+                        "id": 70,
+                        "numberOfRows": 10,
+                        "startRow": 37,
+                        "endRow": 46,
+                        "aislePrice": 10,
+                        "middlePrice": 10,
+                        "windowPrice": 10,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            3,
+                            0,
+                            3
+                        ]
+                    },
+                    {
+                        "id": 71,
+                        "numberOfRows": 5,
+                        "startRow": 47,
+                        "endRow": 51,
+                        "aislePrice": 15,
+                        "middlePrice": 15,
+                        "windowPrice": 15,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            2,
+                            2,
+                            2
+                        ]
+                    },
+                    {
+                        "id": 72,
+                        "numberOfRows": 8,
+                        "startRow": 52,
+                        "endRow": 59,
+                        "aislePrice": 10,
+                        "middlePrice": 10,
+                        "windowPrice": 10,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            2,
+                            2,
+                            2
+                        ]
+                    },
+                    {
+                        "id": 73,
+                        "numberOfRows": 7,
+                        "startRow": 60,
+                        "endRow": 66,
+                        "aislePrice": 75,
+                        "middlePrice": 75,
+                        "windowPrice": 75,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            3,
+                            3,
+                            3
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 8,
+        "aisles": 1,
+        "airline": {
+            "id": 3,
+            "airlineName": "British Airways",
+            "airlineCode": "BA",
+            "data": null,
+            "description": "British Airways (BA) is the flag carrier airline of the United Kingdom, headquartered in London. With a history dating back to 1974, British Airways is one of the largest and most prominent airlines globally. The airline operates an extensive international network, with a focus on connecting London to major cities around the world, as well as offering transatlantic services to North America and beyond. BA is part of the International Airlines Group (IAG), one of the world’s largest airline groups, and it serves both business and leisure travelers. British Airways is also known for its premium services, including its first-class lounges, in-flight entertainment, and exclusive loyalty program, Avios."
+        },
+        "cabinClasses": [
+            {
+                "id": 29,
+                "cabinName": "First Class",
+                "cabinCode": "FIR",
+                "disabled": false,
+                "seating": [
+                    {
+                        "id": 74,
+                        "numberOfRows": 1,
+                        "startRow": 1,
+                        "endRow": 1,
+                        "aislePrice": 0,
+                        "middlePrice": 0,
+                        "windowPrice": 0,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            3,
+                            0,
+                            3
+                        ]
+                    },
+                    {
+                        "id": 75,
+                        "numberOfRows": 10,
+                        "startRow": 2,
+                        "endRow": 11,
+                        "aislePrice": 30,
+                        "middlePrice": 30,
+                        "windowPrice": 30,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            3,
+                            0,
+                            3
+                        ]
+                    },
+                    {
+                        "id": 76,
+                        "numberOfRows": 6,
+                        "startRow": 12,
+                        "endRow": 17,
+                        "aislePrice": 180,
+                        "middlePrice": 180,
+                        "windowPrice": 180,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            3,
+                            0,
+                            3
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 30,
+                "cabinName": "Business Class",
+                "cabinCode": "BUS",
+                "disabled": false,
+                "seating": [
+                    {
+                        "id": 77,
+                        "numberOfRows": 4,
+                        "startRow": 18,
+                        "endRow": 21,
+                        "aislePrice": 45,
+                        "middlePrice": 45,
+                        "windowPrice": 45,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            0,
+                            2,
+                            0
+                        ]
+                    },
+                    {
+                        "id": 78,
+                        "numberOfRows": 2,
+                        "startRow": 22,
+                        "endRow": 23,
+                        "aislePrice": 0,
+                        "middlePrice": 0,
+                        "windowPrice": 0,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            2,
+                            2,
+                            2
+                        ]
+                    },
+                    {
+                        "id": 79,
+                        "numberOfRows": 4,
+                        "startRow": 24,
+                        "endRow": 27,
+                        "aislePrice": 150,
+                        "middlePrice": 150,
+                        "windowPrice": 150,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            3,
+                            0,
+                            3
+                        ]
+                    },
+                    {
+                        "id": 80,
+                        "numberOfRows": 6,
+                        "startRow": 28,
+                        "endRow": 33,
+                        "aislePrice": 75,
+                        "middlePrice": 75,
+                        "windowPrice": 75,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            0,
+                            2,
+                            0
+                        ]
+                    },
+                    {
+                        "id": 81,
+                        "numberOfRows": 9,
+                        "startRow": 34,
+                        "endRow": 42,
+                        "aislePrice": 75,
+                        "middlePrice": 75,
+                        "windowPrice": 75,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            0,
+                            2,
+                            0
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 31,
+                "cabinName": "Premium Economy Class",
+                "cabinCode": "PRE",
+                "disabled": true,
+                "seating": [
+                    {
+                        "id": 82,
+                        "numberOfRows": 7,
+                        "startRow": 43,
+                        "endRow": 49,
+                        "aislePrice": 75,
+                        "middlePrice": 75,
+                        "windowPrice": 75,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            3,
+                            0,
+                            3
+                        ]
+                    },
+                    {
+                        "id": 83,
+                        "numberOfRows": 9,
+                        "startRow": 50,
+                        "endRow": 58,
+                        "aislePrice": 30,
+                        "middlePrice": 30,
+                        "windowPrice": 30,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            2,
+                            2,
+                            2
+                        ]
+                    },
+                    {
+                        "id": 84,
+                        "numberOfRows": 3,
+                        "startRow": 59,
+                        "endRow": 61,
+                        "aislePrice": 75,
+                        "middlePrice": 75,
+                        "windowPrice": 75,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            3,
+                            3,
+                            3
+                        ]
+                    },
+                    {
+                        "id": 85,
+                        "numberOfRows": 1,
+                        "startRow": 62,
+                        "endRow": 62,
+                        "aislePrice": 30,
+                        "middlePrice": 30,
+                        "windowPrice": 30,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            1,
+                            1,
+                            1
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 32,
+                "cabinName": "Economy Class",
+                "cabinCode": "ECO",
+                "disabled": false,
+                "seating": [
+                    {
+                        "id": 86,
+                        "numberOfRows": 4,
+                        "startRow": 63,
+                        "endRow": 66,
+                        "aislePrice": 120,
+                        "middlePrice": 120,
+                        "windowPrice": 120,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            0,
+                            2,
+                            0
+                        ]
+                    },
+                    {
+                        "id": 87,
+                        "numberOfRows": 2,
+                        "startRow": 67,
+                        "endRow": 68,
+                        "aislePrice": 120,
+                        "middlePrice": 120,
+                        "windowPrice": 120,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            0,
+                            2,
+                            0
+                        ]
+                    },
+                    {
+                        "id": 88,
+                        "numberOfRows": 2,
+                        "startRow": 69,
+                        "endRow": 70,
+                        "aislePrice": 0,
+                        "middlePrice": 0,
+                        "windowPrice": 0,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            3,
+                            0,
+                            3
+                        ]
+                    },
+                    {
+                        "id": 89,
+                        "numberOfRows": 5,
+                        "startRow": 71,
+                        "endRow": 75,
+                        "aislePrice": 45,
+                        "middlePrice": 45,
+                        "windowPrice": 45,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            3,
+                            0,
+                            3
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 9,
+        "aisles": 2,
+        "airline": {
+            "id": 2,
+            "airlineName": "Southwest Airlines",
+            "airlineCode": "WN",
+            "data": null,
+            "description": "Southwest Airlines Co. is a low-cost carrier based in Dallas, Texas. Founded in 1967, Southwest Airlines has grown to be one of the largest airlines in the United States by passenger volume, known for its distinctive business model that emphasizes affordable fares, free checked bags, and a simplified booking process. Unlike most major carriers, Southwest operates a point-to-point network, focusing on offering short-haul flights with low-cost, no-frills service. The airline has a strong reputation for its employee culture and customer service, as well as its unique open seating policy that allows passengers to choose their seats upon boarding."
+        },
+        "cabinClasses": [
+            {
+                "id": 33,
+                "cabinName": "First Class",
+                "cabinCode": "FIR",
+                "disabled": false,
+                "seating": [
+                    {
+                        "id": 90,
+                        "numberOfRows": 9,
+                        "startRow": 1,
+                        "endRow": 9,
+                        "aislePrice": 100,
+                        "middlePrice": 100,
+                        "windowPrice": 100,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            3,
+                            0,
+                            3
+                        ]
+                    },
+                    {
+                        "id": 91,
+                        "numberOfRows": 8,
+                        "startRow": 10,
+                        "endRow": 17,
+                        "aislePrice": 90,
+                        "middlePrice": 90,
+                        "windowPrice": 90,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            0,
+                            2,
+                            0
+                        ]
+                    },
+                    {
+                        "id": 92,
+                        "numberOfRows": 9,
+                        "startRow": 18,
+                        "endRow": 26,
+                        "aislePrice": 120,
+                        "middlePrice": 120,
+                        "windowPrice": 120,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            0,
+                            2,
+                            0
+                        ]
+                    },
+                    {
+                        "id": 93,
+                        "numberOfRows": 9,
+                        "startRow": 27,
+                        "endRow": 35,
+                        "aislePrice": 15,
+                        "middlePrice": 15,
+                        "windowPrice": 15,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            3,
+                            0,
+                            3
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 34,
+                "cabinName": "Business Class",
+                "cabinCode": "BUS",
+                "disabled": false,
+                "seating": [
+                    {
+                        "id": 94,
+                        "numberOfRows": 10,
+                        "startRow": 36,
+                        "endRow": 45,
+                        "aislePrice": 75,
+                        "middlePrice": 75,
+                        "windowPrice": 75,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            2,
+                            2,
+                            2
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 35,
+                "cabinName": "Premium Economy Class",
+                "cabinCode": "PRE",
+                "disabled": true,
+                "seating": [
+                    {
+                        "id": 95,
+                        "numberOfRows": 8,
+                        "startRow": 46,
+                        "endRow": 53,
+                        "aislePrice": 100,
+                        "middlePrice": 100,
+                        "windowPrice": 100,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            3,
+                            0,
+                            3
+                        ]
+                    },
+                    {
+                        "id": 96,
+                        "numberOfRows": 5,
+                        "startRow": 54,
+                        "endRow": 58,
+                        "aislePrice": 30,
+                        "middlePrice": 30,
+                        "windowPrice": 30,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            2,
+                            2,
+                            2
+                        ]
+                    },
+                    {
+                        "id": 97,
+                        "numberOfRows": 9,
+                        "startRow": 59,
+                        "endRow": 67,
+                        "aislePrice": 30,
+                        "middlePrice": 30,
+                        "windowPrice": 30,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            3,
+                            3,
+                            3
+                        ]
+                    },
+                    {
+                        "id": 98,
+                        "numberOfRows": 5,
+                        "startRow": 68,
+                        "endRow": 72,
+                        "aislePrice": 0,
+                        "middlePrice": 0,
+                        "windowPrice": 0,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            0,
+                            2,
+                            0
+                        ]
+                    },
+                    {
+                        "id": 99,
+                        "numberOfRows": 4,
+                        "startRow": 73,
+                        "endRow": 76,
+                        "aislePrice": 150,
+                        "middlePrice": 150,
+                        "windowPrice": 150,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            3,
+                            0,
+                            3
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 36,
+                "cabinName": "Economy Class",
+                "cabinCode": "ECO",
+                "disabled": true,
+                "seating": [
+                    {
+                        "id": 100,
+                        "numberOfRows": 3,
+                        "startRow": 77,
+                        "endRow": 79,
+                        "aislePrice": 10,
+                        "middlePrice": 10,
+                        "windowPrice": 10,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            2,
+                            2,
+                            2
+                        ]
+                    },
+                    {
+                        "id": 101,
+                        "numberOfRows": 1,
+                        "startRow": 80,
+                        "endRow": 80,
+                        "aislePrice": 120,
+                        "middlePrice": 120,
+                        "windowPrice": 120,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            2,
+                            2,
+                            2
+                        ]
+                    },
+                    {
+                        "id": 102,
+                        "numberOfRows": 3,
+                        "startRow": 81,
+                        "endRow": 83,
+                        "aislePrice": 30,
+                        "middlePrice": 30,
+                        "windowPrice": 30,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            3,
+                            0,
+                            3
+                        ]
+                    },
+                    {
+                        "id": 103,
+                        "numberOfRows": 10,
+                        "startRow": 84,
+                        "endRow": 93,
+                        "aislePrice": 10,
+                        "middlePrice": 10,
+                        "windowPrice": 10,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            3,
+                            3,
+                            3
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 10,
+        "aisles": 1,
+        "airline": {
+            "id": 2,
+            "airlineName": "Southwest Airlines",
+            "airlineCode": "WN",
+            "data": null,
+            "description": "Southwest Airlines Co. is a low-cost carrier based in Dallas, Texas. Founded in 1967, Southwest Airlines has grown to be one of the largest airlines in the United States by passenger volume, known for its distinctive business model that emphasizes affordable fares, free checked bags, and a simplified booking process. Unlike most major carriers, Southwest operates a point-to-point network, focusing on offering short-haul flights with low-cost, no-frills service. The airline has a strong reputation for its employee culture and customer service, as well as its unique open seating policy that allows passengers to choose their seats upon boarding."
+        },
+        "cabinClasses": [
+            {
+                "id": 37,
+                "cabinName": "First Class",
+                "cabinCode": "FIR",
+                "disabled": false,
+                "seating": [
+                    {
+                        "id": 104,
+                        "numberOfRows": 6,
+                        "startRow": 1,
+                        "endRow": 6,
+                        "aislePrice": 15,
+                        "middlePrice": 15,
+                        "windowPrice": 15,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            3,
+                            3,
+                            3
+                        ]
+                    },
+                    {
+                        "id": 105,
+                        "numberOfRows": 2,
+                        "startRow": 7,
+                        "endRow": 8,
+                        "aislePrice": 75,
+                        "middlePrice": 75,
+                        "windowPrice": 75,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            3,
+                            3,
+                            3
+                        ]
+                    },
+                    {
+                        "id": 106,
+                        "numberOfRows": 3,
+                        "startRow": 9,
+                        "endRow": 11,
+                        "aislePrice": 120,
+                        "middlePrice": 120,
+                        "windowPrice": 120,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            2,
+                            2,
+                            2
+                        ]
+                    },
+                    {
+                        "id": 107,
+                        "numberOfRows": 4,
+                        "startRow": 12,
+                        "endRow": 15,
+                        "aislePrice": 120,
+                        "middlePrice": 120,
+                        "windowPrice": 120,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            1,
+                            1,
+                            1
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 38,
+                "cabinName": "Business Class",
+                "cabinCode": "BUS",
+                "disabled": true,
+                "seating": [
+                    {
+                        "id": 108,
+                        "numberOfRows": 7,
+                        "startRow": 16,
+                        "endRow": 22,
+                        "aislePrice": 0,
+                        "middlePrice": 0,
+                        "windowPrice": 0,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            2,
+                            2,
+                            2
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 39,
+                "cabinName": "Premium Economy Class",
+                "cabinCode": "PRE",
+                "disabled": false,
+                "seating": [
+                    {
+                        "id": 109,
+                        "numberOfRows": 1,
+                        "startRow": 23,
+                        "endRow": 23,
+                        "aislePrice": 10,
+                        "middlePrice": 10,
+                        "windowPrice": 10,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            3,
+                            0,
+                            3
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 40,
+                "cabinName": "Economy Class",
+                "cabinCode": "ECO",
+                "disabled": true,
+                "seating": [
+                    {
+                        "id": 110,
+                        "numberOfRows": 5,
+                        "startRow": 24,
+                        "endRow": 28,
+                        "aislePrice": 0,
+                        "middlePrice": 0,
+                        "windowPrice": 0,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            0,
+                            2,
+                            0
+                        ]
+                    },
+                    {
+                        "id": 111,
+                        "numberOfRows": 9,
+                        "startRow": 29,
+                        "endRow": 37,
+                        "aislePrice": 30,
+                        "middlePrice": 30,
+                        "windowPrice": 30,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            2,
+                            2,
+                            2
+                        ]
+                    },
+                    {
+                        "id": 112,
+                        "numberOfRows": 8,
+                        "startRow": 38,
+                        "endRow": 45,
+                        "aislePrice": 60,
+                        "middlePrice": 60,
+                        "windowPrice": 60,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            2,
+                            2,
+                            2
+                        ]
+                    },
+                    {
+                        "id": 113,
+                        "numberOfRows": 7,
+                        "startRow": 46,
+                        "endRow": 52,
+                        "aislePrice": 15,
+                        "middlePrice": 15,
+                        "windowPrice": 15,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            3,
+                            0,
+                            3
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 11,
+        "aisles": 1,
+        "airline": {
+            "id": 2,
+            "airlineName": "Southwest Airlines",
+            "airlineCode": "WN",
+            "data": null,
+            "description": "Southwest Airlines Co. is a low-cost carrier based in Dallas, Texas. Founded in 1967, Southwest Airlines has grown to be one of the largest airlines in the United States by passenger volume, known for its distinctive business model that emphasizes affordable fares, free checked bags, and a simplified booking process. Unlike most major carriers, Southwest operates a point-to-point network, focusing on offering short-haul flights with low-cost, no-frills service. The airline has a strong reputation for its employee culture and customer service, as well as its unique open seating policy that allows passengers to choose their seats upon boarding."
+        },
+        "cabinClasses": [
+            {
+                "id": 41,
+                "cabinName": "First Class",
+                "cabinCode": "FIR",
+                "disabled": true,
+                "seating": [
+                    {
+                        "id": 114,
+                        "numberOfRows": 9,
+                        "startRow": 1,
+                        "endRow": 9,
+                        "aislePrice": 45,
+                        "middlePrice": 45,
+                        "windowPrice": 45,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            2,
+                            2,
+                            2
+                        ]
+                    },
+                    {
+                        "id": 115,
+                        "numberOfRows": 4,
+                        "startRow": 10,
+                        "endRow": 13,
+                        "aislePrice": 60,
+                        "middlePrice": 60,
+                        "windowPrice": 60,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            0,
+                            2,
+                            0
+                        ]
+                    },
+                    {
+                        "id": 116,
+                        "numberOfRows": 6,
+                        "startRow": 14,
+                        "endRow": 19,
+                        "aislePrice": 60,
+                        "middlePrice": 60,
+                        "windowPrice": 60,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            3,
+                            0,
+                            3
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 42,
+                "cabinName": "Business Class",
+                "cabinCode": "BUS",
+                "disabled": true,
+                "seating": [
+                    {
+                        "id": 117,
+                        "numberOfRows": 1,
+                        "startRow": 20,
+                        "endRow": 20,
+                        "aislePrice": 0,
+                        "middlePrice": 0,
+                        "windowPrice": 0,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            3,
+                            0,
+                            3
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 43,
+                "cabinName": "Premium Economy Class",
+                "cabinCode": "PRE",
+                "disabled": true,
+                "seating": [
+                    {
+                        "id": 118,
+                        "numberOfRows": 5,
+                        "startRow": 21,
+                        "endRow": 25,
+                        "aislePrice": 60,
+                        "middlePrice": 60,
+                        "windowPrice": 60,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            3,
+                            3,
+                            3
+                        ]
+                    },
+                    {
+                        "id": 119,
+                        "numberOfRows": 2,
+                        "startRow": 26,
+                        "endRow": 27,
+                        "aislePrice": 30,
+                        "middlePrice": 30,
+                        "windowPrice": 30,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            0,
+                            2,
+                            0
+                        ]
+                    },
+                    {
+                        "id": 120,
+                        "numberOfRows": 4,
+                        "startRow": 28,
+                        "endRow": 31,
+                        "aislePrice": 45,
+                        "middlePrice": 45,
+                        "windowPrice": 45,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            3,
+                            0,
+                            3
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 44,
+                "cabinName": "Economy Class",
+                "cabinCode": "ECO",
+                "disabled": false,
+                "seating": [
+                    {
+                        "id": 121,
+                        "numberOfRows": 9,
+                        "startRow": 32,
+                        "endRow": 40,
+                        "aislePrice": 10,
+                        "middlePrice": 10,
+                        "windowPrice": 10,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            3,
+                            3,
+                            3
+                        ]
+                    },
+                    {
+                        "id": 122,
+                        "numberOfRows": 4,
+                        "startRow": 41,
+                        "endRow": 44,
+                        "aislePrice": 0,
+                        "middlePrice": 0,
+                        "windowPrice": 0,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            2,
+                            2,
+                            2
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 12,
+        "aisles": 1,
+        "airline": {
+            "id": 2,
+            "airlineName": "Southwest Airlines",
+            "airlineCode": "WN",
+            "data": null,
+            "description": "Southwest Airlines Co. is a low-cost carrier based in Dallas, Texas. Founded in 1967, Southwest Airlines has grown to be one of the largest airlines in the United States by passenger volume, known for its distinctive business model that emphasizes affordable fares, free checked bags, and a simplified booking process. Unlike most major carriers, Southwest operates a point-to-point network, focusing on offering short-haul flights with low-cost, no-frills service. The airline has a strong reputation for its employee culture and customer service, as well as its unique open seating policy that allows passengers to choose their seats upon boarding."
+        },
+        "cabinClasses": [
+            {
+                "id": 45,
+                "cabinName": "First Class",
+                "cabinCode": "FIR",
+                "disabled": false,
+                "seating": [
+                    {
+                        "id": 123,
+                        "numberOfRows": 10,
+                        "startRow": 1,
+                        "endRow": 10,
+                        "aislePrice": 120,
+                        "middlePrice": 120,
+                        "windowPrice": 120,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            0,
+                            2,
+                            0
+                        ]
+                    },
+                    {
+                        "id": 124,
+                        "numberOfRows": 10,
+                        "startRow": 11,
+                        "endRow": 20,
+                        "aislePrice": 100,
+                        "middlePrice": 100,
+                        "windowPrice": 100,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            0,
+                            2,
+                            0
+                        ]
+                    },
+                    {
+                        "id": 125,
+                        "numberOfRows": 10,
+                        "startRow": 21,
+                        "endRow": 30,
+                        "aislePrice": 100,
+                        "middlePrice": 100,
+                        "windowPrice": 100,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            2,
+                            2,
+                            2
+                        ]
+                    },
+                    {
+                        "id": 126,
+                        "numberOfRows": 9,
+                        "startRow": 31,
+                        "endRow": 39,
+                        "aislePrice": 100,
+                        "middlePrice": 100,
+                        "windowPrice": 100,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            0,
+                            2,
+                            0
+                        ]
+                    },
+                    {
+                        "id": 127,
+                        "numberOfRows": 8,
+                        "startRow": 40,
+                        "endRow": 47,
+                        "aislePrice": 30,
+                        "middlePrice": 30,
+                        "windowPrice": 30,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            0,
+                            2,
+                            0
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 46,
+                "cabinName": "Business Class",
+                "cabinCode": "BUS",
+                "disabled": true,
+                "seating": [
+                    {
+                        "id": 128,
+                        "numberOfRows": 8,
+                        "startRow": 48,
+                        "endRow": 55,
+                        "aislePrice": 100,
+                        "middlePrice": 100,
+                        "windowPrice": 100,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            1,
+                            1,
+                            1
+                        ]
+                    },
+                    {
+                        "id": 129,
+                        "numberOfRows": 3,
+                        "startRow": 56,
+                        "endRow": 58,
+                        "aislePrice": 15,
+                        "middlePrice": 15,
+                        "windowPrice": 15,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            1,
+                            1,
+                            1
+                        ]
+                    },
+                    {
+                        "id": 130,
+                        "numberOfRows": 4,
+                        "startRow": 59,
+                        "endRow": 62,
+                        "aislePrice": 45,
+                        "middlePrice": 45,
+                        "windowPrice": 45,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            1,
+                            1,
+                            1
+                        ]
+                    },
+                    {
+                        "id": 131,
+                        "numberOfRows": 7,
+                        "startRow": 63,
+                        "endRow": 69,
+                        "aislePrice": 75,
+                        "middlePrice": 75,
+                        "windowPrice": 75,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            3,
+                            3,
+                            3
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 47,
+                "cabinName": "Premium Economy Class",
+                "cabinCode": "PRE",
+                "disabled": false,
+                "seating": [
+                    {
+                        "id": 132,
+                        "numberOfRows": 1,
+                        "startRow": 70,
+                        "endRow": 70,
+                        "aislePrice": 120,
+                        "middlePrice": 120,
+                        "windowPrice": 120,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            0,
+                            2,
+                            0
+                        ]
+                    },
+                    {
+                        "id": 133,
+                        "numberOfRows": 3,
+                        "startRow": 71,
+                        "endRow": 73,
+                        "aislePrice": 30,
+                        "middlePrice": 30,
+                        "windowPrice": 30,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            3,
+                            3,
+                            3
+                        ]
+                    },
+                    {
+                        "id": 134,
+                        "numberOfRows": 5,
+                        "startRow": 74,
+                        "endRow": 78,
+                        "aislePrice": 60,
+                        "middlePrice": 60,
+                        "windowPrice": 60,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            1,
+                            1,
+                            1
+                        ]
+                    },
+                    {
+                        "id": 135,
+                        "numberOfRows": 5,
+                        "startRow": 79,
+                        "endRow": 83,
+                        "aislePrice": 30,
+                        "middlePrice": 30,
+                        "windowPrice": 30,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            1,
+                            1,
+                            1
+                        ]
+                    },
+                    {
+                        "id": 136,
+                        "numberOfRows": 10,
+                        "startRow": 84,
+                        "endRow": 93,
+                        "aislePrice": 180,
+                        "middlePrice": 180,
+                        "windowPrice": 180,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            3,
+                            0,
+                            3
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 48,
+                "cabinName": "Economy Class",
+                "cabinCode": "ECO",
+                "disabled": false,
+                "seating": [
+                    {
+                        "id": 137,
+                        "numberOfRows": 9,
+                        "startRow": 94,
+                        "endRow": 102,
+                        "aislePrice": 45,
+                        "middlePrice": 45,
+                        "windowPrice": 45,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            3,
+                            3,
+                            3
+                        ]
+                    },
+                    {
+                        "id": 138,
+                        "numberOfRows": 10,
+                        "startRow": 103,
+                        "endRow": 112,
+                        "aislePrice": 150,
+                        "middlePrice": 150,
+                        "windowPrice": 150,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            1,
+                            1,
+                            1
+                        ]
+                    },
+                    {
+                        "id": 139,
+                        "numberOfRows": 1,
+                        "startRow": 113,
+                        "endRow": 113,
+                        "aislePrice": 75,
+                        "middlePrice": 75,
+                        "windowPrice": 75,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            3,
+                            0,
+                            3
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 13,
+        "aisles": 2,
+        "airline": {
+            "id": 5,
+            "airlineName": "Emirates",
+            "airlineCode": "EK",
+            "data": null,
+            "description": "Emirates Airline is a global airline based in Dubai, United Arab Emirates, and is one of the largest international airlines in the world. Founded in 1985, Emirates has expanded rapidly and is known for its modern fleet, exceptional service, and long-haul flights connecting Dubai to major cities across six continents. Emirates offers luxury services, including private suites, fully-flat beds in business class, and gourmet dining. The airline has established a strong reputation for its premium in-flight experiences, including entertainment options with its award-winning ICE system, making it a preferred choice for travelers seeking comfort and world-class service."
+        },
+        "cabinClasses": [
+            {
+                "id": 49,
+                "cabinName": "First Class",
+                "cabinCode": "FIR",
+                "disabled": true,
+                "seating": [
+                    {
+                        "id": 140,
+                        "numberOfRows": 8,
+                        "startRow": 1,
+                        "endRow": 8,
+                        "aislePrice": 10,
+                        "middlePrice": 10,
+                        "windowPrice": 10,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            1,
+                            1,
+                            1
+                        ]
+                    },
+                    {
+                        "id": 141,
+                        "numberOfRows": 1,
+                        "startRow": 9,
+                        "endRow": 9,
+                        "aislePrice": 180,
+                        "middlePrice": 180,
+                        "windowPrice": 180,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            2,
+                            2,
+                            2
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 50,
+                "cabinName": "Business Class",
+                "cabinCode": "BUS",
+                "disabled": true,
+                "seating": [
+                    {
+                        "id": 142,
+                        "numberOfRows": 1,
+                        "startRow": 10,
+                        "endRow": 10,
+                        "aislePrice": 60,
+                        "middlePrice": 60,
+                        "windowPrice": 60,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            3,
+                            3,
+                            3
+                        ]
+                    },
+                    {
+                        "id": 143,
+                        "numberOfRows": 6,
+                        "startRow": 11,
+                        "endRow": 16,
+                        "aislePrice": 30,
+                        "middlePrice": 30,
+                        "windowPrice": 30,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            1,
+                            1,
+                            1
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 51,
+                "cabinName": "Premium Economy Class",
+                "cabinCode": "PRE",
+                "disabled": false,
+                "seating": [
+                    {
+                        "id": 144,
+                        "numberOfRows": 1,
+                        "startRow": 17,
+                        "endRow": 17,
+                        "aislePrice": 10,
+                        "middlePrice": 10,
+                        "windowPrice": 10,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            2,
+                            2,
+                            2
+                        ]
+                    },
+                    {
+                        "id": 145,
+                        "numberOfRows": 5,
+                        "startRow": 18,
+                        "endRow": 22,
+                        "aislePrice": 120,
+                        "middlePrice": 120,
+                        "windowPrice": 120,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            3,
+                            3,
+                            3
+                        ]
+                    },
+                    {
+                        "id": 146,
+                        "numberOfRows": 5,
+                        "startRow": 23,
+                        "endRow": 27,
+                        "aislePrice": 45,
+                        "middlePrice": 45,
+                        "windowPrice": 45,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            2,
+                            2,
+                            2
+                        ]
+                    },
+                    {
+                        "id": 147,
+                        "numberOfRows": 9,
+                        "startRow": 28,
+                        "endRow": 36,
+                        "aislePrice": 30,
+                        "middlePrice": 30,
+                        "windowPrice": 30,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            1,
+                            1,
+                            1
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 52,
+                "cabinName": "Economy Class",
+                "cabinCode": "ECO",
+                "disabled": false,
+                "seating": [
+                    {
+                        "id": 148,
+                        "numberOfRows": 1,
+                        "startRow": 37,
+                        "endRow": 37,
+                        "aislePrice": 120,
+                        "middlePrice": 120,
+                        "windowPrice": 120,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            0,
+                            2,
+                            0
+                        ]
+                    },
+                    {
+                        "id": 149,
+                        "numberOfRows": 4,
+                        "startRow": 38,
+                        "endRow": 41,
+                        "aislePrice": 10,
+                        "middlePrice": 10,
+                        "windowPrice": 10,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            3,
+                            3,
+                            3
+                        ]
+                    },
+                    {
+                        "id": 150,
+                        "numberOfRows": 5,
+                        "startRow": 42,
+                        "endRow": 46,
+                        "aislePrice": 15,
+                        "middlePrice": 15,
+                        "windowPrice": 15,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            3,
+                            3,
+                            3
+                        ]
+                    },
+                    {
+                        "id": 151,
+                        "numberOfRows": 3,
+                        "startRow": 47,
+                        "endRow": 49,
+                        "aislePrice": 180,
+                        "middlePrice": 180,
+                        "windowPrice": 180,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            3,
+                            3,
+                            3
+                        ]
+                    },
+                    {
+                        "id": 152,
+                        "numberOfRows": 8,
+                        "startRow": 50,
+                        "endRow": 57,
+                        "aislePrice": 45,
+                        "middlePrice": 45,
+                        "windowPrice": 45,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            2,
+                            2,
+                            2
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 14,
+        "aisles": 1,
+        "airline": {
+            "id": 5,
+            "airlineName": "Emirates",
+            "airlineCode": "EK",
+            "data": null,
+            "description": "Emirates Airline is a global airline based in Dubai, United Arab Emirates, and is one of the largest international airlines in the world. Founded in 1985, Emirates has expanded rapidly and is known for its modern fleet, exceptional service, and long-haul flights connecting Dubai to major cities across six continents. Emirates offers luxury services, including private suites, fully-flat beds in business class, and gourmet dining. The airline has established a strong reputation for its premium in-flight experiences, including entertainment options with its award-winning ICE system, making it a preferred choice for travelers seeking comfort and world-class service."
+        },
+        "cabinClasses": [
+            {
+                "id": 53,
+                "cabinName": "First Class",
+                "cabinCode": "FIR",
+                "disabled": false,
+                "seating": [
+                    {
+                        "id": 153,
+                        "numberOfRows": 3,
+                        "startRow": 1,
+                        "endRow": 3,
+                        "aislePrice": 30,
+                        "middlePrice": 30,
+                        "windowPrice": 30,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            1,
+                            1,
+                            1
+                        ]
+                    },
+                    {
+                        "id": 154,
+                        "numberOfRows": 2,
+                        "startRow": 4,
+                        "endRow": 5,
+                        "aislePrice": 100,
+                        "middlePrice": 100,
+                        "windowPrice": 100,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            0,
+                            2,
+                            0
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 54,
+                "cabinName": "Business Class",
+                "cabinCode": "BUS",
+                "disabled": false,
+                "seating": [
+                    {
+                        "id": 155,
+                        "numberOfRows": 7,
+                        "startRow": 6,
+                        "endRow": 12,
+                        "aislePrice": 120,
+                        "middlePrice": 120,
+                        "windowPrice": 120,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            2,
+                            2,
+                            2
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 55,
+                "cabinName": "Premium Economy Class",
+                "cabinCode": "PRE",
+                "disabled": false,
+                "seating": [
+                    {
+                        "id": 156,
+                        "numberOfRows": 2,
+                        "startRow": 13,
+                        "endRow": 14,
+                        "aislePrice": 15,
+                        "middlePrice": 15,
+                        "windowPrice": 15,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            2,
+                            2,
+                            2
+                        ]
+                    },
+                    {
+                        "id": 157,
+                        "numberOfRows": 1,
+                        "startRow": 15,
+                        "endRow": 15,
+                        "aislePrice": 120,
+                        "middlePrice": 120,
+                        "windowPrice": 120,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            3,
+                            3,
+                            3
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 56,
+                "cabinName": "Economy Class",
+                "cabinCode": "ECO",
+                "disabled": true,
+                "seating": [
+                    {
+                        "id": 158,
+                        "numberOfRows": 3,
+                        "startRow": 16,
+                        "endRow": 18,
+                        "aislePrice": 0,
+                        "middlePrice": 0,
+                        "windowPrice": 0,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            1,
+                            1,
+                            1
+                        ]
+                    },
+                    {
+                        "id": 159,
+                        "numberOfRows": 8,
+                        "startRow": 19,
+                        "endRow": 26,
+                        "aislePrice": 30,
+                        "middlePrice": 30,
+                        "windowPrice": 30,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            2,
+                            2,
+                            2
+                        ]
+                    },
+                    {
+                        "id": 160,
+                        "numberOfRows": 10,
+                        "startRow": 27,
+                        "endRow": 36,
+                        "aislePrice": 30,
+                        "middlePrice": 30,
+                        "windowPrice": 30,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            3,
+                            0,
+                            3
+                        ]
+                    },
+                    {
+                        "id": 161,
+                        "numberOfRows": 3,
+                        "startRow": 37,
+                        "endRow": 39,
+                        "aislePrice": 0,
+                        "middlePrice": 0,
+                        "windowPrice": 0,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            1,
+                            1,
+                            1
+                        ]
+                    },
+                    {
+                        "id": 162,
+                        "numberOfRows": 7,
+                        "startRow": 40,
+                        "endRow": 46,
+                        "aislePrice": 0,
+                        "middlePrice": 0,
+                        "windowPrice": 0,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            1,
+                            1,
+                            1
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 15,
+        "aisles": 2,
+        "airline": {
+            "id": 5,
+            "airlineName": "Emirates",
+            "airlineCode": "EK",
+            "data": null,
+            "description": "Emirates Airline is a global airline based in Dubai, United Arab Emirates, and is one of the largest international airlines in the world. Founded in 1985, Emirates has expanded rapidly and is known for its modern fleet, exceptional service, and long-haul flights connecting Dubai to major cities across six continents. Emirates offers luxury services, including private suites, fully-flat beds in business class, and gourmet dining. The airline has established a strong reputation for its premium in-flight experiences, including entertainment options with its award-winning ICE system, making it a preferred choice for travelers seeking comfort and world-class service."
+        },
+        "cabinClasses": [
+            {
+                "id": 57,
+                "cabinName": "First Class",
+                "cabinCode": "FIR",
+                "disabled": true,
+                "seating": [
+                    {
+                        "id": 163,
+                        "numberOfRows": 1,
+                        "startRow": 1,
+                        "endRow": 1,
+                        "aislePrice": 180,
+                        "middlePrice": 180,
+                        "windowPrice": 180,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            2,
+                            2,
+                            2
+                        ]
+                    },
+                    {
+                        "id": 164,
+                        "numberOfRows": 2,
+                        "startRow": 2,
+                        "endRow": 3,
+                        "aislePrice": 75,
+                        "middlePrice": 75,
+                        "windowPrice": 75,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            0,
+                            2,
+                            0
+                        ]
+                    },
+                    {
+                        "id": 165,
+                        "numberOfRows": 10,
+                        "startRow": 4,
+                        "endRow": 13,
+                        "aislePrice": 10,
+                        "middlePrice": 10,
+                        "windowPrice": 10,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            3,
+                            3,
+                            3
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 58,
+                "cabinName": "Business Class",
+                "cabinCode": "BUS",
+                "disabled": false,
+                "seating": [
+                    {
+                        "id": 166,
+                        "numberOfRows": 6,
+                        "startRow": 14,
+                        "endRow": 19,
+                        "aislePrice": 150,
+                        "middlePrice": 150,
+                        "windowPrice": 150,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            1,
+                            1,
+                            1
+                        ]
+                    },
+                    {
+                        "id": 167,
+                        "numberOfRows": 5,
+                        "startRow": 20,
+                        "endRow": 24,
+                        "aislePrice": 75,
+                        "middlePrice": 75,
+                        "windowPrice": 75,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            2,
+                            2,
+                            2
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 59,
+                "cabinName": "Premium Economy Class",
+                "cabinCode": "PRE",
+                "disabled": false,
+                "seating": [
+                    {
+                        "id": 168,
+                        "numberOfRows": 4,
+                        "startRow": 25,
+                        "endRow": 28,
+                        "aislePrice": 180,
+                        "middlePrice": 180,
+                        "windowPrice": 180,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            2,
+                            2,
+                            2
+                        ]
+                    },
+                    {
+                        "id": 169,
+                        "numberOfRows": 3,
+                        "startRow": 29,
+                        "endRow": 31,
+                        "aislePrice": 10,
+                        "middlePrice": 10,
+                        "windowPrice": 10,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            3,
+                            3,
+                            3
+                        ]
+                    },
+                    {
+                        "id": 170,
+                        "numberOfRows": 8,
+                        "startRow": 32,
+                        "endRow": 39,
+                        "aislePrice": 10,
+                        "middlePrice": 10,
+                        "windowPrice": 10,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            0,
+                            2,
+                            0
+                        ]
+                    },
+                    {
+                        "id": 171,
+                        "numberOfRows": 8,
+                        "startRow": 40,
+                        "endRow": 47,
+                        "aislePrice": 0,
+                        "middlePrice": 0,
+                        "windowPrice": 0,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            1,
+                            1,
+                            1
+                        ]
+                    },
+                    {
+                        "id": 172,
+                        "numberOfRows": 7,
+                        "startRow": 48,
+                        "endRow": 54,
+                        "aislePrice": 75,
+                        "middlePrice": 75,
+                        "windowPrice": 75,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            1,
+                            1,
+                            1
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 60,
+                "cabinName": "Economy Class",
+                "cabinCode": "ECO",
+                "disabled": true,
+                "seating": [
+                    {
+                        "id": 173,
+                        "numberOfRows": 9,
+                        "startRow": 55,
+                        "endRow": 63,
+                        "aislePrice": 120,
+                        "middlePrice": 120,
+                        "windowPrice": 120,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            3,
+                            0,
+                            3
+                        ]
+                    },
+                    {
+                        "id": 174,
+                        "numberOfRows": 7,
+                        "startRow": 64,
+                        "endRow": 70,
+                        "aislePrice": 150,
+                        "middlePrice": 150,
+                        "windowPrice": 150,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            2,
+                            2,
+                            2
+                        ]
+                    },
+                    {
+                        "id": 175,
+                        "numberOfRows": 2,
+                        "startRow": 71,
+                        "endRow": 72,
+                        "aislePrice": 75,
+                        "middlePrice": 75,
+                        "windowPrice": 75,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            1,
+                            1,
+                            1
+                        ]
+                    },
+                    {
+                        "id": 176,
+                        "numberOfRows": 2,
+                        "startRow": 73,
+                        "endRow": 74,
+                        "aislePrice": 30,
+                        "middlePrice": 30,
+                        "windowPrice": 30,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            1,
+                            1,
+                            1
+                        ]
+                    },
+                    {
+                        "id": 177,
+                        "numberOfRows": 1,
+                        "startRow": 75,
+                        "endRow": 75,
+                        "aislePrice": 0,
+                        "middlePrice": 0,
+                        "windowPrice": 0,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            2,
+                            2,
+                            2
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 16,
+        "aisles": 1,
+        "airline": {
+            "id": 5,
+            "airlineName": "Emirates",
+            "airlineCode": "EK",
+            "data": null,
+            "description": "Emirates Airline is a global airline based in Dubai, United Arab Emirates, and is one of the largest international airlines in the world. Founded in 1985, Emirates has expanded rapidly and is known for its modern fleet, exceptional service, and long-haul flights connecting Dubai to major cities across six continents. Emirates offers luxury services, including private suites, fully-flat beds in business class, and gourmet dining. The airline has established a strong reputation for its premium in-flight experiences, including entertainment options with its award-winning ICE system, making it a preferred choice for travelers seeking comfort and world-class service."
+        },
+        "cabinClasses": [
+            {
+                "id": 61,
+                "cabinName": "First Class",
+                "cabinCode": "FIR",
+                "disabled": false,
+                "seating": [
+                    {
+                        "id": 178,
+                        "numberOfRows": 3,
+                        "startRow": 1,
+                        "endRow": 3,
+                        "aislePrice": 180,
+                        "middlePrice": 180,
+                        "windowPrice": 180,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            0,
+                            2,
+                            0
+                        ]
+                    },
+                    {
+                        "id": 179,
+                        "numberOfRows": 5,
+                        "startRow": 4,
+                        "endRow": 8,
+                        "aislePrice": 150,
+                        "middlePrice": 150,
+                        "windowPrice": 150,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            3,
+                            0,
+                            3
+                        ]
+                    },
+                    {
+                        "id": 180,
+                        "numberOfRows": 7,
+                        "startRow": 9,
+                        "endRow": 15,
+                        "aislePrice": 60,
+                        "middlePrice": 60,
+                        "windowPrice": 60,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            0,
+                            2,
+                            0
+                        ]
+                    },
+                    {
+                        "id": 181,
+                        "numberOfRows": 8,
+                        "startRow": 16,
+                        "endRow": 23,
+                        "aislePrice": 180,
+                        "middlePrice": 180,
+                        "windowPrice": 180,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            2,
+                            2,
+                            2
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 62,
+                "cabinName": "Business Class",
+                "cabinCode": "BUS",
+                "disabled": false,
+                "seating": [
+                    {
+                        "id": 182,
+                        "numberOfRows": 4,
+                        "startRow": 24,
+                        "endRow": 27,
+                        "aislePrice": 45,
+                        "middlePrice": 45,
+                        "windowPrice": 45,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            0,
+                            2,
+                            0
+                        ]
+                    },
+                    {
+                        "id": 183,
+                        "numberOfRows": 10,
+                        "startRow": 28,
+                        "endRow": 37,
+                        "aislePrice": 10,
+                        "middlePrice": 10,
+                        "windowPrice": 10,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            3,
+                            0,
+                            3
+                        ]
+                    },
+                    {
+                        "id": 184,
+                        "numberOfRows": 10,
+                        "startRow": 38,
+                        "endRow": 47,
+                        "aislePrice": 30,
+                        "middlePrice": 30,
+                        "windowPrice": 30,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            3,
+                            0,
+                            3
+                        ]
+                    },
+                    {
+                        "id": 185,
+                        "numberOfRows": 1,
+                        "startRow": 48,
+                        "endRow": 48,
+                        "aislePrice": 60,
+                        "middlePrice": 60,
+                        "windowPrice": 60,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            3,
+                            3,
+                            3
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 63,
+                "cabinName": "Premium Economy Class",
+                "cabinCode": "PRE",
+                "disabled": false,
+                "seating": [
+                    {
+                        "id": 186,
+                        "numberOfRows": 5,
+                        "startRow": 49,
+                        "endRow": 53,
+                        "aislePrice": 15,
+                        "middlePrice": 15,
+                        "windowPrice": 15,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            3,
+                            0,
+                            3
+                        ]
+                    },
+                    {
+                        "id": 187,
+                        "numberOfRows": 10,
+                        "startRow": 54,
+                        "endRow": 63,
+                        "aislePrice": 60,
+                        "middlePrice": 60,
+                        "windowPrice": 60,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            0,
+                            2,
+                            0
+                        ]
+                    },
+                    {
+                        "id": 188,
+                        "numberOfRows": 9,
+                        "startRow": 64,
+                        "endRow": 72,
+                        "aislePrice": 75,
+                        "middlePrice": 75,
+                        "windowPrice": 75,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            2,
+                            2,
+                            2
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 64,
+                "cabinName": "Economy Class",
+                "cabinCode": "ECO",
+                "disabled": false,
+                "seating": [
+                    {
+                        "id": 189,
+                        "numberOfRows": 2,
+                        "startRow": 73,
+                        "endRow": 74,
+                        "aislePrice": 10,
+                        "middlePrice": 10,
+                        "windowPrice": 10,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            3,
+                            0,
+                            3
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 17,
+        "aisles": 2,
+        "airline": {
+            "id": 4,
+            "airlineName": "Delta Air Lines",
+            "airlineCode": "DL",
+            "data": null,
+            "description": "Delta Air Lines, Inc. is a major American airline, headquartered in Atlanta, Georgia. It is one of the oldest airlines in the world, founded in 1924 as a crop-dusting operation in Macon, Georgia. Today, Delta is a legacy carrier and one of the largest airlines globally, offering a vast network of domestic and international flights with a focus on providing exceptional customer service, on-time performance, and a comfortable flying experience. Delta is also a founding member of the SkyTeam global airline alliance and operates an extensive fleet of both narrow and wide-body aircraft."
+        },
+        "cabinClasses": [
+            {
+                "id": 65,
+                "cabinName": "First Class",
+                "cabinCode": "FIR",
+                "disabled": true,
+                "seating": [
+                    {
+                        "id": 190,
+                        "numberOfRows": 3,
+                        "startRow": 1,
+                        "endRow": 3,
+                        "aislePrice": 75,
+                        "middlePrice": 75,
+                        "windowPrice": 75,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            3,
+                            0,
+                            3
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 66,
+                "cabinName": "Business Class",
+                "cabinCode": "BUS",
+                "disabled": false,
+                "seating": [
+                    {
+                        "id": 191,
+                        "numberOfRows": 10,
+                        "startRow": 4,
+                        "endRow": 13,
+                        "aislePrice": 180,
+                        "middlePrice": 180,
+                        "windowPrice": 180,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            0,
+                            2,
+                            0
+                        ]
+                    },
+                    {
+                        "id": 192,
+                        "numberOfRows": 5,
+                        "startRow": 14,
+                        "endRow": 18,
+                        "aislePrice": 90,
+                        "middlePrice": 90,
+                        "windowPrice": 90,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            0,
+                            2,
+                            0
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 67,
+                "cabinName": "Premium Economy Class",
+                "cabinCode": "PRE",
+                "disabled": false,
+                "seating": [
+                    {
+                        "id": 193,
+                        "numberOfRows": 1,
+                        "startRow": 19,
+                        "endRow": 19,
+                        "aislePrice": 30,
+                        "middlePrice": 30,
+                        "windowPrice": 30,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            1,
+                            1,
+                            1
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 68,
+                "cabinName": "Economy Class",
+                "cabinCode": "ECO",
+                "disabled": false,
+                "seating": [
+                    {
+                        "id": 194,
+                        "numberOfRows": 10,
+                        "startRow": 20,
+                        "endRow": 29,
+                        "aislePrice": 75,
+                        "middlePrice": 75,
+                        "windowPrice": 75,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            3,
+                            3,
+                            3
+                        ]
+                    },
+                    {
+                        "id": 195,
+                        "numberOfRows": 6,
+                        "startRow": 30,
+                        "endRow": 35,
+                        "aislePrice": 100,
+                        "middlePrice": 100,
+                        "windowPrice": 100,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            2,
+                            2,
+                            2
+                        ]
+                    },
+                    {
+                        "id": 196,
+                        "numberOfRows": 9,
+                        "startRow": 36,
+                        "endRow": 44,
+                        "aislePrice": 30,
+                        "middlePrice": 30,
+                        "windowPrice": 30,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            0,
+                            2,
+                            0
+                        ]
+                    },
+                    {
+                        "id": 197,
+                        "numberOfRows": 2,
+                        "startRow": 45,
+                        "endRow": 46,
+                        "aislePrice": 15,
+                        "middlePrice": 15,
+                        "windowPrice": 15,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            0,
+                            2,
+                            0
+                        ]
+                    },
+                    {
+                        "id": 198,
+                        "numberOfRows": 9,
+                        "startRow": 47,
+                        "endRow": 55,
+                        "aislePrice": 0,
+                        "middlePrice": 0,
+                        "windowPrice": 0,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            2,
+                            2,
+                            2
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 18,
+        "aisles": 1,
+        "airline": {
+            "id": 4,
+            "airlineName": "Delta Air Lines",
+            "airlineCode": "DL",
+            "data": null,
+            "description": "Delta Air Lines, Inc. is a major American airline, headquartered in Atlanta, Georgia. It is one of the oldest airlines in the world, founded in 1924 as a crop-dusting operation in Macon, Georgia. Today, Delta is a legacy carrier and one of the largest airlines globally, offering a vast network of domestic and international flights with a focus on providing exceptional customer service, on-time performance, and a comfortable flying experience. Delta is also a founding member of the SkyTeam global airline alliance and operates an extensive fleet of both narrow and wide-body aircraft."
+        },
+        "cabinClasses": [
+            {
+                "id": 69,
+                "cabinName": "First Class",
+                "cabinCode": "FIR",
+                "disabled": false,
+                "seating": [
+                    {
+                        "id": 199,
+                        "numberOfRows": 9,
+                        "startRow": 1,
+                        "endRow": 9,
+                        "aislePrice": 0,
+                        "middlePrice": 0,
+                        "windowPrice": 0,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            2,
+                            2,
+                            2
+                        ]
+                    },
+                    {
+                        "id": 200,
+                        "numberOfRows": 4,
+                        "startRow": 10,
+                        "endRow": 13,
+                        "aislePrice": 180,
+                        "middlePrice": 180,
+                        "windowPrice": 180,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            1,
+                            1,
+                            1
+                        ]
+                    },
+                    {
+                        "id": 201,
+                        "numberOfRows": 2,
+                        "startRow": 14,
+                        "endRow": 15,
+                        "aislePrice": 150,
+                        "middlePrice": 150,
+                        "windowPrice": 150,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            3,
+                            3,
+                            3
+                        ]
+                    },
+                    {
+                        "id": 202,
+                        "numberOfRows": 4,
+                        "startRow": 16,
+                        "endRow": 19,
+                        "aislePrice": 150,
+                        "middlePrice": 150,
+                        "windowPrice": 150,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            3,
+                            0,
+                            3
+                        ]
+                    },
+                    {
+                        "id": 203,
+                        "numberOfRows": 3,
+                        "startRow": 20,
+                        "endRow": 22,
+                        "aislePrice": 30,
+                        "middlePrice": 30,
+                        "windowPrice": 30,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            0,
+                            2,
+                            0
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 70,
+                "cabinName": "Business Class",
+                "cabinCode": "BUS",
+                "disabled": false,
+                "seating": [
+                    {
+                        "id": 204,
+                        "numberOfRows": 7,
+                        "startRow": 23,
+                        "endRow": 29,
+                        "aislePrice": 45,
+                        "middlePrice": 45,
+                        "windowPrice": 45,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            3,
+                            3,
+                            3
+                        ]
+                    },
+                    {
+                        "id": 205,
+                        "numberOfRows": 8,
+                        "startRow": 30,
+                        "endRow": 37,
+                        "aislePrice": 15,
+                        "middlePrice": 15,
+                        "windowPrice": 15,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            1,
+                            1,
+                            1
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 71,
+                "cabinName": "Premium Economy Class",
+                "cabinCode": "PRE",
+                "disabled": false,
+                "seating": [
+                    {
+                        "id": 206,
+                        "numberOfRows": 10,
+                        "startRow": 38,
+                        "endRow": 47,
+                        "aislePrice": 15,
+                        "middlePrice": 15,
+                        "windowPrice": 15,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            3,
+                            3,
+                            3
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 72,
+                "cabinName": "Economy Class",
+                "cabinCode": "ECO",
+                "disabled": true,
+                "seating": [
+                    {
+                        "id": 207,
+                        "numberOfRows": 3,
+                        "startRow": 48,
+                        "endRow": 50,
+                        "aislePrice": 180,
+                        "middlePrice": 180,
+                        "windowPrice": 180,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            1,
+                            1,
+                            1
+                        ]
+                    },
+                    {
+                        "id": 208,
+                        "numberOfRows": 1,
+                        "startRow": 51,
+                        "endRow": 51,
+                        "aislePrice": 0,
+                        "middlePrice": 0,
+                        "windowPrice": 0,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            1,
+                            1,
+                            1
+                        ]
+                    },
+                    {
+                        "id": 209,
+                        "numberOfRows": 10,
+                        "startRow": 52,
+                        "endRow": 61,
+                        "aislePrice": 15,
+                        "middlePrice": 15,
+                        "windowPrice": 15,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            0,
+                            2,
+                            0
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 19,
+        "aisles": 2,
+        "airline": {
+            "id": 4,
+            "airlineName": "Delta Air Lines",
+            "airlineCode": "DL",
+            "data": null,
+            "description": "Delta Air Lines, Inc. is a major American airline, headquartered in Atlanta, Georgia. It is one of the oldest airlines in the world, founded in 1924 as a crop-dusting operation in Macon, Georgia. Today, Delta is a legacy carrier and one of the largest airlines globally, offering a vast network of domestic and international flights with a focus on providing exceptional customer service, on-time performance, and a comfortable flying experience. Delta is also a founding member of the SkyTeam global airline alliance and operates an extensive fleet of both narrow and wide-body aircraft."
+        },
+        "cabinClasses": [
+            {
+                "id": 73,
+                "cabinName": "First Class",
+                "cabinCode": "FIR",
+                "disabled": true,
+                "seating": [
+                    {
+                        "id": 210,
+                        "numberOfRows": 9,
+                        "startRow": 1,
+                        "endRow": 9,
+                        "aislePrice": 180,
+                        "middlePrice": 180,
+                        "windowPrice": 180,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            0,
+                            2,
+                            0
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 74,
+                "cabinName": "Business Class",
+                "cabinCode": "BUS",
+                "disabled": false,
+                "seating": [
+                    {
+                        "id": 211,
+                        "numberOfRows": 9,
+                        "startRow": 10,
+                        "endRow": 18,
+                        "aislePrice": 0,
+                        "middlePrice": 0,
+                        "windowPrice": 0,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            3,
+                            3,
+                            3
+                        ]
+                    },
+                    {
+                        "id": 212,
+                        "numberOfRows": 3,
+                        "startRow": 19,
+                        "endRow": 21,
+                        "aislePrice": 90,
+                        "middlePrice": 90,
+                        "windowPrice": 90,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            3,
+                            3,
+                            3
+                        ]
+                    },
+                    {
+                        "id": 213,
+                        "numberOfRows": 5,
+                        "startRow": 22,
+                        "endRow": 26,
+                        "aislePrice": 120,
+                        "middlePrice": 120,
+                        "windowPrice": 120,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            2,
+                            2,
+                            2
+                        ]
+                    },
+                    {
+                        "id": 214,
+                        "numberOfRows": 7,
+                        "startRow": 27,
+                        "endRow": 33,
+                        "aislePrice": 150,
+                        "middlePrice": 150,
+                        "windowPrice": 150,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            0,
+                            2,
+                            0
+                        ]
+                    },
+                    {
+                        "id": 215,
+                        "numberOfRows": 7,
+                        "startRow": 34,
+                        "endRow": 40,
+                        "aislePrice": 30,
+                        "middlePrice": 30,
+                        "windowPrice": 30,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            3,
+                            3,
+                            3
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 75,
+                "cabinName": "Premium Economy Class",
+                "cabinCode": "PRE",
+                "disabled": false,
+                "seating": [
+                    {
+                        "id": 216,
+                        "numberOfRows": 3,
+                        "startRow": 41,
+                        "endRow": 43,
+                        "aislePrice": 150,
+                        "middlePrice": 150,
+                        "windowPrice": 150,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            2,
+                            2,
+                            2
+                        ]
+                    },
+                    {
+                        "id": 217,
+                        "numberOfRows": 1,
+                        "startRow": 44,
+                        "endRow": 44,
+                        "aislePrice": 15,
+                        "middlePrice": 15,
+                        "windowPrice": 15,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            2,
+                            2,
+                            2
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 76,
+                "cabinName": "Economy Class",
+                "cabinCode": "ECO",
+                "disabled": false,
+                "seating": [
+                    {
+                        "id": 218,
+                        "numberOfRows": 2,
+                        "startRow": 45,
+                        "endRow": 46,
+                        "aislePrice": 100,
+                        "middlePrice": 100,
+                        "windowPrice": 100,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            3,
+                            0,
+                            3
+                        ]
+                    },
+                    {
+                        "id": 219,
+                        "numberOfRows": 4,
+                        "startRow": 47,
+                        "endRow": 50,
+                        "aislePrice": 60,
+                        "middlePrice": 60,
+                        "windowPrice": 60,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            2,
+                            2,
+                            2
+                        ]
+                    },
+                    {
+                        "id": 220,
+                        "numberOfRows": 9,
+                        "startRow": 51,
+                        "endRow": 59,
+                        "aislePrice": 45,
+                        "middlePrice": 45,
+                        "windowPrice": 45,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            1,
+                            1,
+                            1
+                        ]
+                    },
+                    {
+                        "id": 221,
+                        "numberOfRows": 5,
+                        "startRow": 60,
+                        "endRow": 64,
+                        "aislePrice": 10,
+                        "middlePrice": 10,
+                        "windowPrice": 10,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            3,
+                            3,
+                            3
+                        ]
+                    },
+                    {
+                        "id": 222,
+                        "numberOfRows": 8,
+                        "startRow": 65,
+                        "endRow": 72,
+                        "aislePrice": 60,
+                        "middlePrice": 60,
+                        "windowPrice": 60,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            2,
+                            2,
+                            2
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 20,
+        "aisles": 1,
+        "airline": {
+            "id": 4,
+            "airlineName": "Delta Air Lines",
+            "airlineCode": "DL",
+            "data": null,
+            "description": "Delta Air Lines, Inc. is a major American airline, headquartered in Atlanta, Georgia. It is one of the oldest airlines in the world, founded in 1924 as a crop-dusting operation in Macon, Georgia. Today, Delta is a legacy carrier and one of the largest airlines globally, offering a vast network of domestic and international flights with a focus on providing exceptional customer service, on-time performance, and a comfortable flying experience. Delta is also a founding member of the SkyTeam global airline alliance and operates an extensive fleet of both narrow and wide-body aircraft."
+        },
+        "cabinClasses": [
+            {
+                "id": 77,
+                "cabinName": "First Class",
+                "cabinCode": "FIR",
+                "disabled": true,
+                "seating": [
+                    {
+                        "id": 223,
+                        "numberOfRows": 2,
+                        "startRow": 1,
+                        "endRow": 2,
+                        "aislePrice": 90,
+                        "middlePrice": 90,
+                        "windowPrice": 90,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            1,
+                            1,
+                            1
+                        ]
+                    },
+                    {
+                        "id": 224,
+                        "numberOfRows": 9,
+                        "startRow": 3,
+                        "endRow": 11,
+                        "aislePrice": 10,
+                        "middlePrice": 10,
+                        "windowPrice": 10,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            3,
+                            0,
+                            3
+                        ]
+                    },
+                    {
+                        "id": 225,
+                        "numberOfRows": 10,
+                        "startRow": 12,
+                        "endRow": 21,
+                        "aislePrice": 180,
+                        "middlePrice": 180,
+                        "windowPrice": 180,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            3,
+                            3,
+                            3
+                        ]
+                    },
+                    {
+                        "id": 226,
+                        "numberOfRows": 2,
+                        "startRow": 22,
+                        "endRow": 23,
+                        "aislePrice": 150,
+                        "middlePrice": 150,
+                        "windowPrice": 150,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            3,
+                            3,
+                            3
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 78,
+                "cabinName": "Business Class",
+                "cabinCode": "BUS",
+                "disabled": false,
+                "seating": [
+                    {
+                        "id": 227,
+                        "numberOfRows": 2,
+                        "startRow": 24,
+                        "endRow": 25,
+                        "aislePrice": 150,
+                        "middlePrice": 150,
+                        "windowPrice": 150,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            3,
+                            3,
+                            3
+                        ]
+                    },
+                    {
+                        "id": 228,
+                        "numberOfRows": 3,
+                        "startRow": 26,
+                        "endRow": 28,
+                        "aislePrice": 60,
+                        "middlePrice": 60,
+                        "windowPrice": 60,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            3,
+                            0,
+                            3
+                        ]
+                    },
+                    {
+                        "id": 229,
+                        "numberOfRows": 4,
+                        "startRow": 29,
+                        "endRow": 32,
+                        "aislePrice": 30,
+                        "middlePrice": 30,
+                        "windowPrice": 30,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            3,
+                            0,
+                            3
+                        ]
+                    },
+                    {
+                        "id": 230,
+                        "numberOfRows": 7,
+                        "startRow": 33,
+                        "endRow": 39,
+                        "aislePrice": 90,
+                        "middlePrice": 90,
+                        "windowPrice": 90,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            3,
+                            0,
+                            3
+                        ]
+                    },
+                    {
+                        "id": 231,
+                        "numberOfRows": 7,
+                        "startRow": 40,
+                        "endRow": 46,
+                        "aislePrice": 75,
+                        "middlePrice": 75,
+                        "windowPrice": 75,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            3,
+                            3,
+                            3
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 79,
+                "cabinName": "Premium Economy Class",
+                "cabinCode": "PRE",
+                "disabled": false,
+                "seating": [
+                    {
+                        "id": 232,
+                        "numberOfRows": 8,
+                        "startRow": 47,
+                        "endRow": 54,
+                        "aislePrice": 30,
+                        "middlePrice": 30,
+                        "windowPrice": 30,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            0,
+                            2,
+                            0
+                        ]
+                    },
+                    {
+                        "id": 233,
+                        "numberOfRows": 8,
+                        "startRow": 55,
+                        "endRow": 62,
+                        "aislePrice": 10,
+                        "middlePrice": 10,
+                        "windowPrice": 10,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            1,
+                            1,
+                            1
+                        ]
+                    },
+                    {
+                        "id": 234,
+                        "numberOfRows": 1,
+                        "startRow": 63,
+                        "endRow": 63,
+                        "aislePrice": 100,
+                        "middlePrice": 100,
+                        "windowPrice": 100,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            0,
+                            2,
+                            0
+                        ]
+                    },
+                    {
+                        "id": 235,
+                        "numberOfRows": 2,
+                        "startRow": 64,
+                        "endRow": 65,
+                        "aislePrice": 45,
+                        "middlePrice": 45,
+                        "windowPrice": 45,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            3,
+                            3,
+                            3
+                        ]
+                    },
+                    {
+                        "id": 236,
+                        "numberOfRows": 3,
+                        "startRow": 66,
+                        "endRow": 68,
+                        "aislePrice": 45,
+                        "middlePrice": 45,
+                        "windowPrice": 45,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            3,
+                            0,
+                            3
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 80,
+                "cabinName": "Economy Class",
+                "cabinCode": "ECO",
+                "disabled": false,
+                "seating": [
+                    {
+                        "id": 237,
+                        "numberOfRows": 7,
+                        "startRow": 69,
+                        "endRow": 75,
+                        "aislePrice": 30,
+                        "middlePrice": 30,
+                        "windowPrice": 30,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            3,
+                            3,
+                            3
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]

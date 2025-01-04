@@ -10,8 +10,11 @@ import SignUp from './pages/auth/SignUp';
 import Airlines from './pages/tables/Airlines';
 import Flights from './pages/tables/Flights'
 import Airports from './pages/tables/Airports'
-import Seats from './components/Seat'
-import AddFlights from './pages/add/addFlightFormat'
+import AddAirplaneConfigurations from './pages/add/addAirplaneConfigurations'
+import AirplaneConfigurations from './pages/tables/AirplaneConfigurations'
+import AddAirport from './pages/add/addAirport'
+import AddAirline from './pages/add/addAirline'
+import Users from './pages/tables/Users'
 
 function App() {
   return (
@@ -27,11 +30,14 @@ function App() {
               <Route path="/airlines/table" element={<Airlines />} />
               <Route path="/flights/table" element={<Flights />} />
               <Route path="/airports/table" element={<Airports />} />
-              <Route path="/seats" element={<Seats />} />
-              <Route path="/flights/add" element={<AddFlights />} />
+              <Route path="/users/table" element={<Users />} />
+              <Route path="/airplaneConfigurations/table" element={<AirplaneConfigurations />} />
+              <Route path="/airplaneConfigurations/add" element={<AddAirplaneConfigurations />} />
+              <Route path="/airports/add" element={<AddAirport />} />
+              <Route path="/airlines/add" element={<AddAirline />} />
             </Routes>
           </div>
-          {/* <Footer/> */}
+          <Footer/>
         </div>
       </BrowserRouter>
     </LocalizationProvider>

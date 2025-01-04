@@ -41,7 +41,7 @@ export default function Example({content, width}) {
     <div>
       <button onClick={openModal}
         style = {{
-          border : "2px solid #E2E2E2",
+          border : "1px solid #E2E2E2",
         }}
         className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-blue-600 bg-white hover:bg-white"
       >View</button>

@@ -3,6 +3,7 @@ package com.dailycodebuffer.Response;
 import com.dailycodebuffer.Request.Airport;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -23,15 +24,15 @@ public class Terminal {
 
     @ManyToOne
     @JoinColumn(name = "iataCode", nullable = false)
-    @JsonBackReference
+    @JsonBackReference("airport-terminals")
     private Airport airport;
 
     @OneToMany(mappedBy = "terminalArrival")
-    @JsonBackReference
+    @JsonIgnore
     private List<Flight> flightsArrival = new ArrayList<>();
 
     @OneToMany(mappedBy = "terminalDeparture")
-    @JsonBackReference
+    @JsonIgnore
     private List<Flight> flightsDeparture = new ArrayList<>();
 
     @Override

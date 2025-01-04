@@ -12,6 +12,7 @@ let object = {
     airport: "/addairports",
     flights: "/addflights",
     terminal: "/addterminals",
+    airplaneConfigurations : "/cabinclasslists/add"
 };
 
 async function headerCreator(token) {
@@ -30,6 +31,7 @@ const airports = require('../JSONs/airports.json');
 const flights = require('../JSONs/flight_requests.json');
 const terminals = require('../JSONs/complete_terminals.json');
 const airline_cabins = require('../JSONs/airline_cabins.json');
+const airplane_configurations = require('../JSONs/airplane_configurations.json');
 
 let signUpUrl = `${environment}${object.signUp}`;
 let signInUrl = `${environment}${object.signIn}`;
@@ -39,6 +41,7 @@ let airportUrl = `${environment}${object.airport}`;
 let flightUrl = `${environment}${object.flights}`;
 let terminalUrl = `${environment}${object.terminal}`;
 let airlineCabinUrl = `${environment}${object.airlineCabin}`;
+let airplaneConfigUrl = `${environment}${object.airplaneConfigurations}`;
 
 async function signUp(url, header, data) {
     try {
@@ -229,6 +232,24 @@ async function processFlightRequests(url, header, flights){
     }
 }
 
+async function processAirPlaneConfigurations(url, header, airplane_configurations) {
+    for (let i = 1; i < token.length; i++) {
+        try {
+            let userName = i;
+            let tokenUser = token[userName].token;
+
+            let airplaneConfigurationsArray = airplane_configurations.slice((i - 1)*2, i*2);
+
+            console.log(airplaneConfigurationsArray);
+
+            header = await headerCreator(tokenUser);
+            let airlineCabinResponse = await processPostRequests(url, header, airplaneConfigurationsArray);
+        }
+        catch (error) {
+        }
+    }
+}
+
 
 async function main() {
     console.log(users);
@@ -239,18 +260,21 @@ async function main() {
     await split(users);
     await processSignUpsSignIns(signUpUrl, signInUrl, userHeader, adminArray);
     header = await headerCreator(token[0].token);
-    await processAircraftModels(aircraftUrl, header, aircraft_models);
+    console.log(header);
     await processAirlines(airlineUrl, header, airlines);
     await processAirports(airportUrl, header, airports);
     await processTerminals(terminalUrl, header, terminals);
+    // await processAircraftModels(aircraftUrl, header, aircraft_models);
 
     await processSignUpsSignIns(signUpUrl, signInUrl, userHeader, userArray);
 
     console.log(token);
+
+    await processAirPlaneConfigurations(airplaneConfigUrl, token, airplane_configurations);
     // await processAirlineCabins(airlineCabinUrl, token, airline_cabins);
 
     // console.log(flights);
-    await processFlightRequests(flightUrl, token, flights);
+    // await processFlightRequests(flightUrl, token, flights);
 }
 
 main().catch((error) => console.error('Error:', error));

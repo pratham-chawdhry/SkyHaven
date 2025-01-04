@@ -133,7 +133,7 @@ public class FlightController {
                     return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
                 }
 
-                List<Row> rows = flightSeats(aircraftModel.getSeats(), flight);
+//                List<Row> rows = flightSeats(aircraftModel.getSeats(), flight);
 
                 flight.setTerminalArrival(terminalArrival);
                 flight.setTerminalDeparture(terminalDeparture);
@@ -141,7 +141,7 @@ public class FlightController {
                 flight.setAirportDeparture(airportDeparture);
                 flight.setAirline(airline);
 
-                flight.setRows(rows);
+                flight.setRows(null);
 
                 for (FlightCabinRequest flightCabinRequest : flightRequest.getFlightCabins()) {
                     FlightCabin flightCabin = getFlightCabin(flightCabinRequest, airline, flight);
@@ -222,14 +222,14 @@ public class FlightController {
                 Terminal terminalDeparture = terminalService.getTerminalByIataCodeAndTerminalName(
                         flightRequest.getAirportDeparture(), flightRequest.getTerminalDeparture());
 
-                List<Row> flightRows = flightSeats(aircraftModel.getSeats(), flight);
+//                List<Row> flightRows = flightSeats(aircraftModel.getSeats(), flight);
 
                 flight.setTerminalDeparture(terminalDeparture);
                 flight.setTerminalArrival(terminalArrival);
                 flight.setAirportArrival(airportArrival);
                 flight.setAirportDeparture(airportDeparture);
                 flight.setAirline(airline);
-                flight.setRows(flightRows);
+                flight.setRows(null);
 
                 flightRepository.save(flight);
             }
@@ -335,8 +335,8 @@ public class FlightController {
                         return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
                     }
 
-                    List<Row> rows = flightSeats(aircraftModel.getSeats(), flight);
-                    flight.setRows(rows);
+//                    List<Row> rows = flightSeats(aircraftModel.getSeats(), flight);
+                    flight.setRows(null);
                     flightRepository.save(flight);
                     DefaultResponse response = messageMaker("Flight updated", HttpStatus.OK, 200);
                     return new ResponseEntity<>(response, HttpStatus.OK);

@@ -2,6 +2,7 @@ package com.dailycodebuffer.Request;
 
 import com.dailycodebuffer.Response.Flight;
 import com.dailycodebuffer.Response.Terminal;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
@@ -36,11 +37,11 @@ public class Airport {
     private List<Flight> flightsDeparture = new ArrayList<>();
 
     @OneToMany(mappedBy = "airport")
-    @JsonManagedReference
+    @JsonManagedReference("airport-terminals")
     private List<Terminal> terminals = new ArrayList<>();
 
     @Override
     public String toString() {
-        return "Airport [id=" + airport_id + ", airportName=" + airportName + ", city=" + city + ", state=" + state + ", country=" + country + ", iataCode" + iataCode + "timezone" + timezone + "dst" + dst + "]";
+        return "Airport [id=" + airport_id + ", airportName=" + airportName + ", city=" + city + ", state=" + state + ", country=" + country + ", iataCode=" + iataCode + ", timezone=" + timezone + ", dst=" + dst + "]";
     }
 }

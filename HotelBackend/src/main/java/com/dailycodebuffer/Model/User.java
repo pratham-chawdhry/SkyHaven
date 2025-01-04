@@ -1,10 +1,11 @@
 package com.dailycodebuffer.Model;
 
-import java.util.List;
-
-import jakarta.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Data;
+
 @Data
 @Entity
 public class User {

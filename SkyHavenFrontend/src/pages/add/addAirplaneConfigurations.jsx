@@ -193,20 +193,19 @@ function AddFlight() {
       if (!cabin.disabled) {
         let cabinFlag = true;
         cabin.seating.forEach((seatingConfig, seatIndex) => {
-          let {numberOfRows} = seatingConfig;
+            let {numberOfRows} = seatingConfig;
 
-          if (numberOfRows !== 0){
-            cabinFlag = false;
-          }
+            if (numberOfRows !== 0){
+                cabinFlag = false;
+            }
         });
-
         cabin.disabled = cabinFlag;
       }
     });
 
     cabinClasses.forEach((cabin) => {
       if (!cabin.disabled){
-        cabin.seating.forEach((seatingConfig) => {
+        cabin.seating.forEach((seatingConfig, seatIndex) => {
           const { numberOfRows, seatSeating, extraLegroom } = seatingConfig;
 
           for (let rowIndex = 0; rowIndex < numberOfRows; rowIndex++) {
@@ -220,67 +219,78 @@ function AddFlight() {
             let previousSection = 0;
 
             seatSeating.forEach((seatCount, sectionIndex) => {
-              if (sectionIndex > 0){
-                previousSection += seatSeating[sectionIndex - 1]
-              }
-              for (let seatIndex = 0; seatIndex < seatCount; seatIndex++) {
-                const seatLetter = String.fromCharCode(
-                  65 + seatIndex + previousSection
-                );
-
-                let price = 0;
-
-                let free = false;
-                if (seatIndex === 0){
-                  if (sectionIndex === 0){
-                    price = seatingConfig.windowPrice;
-                    if (!seatingConfig.windowPrice){
-                      free = true;
+                if (sectionIndex <= aisles){
+                    if (sectionIndex > 0){
+                        previousSection += seatSeating[sectionIndex - 1]
                     }
-                  }
-                  else{
-                    price = seatingConfig.aislePrice;
-                    if (!seatingConfig.aislePrice){
-                      free = true;
+                    for (let seatIndex = 0; seatIndex < seatCount; seatIndex++) {
+                        const seatLetter = String.fromCharCode(
+                        65 + seatIndex + previousSection
+                        );
+
+                        let price = 0;
+
+                        let free = false;
+                        if (seatIndex === 0){
+                        if (sectionIndex === 0){
+                            price = seatingConfig.windowPrice;
+                            if (!seatingConfig.windowPrice){
+                            free = true;
+                            }
+                        }
+                        else{
+                            price = seatingConfig.aislePrice;
+                            if (!seatingConfig.aislePrice){
+                            free = true;
+                            }
+                        }
+                        }
+                        else if (seatIndex === seatCount - 1){
+                        if (sectionIndex === aisles){
+                            price = seatingConfig.windowPrice;
+                            if (!seatingConfig.windowPrice){
+                            free = true;
+                            }
+                        }
+                        else{
+                            price = seatingConfig.aislePrice;
+                            if (!seatingConfig.aislePrice){
+                            free = true;
+                            }
+                        }
+                        }
+                        else{
+                        price = seatingConfig.middlePrice;
+                        if (!seatingConfig.middlePrice){
+                            free = true;
+                        }
+                        }
+
+                        const seatNumber = `${seats.length + 1 + startRowNumber}${seatLetter}`;
+                        row.push({
+                        id: seatNumber,
+                        seatNumber: seatNumber,
+                        seatType: seatType,
+                        occupied: "No",
+                        extraLegroom: extraLegroomFlag,
+                        free : free,
+                        price : price,
+                        });
                     }
-                  }
+
+                    console.log("sectionIndex: " + sectionIndex, " aisles: " + aisles);
+                    if (sectionIndex < seatSeating.length - 1 && sectionIndex < aisles) {
+                        if (seatSeating[sectionIndex] && seatSeating[sectionIndex + 1]) {
+                            row.push(null);
+                        }
+                        if (aisles === 2){
+                            if (sectionIndex === 0 && seatSeating[0] && seatSeating[2] && !seatSeating[1]) {
+                                row.push(null);
+                                row.push(null);
+                            }
+                        }
+                    }
                 }
-                else if (seatIndex === seatCount - 1){
-                  if (sectionIndex === aisles){
-                    price = seatingConfig.windowPrice;
-                    if (!seatingConfig.windowPrice){
-                      free = true;
-                    }
-                  }
-                  else{
-                    price = seatingConfig.aislePrice;
-                    if (!seatingConfig.aislePrice){
-                      free = true;
-                    }
-                  }
-                }
-                else{
-                  price = seatingConfig.middlePrice;
-                  if (!seatingConfig.middlePrice){
-                    free = true;
-                  }
-                }
-
-                const seatNumber = `${seats.length + 1 + startRowNumber}${seatLetter}`;
-                row.push({
-                  id: seatNumber,
-                  seatNumber: seatNumber,
-                  seatType: seatType,
-                  occupied: "No",
-                  extraLegroom: extraLegroomFlag,
-                  free : free,
-                  price : price,
-                });
-              }
-
-              if (sectionIndex < seatSeating.length - 1) {
-                row.push(null);
-              }
             });
             seats.push(row);
           }
@@ -290,82 +300,82 @@ function AddFlight() {
     return seats;
   };
 
+  function renderSeatPricing(seat, seatIndex) {
+    const renderRowRange = (start, end) => `The rows ${start} to ${end}`;
+    const renderSingleRow = (row) => `Row ${row}`;
+  
+    const renderPricingDetails = (seat) => {
+      if (seat.windowPrice === seat.middlePrice && seat.middlePrice === seat.aislePrice) {
+        return `follows the order ${seat.seatSeating.slice(0, aisles + 1).join("-")}, and the price is $${seat.windowPrice} for any seat.`;
+      }
+      if (seat.windowPrice !== seat.middlePrice && seat.middlePrice !== seat.aislePrice && seat.windowPrice !== seat.aislePrice) {
+        return `follows the order ${seat.seatSeating.slice(0, aisles + 1).join("-")}, and the price is $${seat.windowPrice} for window seats, $${seat.middlePrice} for middle seats, and $${seat.aislePrice} for aisle seats.`;
+      }
+      if (seat.windowPrice === seat.aislePrice && seat.windowPrice !== seat.middlePrice) {
+        return `follows the order ${seat.seatSeating.slice(0, aisles + 1).join("-")}, and the price is $${seat.windowPrice} for window and aisle seats, and $${seat.middlePrice} for middle seats.`;
+      }
+      if (seat.windowPrice === seat.middlePrice && seat.middlePrice !== seat.aislePrice) {
+        return `follows the order ${seat.seatSeating.slice(0, aisles + 1).join("-")}, and the price is $${seat.windowPrice} for window and middle seats, and $${seat.aislePrice} for aisle seats.`;
+      }
+      if (seat.middlePrice === seat.aislePrice && seat.windowPrice !== seat.middlePrice) {
+        return `follows the order ${seat.seatSeating.slice(0, aisles + 1).join("-")}, and the price is $${seat.middlePrice} for middle and aisle seats, and $${seat.windowPrice} for window seats.`;
+      }
+    };
+  
+    const renderFreeSeatsDetails = (seat) => {
+      if (seat.windowPrice === 0 && seat.middlePrice === 0 && seat.aislePrice === 0) {
+        return `follows the order ${seat.seatSeating.slice(0, aisles + 1).join("-")}, and all seats are free.`;
+      }
+      if (seat.windowPrice === 0 && seat.middlePrice !== 0 && seat.aislePrice !== 0 && seat.middlePrice !== seat.aislePrice) {
+        return `follows the order ${seat.seatSeating.slice(0, aisles + 1).join("-")}, and the price is $${seat.middlePrice} for middle seats and $${seat.aislePrice} for aisle seats, while window seats are free.`;
+      }
+      if (seat.windowPrice !== 0 && seat.middlePrice === 0 && seat.aislePrice !== 0 && seat.windowPrice !== seat.aislePrice) {
+        return `follows the order ${seat.seatSeating.slice(0, aisles + 1).join("-")}, and the price is $${seat.windowPrice} for window seats and $${seat.aislePrice} for aisle seats, while middle seats are free.`;
+      }
+      if (seat.windowPrice !== 0 && seat.middlePrice !== 0 && seat.aislePrice === 0 && seat.windowPrice !== seat.middlePrice) {
+        return `follows the order ${seat.seatSeating.slice(0, aisles + 1).join("-")}, and the price is $${seat.windowPrice} for window seats and $${seat.middlePrice} for middle seats, while aisle seats are free.`;
+      }
+      if (seat.windowPrice === seat.middlePrice && seat.aislePrice === 0) {
+        return `follows the order ${seat.seatSeating.slice(0, aisles + 1).join("-")}, and the price is $${seat.windowPrice} for window and middle seats, while aisle seats are free.`;
+      }
+      if (seat.windowPrice === seat.aislePrice && seat.middlePrice === 0) {
+        return `follows the order ${seat.seatSeating.slice(0, aisles + 1).join("-")}, and the price is $${seat.windowPrice} for window and aisle seats, while middle seats are free.`;
+      }
+      if (seat.windowPrice === 0 && seat.middlePrice === seat.aislePrice) {
+        return `follows the order ${seat.seatSeating.slice(0, aisles + 1).join("-")}, and the price is $${seat.middlePrice} for middle and aisle seats, while window seats are free.`;
+      }
+      if (seat.windowPrice !== 0 && seat.middlePrice === 0 && seat.aislePrice === 0) {
+        return `follows the order ${seat.seatSeating.slice(0, aisles + 1).join("-")}, and the price is $${seat.windowPrice} for window seats, while middle and aisle seats are free.`;
+      }
+      if (seat.windowPrice === 0 && seat.middlePrice !== 0 && seat.aislePrice === 0) {
+        return `follows the order ${seat.seatSeating.slice(0, aisles + 1).join("-")}, and the price is $${seat.middlePrice} for middle seats, while window and aisle seats are free.`;
+      }
+      if (seat.windowPrice === 0 && seat.middlePrice === 0 && seat.aislePrice !== 0) {
+        return `follows the order ${seat.seatSeating.slice(0, aisles + 1).join("-")}, and the price is $${seat.aislePrice} for aisle seats, while window and middle seats are free.`;
+      }
+    };
+
+    const extraLegroomDetails = (seat) => {
+      if (seat.extraLegroom) {
+        return `All the seats in this row ${seat.startRow !== seat.endRow ? "range" : ""} provide extra legroom.`;
+      }
+      return "";
+    };
+  
+    return (
+      <li key={seatIndex}>
+        {seat.startRow !== seat.endRow
+          ? (seat.windowPrice !== 0 && seat.middlePrice !== 0 && seat.aislePrice !== 0
+              ? `${renderRowRange(seat.startRow, seat.endRow)} ${renderPricingDetails(seat)} ${extraLegroomDetails(seat)}`
+              : `${renderRowRange(seat.startRow, seat.endRow)} ${renderFreeSeatsDetails(seat)} ${extraLegroomDetails(seat)}`)
+          : (seat.windowPrice !== 0 && seat.middlePrice !== 0 && seat.aislePrice !== 0
+              ? `${renderSingleRow(seat.startRow)} ${renderPricingDetails(seat)} ${extraLegroomDetails(seat)}`
+              : `${renderSingleRow(seat.startRow)} ${renderFreeSeatsDetails(seat)} ${extraLegroomDetails(seat)}`)}
+      </li>
+    );
+  }
+
   const modalContent = () => {
-
-    function renderSeatPricing(seat, seatIndex) {
-      const renderRowRange = (start, end) => `The rows ${start} to ${end}`;
-      const renderSingleRow = (row) => `Row ${row}`;
-    
-      const renderPricingDetails = (seat) => {
-        if (seat.windowPrice === seat.middlePrice && seat.middlePrice === seat.aislePrice) {
-          return `follows the order ${seat.seatSeating.join("-")}, and the price is $${seat.windowPrice} for any seat.`;
-        }
-        if (seat.windowPrice !== seat.middlePrice && seat.middlePrice !== seat.aislePrice && seat.windowPrice !== seat.aislePrice) {
-          return `follows the order ${seat.seatSeating.join("-")}, and the price is $${seat.windowPrice} for window seats, $${seat.middlePrice} for middle seats, and $${seat.aislePrice} for aisle seats.`;
-        }
-        if (seat.windowPrice === seat.aislePrice && seat.windowPrice !== seat.middlePrice) {
-          return `follows the order ${seat.seatSeating.join("-")}, and the price is $${seat.windowPrice} for window and aisle seats, and $${seat.middlePrice} for middle seats.`;
-        }
-        if (seat.windowPrice === seat.middlePrice && seat.middlePrice !== seat.aislePrice) {
-          return `follows the order ${seat.seatSeating.join("-")}, and the price is $${seat.windowPrice} for window and middle seats, and $${seat.aislePrice} for aisle seats.`;
-        }
-        if (seat.middlePrice === seat.aislePrice && seat.windowPrice !== seat.middlePrice) {
-          return `follows the order ${seat.seatSeating.join("-")}, and the price is $${seat.middlePrice} for middle and aisle seats, and $${seat.windowPrice} for window seats.`;
-        }
-      };
-    
-      const renderFreeSeatsDetails = (seat) => {
-        if (seat.windowPrice === 0 && seat.middlePrice === 0 && seat.aislePrice === 0) {
-          return `follows the order ${seat.seatSeating.join("-")}, and all seats are free.`;
-        }
-        if (seat.windowPrice === 0 && seat.middlePrice !== 0 && seat.aislePrice !== 0 && seat.middlePrice !== seat.aislePrice) {
-          return `follows the order ${seat.seatSeating.join("-")}, and the price is $${seat.middlePrice} for middle seats and $${seat.aislePrice} for aisle seats, while window seats are free.`;
-        }
-        if (seat.windowPrice !== 0 && seat.middlePrice === 0 && seat.aislePrice !== 0 && seat.windowPrice !== seat.aislePrice) {
-          return `follows the order ${seat.seatSeating.join("-")}, and the price is $${seat.windowPrice} for window seats and $${seat.aislePrice} for aisle seats, while middle seats are free.`;
-        }
-        if (seat.windowPrice !== 0 && seat.middlePrice !== 0 && seat.aislePrice === 0 && seat.windowPrice !== seat.middlePrice) {
-          return `follows the order ${seat.seatSeating.join("-")}, and the price is $${seat.windowPrice} for window seats and $${seat.middlePrice} for middle seats, while aisle seats are free.`;
-        }
-        if (seat.windowPrice === seat.middlePrice && seat.aislePrice === 0) {
-          return `follows the order ${seat.seatSeating.join("-")}, and the price is $${seat.windowPrice} for window and middle seats, while aisle seats are free.`;
-        }
-        if (seat.windowPrice === seat.aislePrice && seat.middlePrice === 0) {
-          return `follows the order ${seat.seatSeating.join("-")}, and the price is $${seat.windowPrice} for window and aisle seats, while middle seats are free.`;
-        }
-        if (seat.windowPrice === 0 && seat.middlePrice === seat.aislePrice) {
-          return `follows the order ${seat.seatSeating.join("-")}, and the price is $${seat.middlePrice} for middle and aisle seats, while window seats are free.`;
-        }
-        if (seat.windowPrice !== 0 && seat.middlePrice === 0 && seat.aislePrice === 0) {
-          return `follows the order ${seat.seatSeating.join("-")}, and the price is $${seat.windowPrice} for window seats, while middle and aisle seats are free.`;
-        }
-        if (seat.windowPrice === 0 && seat.middlePrice !== 0 && seat.aislePrice === 0) {
-          return `follows the order ${seat.seatSeating.join("-")}, and the price is $${seat.middlePrice} for middle seats, while window and aisle seats are free.`;
-        }
-        if (seat.windowPrice === 0 && seat.middlePrice === 0 && seat.aislePrice !== 0) {
-          return `follows the order ${seat.seatSeating.join("-")}, and the price is $${seat.aislePrice} for aisle seats, while window and middle seats are free.`;
-        }
-      };
-
-      const extraLegroomDetails = (seat) => {
-        if (seat.extraLegroom) {
-          return `All the seats in this row ${seat.startRow !== seat.endRow ? "range" : ""} provide extra legroom.`;
-        }
-        return "";
-      };
-    
-      return (
-        <li key={seatIndex}>
-          {seat.startRow !== seat.endRow
-            ? (seat.windowPrice !== 0 && seat.middlePrice !== 0 && seat.aislePrice !== 0
-                ? `${renderRowRange(seat.startRow, seat.endRow)} ${renderPricingDetails(seat)} ${extraLegroomDetails(seat)}`
-                : `${renderRowRange(seat.startRow, seat.endRow)} ${renderFreeSeatsDetails(seat)} ${extraLegroomDetails(seat)}`)
-            : (seat.windowPrice !== 0 && seat.middlePrice !== 0 && seat.aislePrice !== 0
-                ? `${renderSingleRow(seat.startRow)} ${renderPricingDetails(seat)} ${extraLegroomDetails(seat)}`
-                : `${renderSingleRow(seat.startRow)} ${renderFreeSeatsDetails(seat)} ${extraLegroomDetails(seat)}`)}
-        </li>
-      );
-    }
 
     let cabinClassNumber = 0;
     let rowNumber = 0;
@@ -417,7 +427,7 @@ function AddFlight() {
                 if (!cabinClass.disabled) {
                   let seatsArray = [];
                   seatsArray.push(cabinClass)
-                  let cabinClassArray = seatingFormCabins(seatsArray, cabinClass.seating[0].startRow - 1);
+                  let cabinClassArray = seatingFormCabins(seatsArray, cabinClass.seating[0].startRow - 1, aisles);
                   return (
                     <div key={cabinIndex}>
                       <div className="mt-5 mb-5" style = {{color: "#1B273A", fontSize: "20px", fontWeight: 600, lineHeight: "28.8px", textAlign: "left", textUnderlinePosition: "from-font", textDecorationSkipInk: "none"}}>
