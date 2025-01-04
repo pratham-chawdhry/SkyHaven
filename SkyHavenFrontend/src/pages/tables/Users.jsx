@@ -20,9 +20,9 @@ const columnName = [
         }],
         "cellStyle": {
             display: "inline-block",
-            backgroundColor: "#FFE5CC", // Light orange background
+            backgroundColor: "#FFE5CC", 
             whiteSpace: "nowrap",
-            color: "#FF6700", // Orange text color
+            color: "#FF6700",
             fontWeight: 600,
             padding: "4px 8px",
             borderRadius: "12px",
