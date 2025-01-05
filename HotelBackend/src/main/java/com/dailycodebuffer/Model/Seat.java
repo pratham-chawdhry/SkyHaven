@@ -12,4 +12,5 @@ public class Seat {
     private String seatClass;
     private String seatNumber;
     private String food;
+    private Boolean extraLegroom;
 }

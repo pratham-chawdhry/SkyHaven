@@ -14,9 +14,9 @@ public class Seating {
     private Integer numberOfRows;
     private Integer startRow;
     private Integer endRow;
-    private Integer aislePrice;
-    private Integer middlePrice;
-    private Integer windowPrice;
+    private Long aislePrice;
+    private Long middlePrice;
+    private Long windowPrice;
     private Boolean extraLegroom;
 
     @ElementCollection

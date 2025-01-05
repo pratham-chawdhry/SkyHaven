@@ -7,5 +7,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface CabinClassListRepo extends JpaRepository<CabinClassList, Long> {
-//    public CabinClassList findAllByAirline(Airline airline);
+    public CabinClassList findById(long id);
 }

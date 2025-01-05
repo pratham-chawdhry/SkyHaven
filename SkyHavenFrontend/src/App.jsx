@@ -15,6 +15,7 @@ import AirplaneConfigurations from './pages/tables/AirplaneConfigurations'
 import AddAirport from './pages/add/addAirport'
 import AddAirline from './pages/add/addAirline'
 import Users from './pages/tables/Users'
+import Seats from './pages/tables/Seats'
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
               <Route path="/airlines/table" element={<Airlines />} />
               <Route path="/flights/table" element={<Flights />} />
               <Route path="/airports/table" element={<Airports />} />
+              <Route path="/seats/table" element={<Seats />} />
               <Route path="/users/table" element={<Users />} />
               <Route path="/airplaneConfigurations/table" element={<AirplaneConfigurations />} />
               <Route path="/airplaneConfigurations/add" element={<AddAirplaneConfigurations />} />

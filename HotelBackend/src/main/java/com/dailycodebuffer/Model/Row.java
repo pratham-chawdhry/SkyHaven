@@ -27,4 +27,8 @@ public class Row {
     @ElementCollection
     @CollectionTable(name = "seats", joinColumns = @JoinColumn(name = "row_id"))
     private List<Seat> seats = new ArrayList<>();
+
+    public String toString() {
+        return "Row [id=" + id + ", seatRowNumber=" + seatRowNumber + ", seats=" + seats + "]";
+    }
 }

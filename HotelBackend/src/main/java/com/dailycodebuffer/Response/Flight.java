@@ -1,6 +1,7 @@
 package com.dailycodebuffer.Response;
 
 import com.dailycodebuffer.Model.Airline;
+import com.dailycodebuffer.Model.CabinClassList;
 import com.dailycodebuffer.Model.Row;
 import com.dailycodebuffer.Request.Airport;
 import com.fasterxml.jackson.annotation.JsonBackReference;
@@ -44,13 +45,15 @@ public class Flight{
 
     @Setter
     @OneToMany(mappedBy = "flight", cascade = CascadeType.ALL)
-    @JsonIgnore
     private List<Row> rows = new ArrayList<>();
 
     @ManyToOne
     @JoinColumn(name = "airline_id", nullable = false)
-    @JsonManagedReference
     private Airline airline;
+
+    @ManyToOne
+    @JoinColumn(name = "cabinClassList_id", nullable = false)
+    private CabinClassList cabinClassList;
 
     @OneToMany(mappedBy = "flight", cascade = CascadeType.ALL)
     private List<FlightCabin> flightCabins = new ArrayList<>();
@@ -66,6 +69,8 @@ public class Flight{
                 ", departureTime=" + departureTime +
                 ", flightNumber=" + flightNumber +
                 ", aircraftModel=" + aircraftModel +
-                ", airline=" + airline + "]";
+                ", airline=" + airline +
+                ", rows=" + rows +
+                "]";
     }
 }

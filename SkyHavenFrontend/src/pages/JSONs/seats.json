@@ -1,0 +1,3441 @@
+{
+    "id": 502,
+    "terminalArrival": null,
+    "airportArrival": {
+        "airport_id": 9,
+        "airportName": "Charles de Gaulle Airport",
+        "city": "Paris",
+        "state": "",
+        "country": "France",
+        "iataCode": "CDG",
+        "timezone": "Europe/Paris",
+        "dst": "Y",
+        "terminals": [
+            {
+                "terminalId": 31,
+                "terminalName": "Terminal 1"
+            },
+            {
+                "terminalId": 32,
+                "terminalName": "Terminal 2 (2A to 2G)"
+            },
+            {
+                "terminalId": 33,
+                "terminalName": "Terminal 3"
+            }
+        ]
+    },
+    "terminalDeparture": null,
+    "airportDeparture": {
+        "airport_id": 26,
+        "airportName": "Shanghai Hongqiao International Airport",
+        "city": "Shanghai",
+        "state": "",
+        "country": "China",
+        "iataCode": "SHA",
+        "timezone": "Asia/Shanghai",
+        "dst": "N",
+        "terminals": [
+            {
+                "terminalId": 70,
+                "terminalName": "Terminal 1"
+            },
+            {
+                "terminalId": 71,
+                "terminalName": "Terminal 2"
+            }
+        ]
+    },
+    "arrivalTime": "2025-03-15T18:49:14.48992",
+    "departureTime": "2025-03-15T12:49:14.48992",
+    "flightNumber": "BA747",
+    "aircraftModel": null,
+    "rows": [
+        {
+            "id": 102,
+            "seatRowNumber": 1,
+            "seats": [
+                {
+                    "seatType": "window",
+                    "seatPrice": 100,
+                    "seatStatus": "Occupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "1A",
+                    "food": "Fish & Bacon",
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 100,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "1B",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 100,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "1C",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 100,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "1D",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 100,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "1E",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "window",
+                    "seatPrice": 100,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "1F",
+                    "food": null,
+                    "extraLegroom": true
+                }
+            ]
+        },
+        {
+            "id": 103,
+            "seatRowNumber": 2,
+            "seats": [
+                {
+                    "seatType": "window",
+                    "seatPrice": 100,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "2A",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 100,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "2B",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 100,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "2C",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 100,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "2D",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 100,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "2E",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "window",
+                    "seatPrice": 100,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "2F",
+                    "food": null,
+                    "extraLegroom": true
+                }
+            ]
+        },
+        {
+            "id": 104,
+            "seatRowNumber": 3,
+            "seats": [
+                {
+                    "seatType": "window",
+                    "seatPrice": 100,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "3A",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 100,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "3B",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 100,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "3C",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 100,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "3D",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 100,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "3E",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "window",
+                    "seatPrice": 100,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "3F",
+                    "food": null,
+                    "extraLegroom": true
+                }
+            ]
+        },
+        {
+            "id": 105,
+            "seatRowNumber": 4,
+            "seats": [
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 45,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "4A",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 45,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "4B",
+                    "food": null,
+                    "extraLegroom": true
+                }
+            ]
+        },
+        {
+            "id": 106,
+            "seatRowNumber": 5,
+            "seats": [
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 45,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "5A",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 45,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "5B",
+                    "food": null,
+                    "extraLegroom": true
+                }
+            ]
+        },
+        {
+            "id": 107,
+            "seatRowNumber": 6,
+            "seats": [
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 45,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "6A",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 45,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "6B",
+                    "food": null,
+                    "extraLegroom": true
+                }
+            ]
+        },
+        {
+            "id": 108,
+            "seatRowNumber": 7,
+            "seats": [
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 45,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "7A",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 45,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "7B",
+                    "food": null,
+                    "extraLegroom": true
+                }
+            ]
+        },
+        {
+            "id": 109,
+            "seatRowNumber": 8,
+            "seats": [
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 45,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "8A",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 45,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "8B",
+                    "food": null,
+                    "extraLegroom": true
+                }
+            ]
+        },
+        {
+            "id": 110,
+            "seatRowNumber": 9,
+            "seats": [
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 45,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "9A",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 45,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "9B",
+                    "food": null,
+                    "extraLegroom": true
+                }
+            ]
+        },
+        {
+            "id": 111,
+            "seatRowNumber": 10,
+            "seats": [
+                {
+                    "seatType": "window",
+                    "seatPrice": 90,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "10A",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "middle",
+                    "seatPrice": 90,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "10B",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 90,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "10C",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 90,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "10D",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "middle",
+                    "seatPrice": 90,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "10E",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "window",
+                    "seatPrice": 90,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "10F",
+                    "food": null,
+                    "extraLegroom": false
+                }
+            ]
+        },
+        {
+            "id": 112,
+            "seatRowNumber": 11,
+            "seats": [
+                {
+                    "seatType": "window",
+                    "seatPrice": 90,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "11A",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "middle",
+                    "seatPrice": 90,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "11B",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 90,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "11C",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 90,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "11D",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "middle",
+                    "seatPrice": 90,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "11E",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "window",
+                    "seatPrice": 90,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "11F",
+                    "food": null,
+                    "extraLegroom": false
+                }
+            ]
+        },
+        {
+            "id": 113,
+            "seatRowNumber": 12,
+            "seats": [
+                {
+                    "seatType": "window",
+                    "seatPrice": 90,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "12A",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "middle",
+                    "seatPrice": 90,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "12B",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 90,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "12C",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 90,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "12D",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "middle",
+                    "seatPrice": 90,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "12E",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "window",
+                    "seatPrice": 90,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "12F",
+                    "food": null,
+                    "extraLegroom": false
+                }
+            ]
+        },
+        {
+            "id": 114,
+            "seatRowNumber": 13,
+            "seats": [
+                {
+                    "seatType": "window",
+                    "seatPrice": 90,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "13A",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "middle",
+                    "seatPrice": 90,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "13B",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 90,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "13C",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 90,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "13D",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "middle",
+                    "seatPrice": 90,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "13E",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "window",
+                    "seatPrice": 90,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "13F",
+                    "food": null,
+                    "extraLegroom": false
+                }
+            ]
+        },
+        {
+            "id": 115,
+            "seatRowNumber": 14,
+            "seats": [
+                {
+                    "seatType": "window",
+                    "seatPrice": 90,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "14A",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "middle",
+                    "seatPrice": 90,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "14B",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 90,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "14C",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 90,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "14D",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "middle",
+                    "seatPrice": 90,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "14E",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "window",
+                    "seatPrice": 90,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "14F",
+                    "food": null,
+                    "extraLegroom": false
+                }
+            ]
+        },
+        {
+            "id": 116,
+            "seatRowNumber": 15,
+            "seats": [
+                {
+                    "seatType": "window",
+                    "seatPrice": 90,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "15A",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "middle",
+                    "seatPrice": 90,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "15B",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 90,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "15C",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 90,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "15D",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "middle",
+                    "seatPrice": 90,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "15E",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "window",
+                    "seatPrice": 90,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "15F",
+                    "food": null,
+                    "extraLegroom": false
+                }
+            ]
+        },
+        {
+            "id": 117,
+            "seatRowNumber": 16,
+            "seats": [
+                {
+                    "seatType": "window",
+                    "seatPrice": 90,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "16A",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "middle",
+                    "seatPrice": 90,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "16B",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 90,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "16C",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 90,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "16D",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "middle",
+                    "seatPrice": 90,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "16E",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "window",
+                    "seatPrice": 90,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "16F",
+                    "food": null,
+                    "extraLegroom": false
+                }
+            ]
+        },
+        {
+            "id": 118,
+            "seatRowNumber": 17,
+            "seats": [
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 150,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "17A",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 150,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "17B",
+                    "food": null,
+                    "extraLegroom": true
+                }
+            ]
+        },
+        {
+            "id": 119,
+            "seatRowNumber": 18,
+            "seats": [
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 150,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "18A",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 150,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "18B",
+                    "food": null,
+                    "extraLegroom": true
+                }
+            ]
+        },
+        {
+            "id": 120,
+            "seatRowNumber": 19,
+            "seats": [
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 150,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "19A",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 150,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "19B",
+                    "food": null,
+                    "extraLegroom": true
+                }
+            ]
+        },
+        {
+            "id": 121,
+            "seatRowNumber": 20,
+            "seats": [
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 150,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "20A",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 150,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "20B",
+                    "food": null,
+                    "extraLegroom": true
+                }
+            ]
+        },
+        {
+            "id": 122,
+            "seatRowNumber": 21,
+            "seats": [
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 150,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "21A",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 150,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "21B",
+                    "food": null,
+                    "extraLegroom": true
+                }
+            ]
+        },
+        {
+            "id": 123,
+            "seatRowNumber": 22,
+            "seats": [
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 150,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "22A",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 150,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "22B",
+                    "food": null,
+                    "extraLegroom": true
+                }
+            ]
+        },
+        {
+            "id": 124,
+            "seatRowNumber": 23,
+            "seats": [
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 150,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "23A",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 150,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "23B",
+                    "food": null,
+                    "extraLegroom": true
+                }
+            ]
+        },
+        {
+            "id": 125,
+            "seatRowNumber": 24,
+            "seats": [
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 150,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "24A",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 150,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "24B",
+                    "food": null,
+                    "extraLegroom": true
+                }
+            ]
+        },
+        {
+            "id": 126,
+            "seatRowNumber": 25,
+            "seats": [
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 150,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "25A",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 150,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "25B",
+                    "food": null,
+                    "extraLegroom": true
+                }
+            ]
+        },
+        {
+            "id": 127,
+            "seatRowNumber": 26,
+            "seats": [
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 150,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "26A",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 150,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "26B",
+                    "food": null,
+                    "extraLegroom": true
+                }
+            ]
+        },
+        {
+            "id": 128,
+            "seatRowNumber": 27,
+            "seats": [
+                {
+                    "seatType": "window",
+                    "seatPrice": 120,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "27A",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 120,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "27B",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 120,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "27C",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 120,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "27D",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 120,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "27E",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "window",
+                    "seatPrice": 120,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "27F",
+                    "food": null,
+                    "extraLegroom": true
+                }
+            ]
+        },
+        {
+            "id": 129,
+            "seatRowNumber": 28,
+            "seats": [
+                {
+                    "seatType": "window",
+                    "seatPrice": 120,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "28A",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 120,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "28B",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 120,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "28C",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 120,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "28D",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 120,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "28E",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "window",
+                    "seatPrice": 120,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "28F",
+                    "food": null,
+                    "extraLegroom": true
+                }
+            ]
+        },
+        {
+            "id": 130,
+            "seatRowNumber": 29,
+            "seats": [
+                {
+                    "seatType": "window",
+                    "seatPrice": 120,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "29A",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 120,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "29B",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 120,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "29C",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 120,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "29D",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 120,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "29E",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "window",
+                    "seatPrice": 120,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "29F",
+                    "food": null,
+                    "extraLegroom": true
+                }
+            ]
+        },
+        {
+            "id": 131,
+            "seatRowNumber": 30,
+            "seats": [
+                {
+                    "seatType": "window",
+                    "seatPrice": 120,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "30A",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 120,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "30B",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 120,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "30C",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 120,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "30D",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 120,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "30E",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "window",
+                    "seatPrice": 120,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "30F",
+                    "food": null,
+                    "extraLegroom": true
+                }
+            ]
+        },
+        {
+            "id": 132,
+            "seatRowNumber": 31,
+            "seats": [
+                {
+                    "seatType": "window",
+                    "seatPrice": 120,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "31A",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 120,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "31B",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 120,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "31C",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 120,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "31D",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 120,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "31E",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "window",
+                    "seatPrice": 120,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "First Class",
+                    "seatNumber": "31F",
+                    "food": null,
+                    "extraLegroom": true
+                }
+            ]
+        },
+        {
+            "id": 133,
+            "seatRowNumber": 32,
+            "seats": [
+                {
+                    "seatType": "window",
+                    "seatPrice": 0,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Business Class",
+                    "seatNumber": "32A",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 0,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Business Class",
+                    "seatNumber": "32B",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "window",
+                    "seatPrice": 0,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Business Class",
+                    "seatNumber": "32C",
+                    "food": null,
+                    "extraLegroom": false
+                }
+            ]
+        },
+        {
+            "id": 134,
+            "seatRowNumber": 33,
+            "seats": [
+                {
+                    "seatType": "window",
+                    "seatPrice": 0,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Business Class",
+                    "seatNumber": "33A",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "middle",
+                    "seatPrice": 0,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Business Class",
+                    "seatNumber": "33B",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 0,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Business Class",
+                    "seatNumber": "33C",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 0,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Business Class",
+                    "seatNumber": "33D",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "middle",
+                    "seatPrice": 0,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Business Class",
+                    "seatNumber": "33E",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 0,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Business Class",
+                    "seatNumber": "33F",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 0,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Business Class",
+                    "seatNumber": "33G",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "middle",
+                    "seatPrice": 0,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Business Class",
+                    "seatNumber": "33H",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "window",
+                    "seatPrice": 0,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Business Class",
+                    "seatNumber": "33I",
+                    "food": null,
+                    "extraLegroom": true
+                }
+            ]
+        },
+        {
+            "id": 135,
+            "seatRowNumber": 34,
+            "seats": [
+                {
+                    "seatType": "window",
+                    "seatPrice": 0,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Business Class",
+                    "seatNumber": "34A",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "middle",
+                    "seatPrice": 0,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Business Class",
+                    "seatNumber": "34B",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 0,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Business Class",
+                    "seatNumber": "34C",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 0,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Business Class",
+                    "seatNumber": "34D",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "middle",
+                    "seatPrice": 0,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Business Class",
+                    "seatNumber": "34E",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 0,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Business Class",
+                    "seatNumber": "34F",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 0,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Business Class",
+                    "seatNumber": "34G",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "middle",
+                    "seatPrice": 0,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Business Class",
+                    "seatNumber": "34H",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "window",
+                    "seatPrice": 0,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Business Class",
+                    "seatNumber": "34I",
+                    "food": null,
+                    "extraLegroom": true
+                }
+            ]
+        },
+        {
+            "id": 136,
+            "seatRowNumber": 35,
+            "seats": [
+                {
+                    "seatType": "window",
+                    "seatPrice": 10,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Business Class",
+                    "seatNumber": "35A",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 10,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Business Class",
+                    "seatNumber": "35B",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "window",
+                    "seatPrice": 10,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Business Class",
+                    "seatNumber": "35C",
+                    "food": null,
+                    "extraLegroom": true
+                }
+            ]
+        },
+        {
+            "id": 137,
+            "seatRowNumber": 36,
+            "seats": [
+                {
+                    "seatType": "window",
+                    "seatPrice": 10,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Business Class",
+                    "seatNumber": "36A",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 10,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Business Class",
+                    "seatNumber": "36B",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "window",
+                    "seatPrice": 10,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Business Class",
+                    "seatNumber": "36C",
+                    "food": null,
+                    "extraLegroom": true
+                }
+            ]
+        },
+        {
+            "id": 138,
+            "seatRowNumber": 37,
+            "seats": [
+                {
+                    "seatType": "window",
+                    "seatPrice": 10,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Business Class",
+                    "seatNumber": "37A",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 10,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Business Class",
+                    "seatNumber": "37B",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "window",
+                    "seatPrice": 10,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Business Class",
+                    "seatNumber": "37C",
+                    "food": null,
+                    "extraLegroom": true
+                }
+            ]
+        },
+        {
+            "id": 139,
+            "seatRowNumber": 38,
+            "seats": [
+                {
+                    "seatType": "window",
+                    "seatPrice": 10,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Business Class",
+                    "seatNumber": "38A",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 10,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Business Class",
+                    "seatNumber": "38B",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "window",
+                    "seatPrice": 10,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Business Class",
+                    "seatNumber": "38C",
+                    "food": null,
+                    "extraLegroom": true
+                }
+            ]
+        },
+        {
+            "id": 140,
+            "seatRowNumber": 39,
+            "seats": [
+                {
+                    "seatType": "window",
+                    "seatPrice": 10,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Business Class",
+                    "seatNumber": "39A",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 10,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Business Class",
+                    "seatNumber": "39B",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "window",
+                    "seatPrice": 10,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Business Class",
+                    "seatNumber": "39C",
+                    "food": null,
+                    "extraLegroom": true
+                }
+            ]
+        },
+        {
+            "id": 141,
+            "seatRowNumber": 40,
+            "seats": [
+                {
+                    "seatType": "window",
+                    "seatPrice": 10,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Business Class",
+                    "seatNumber": "40A",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 10,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Business Class",
+                    "seatNumber": "40B",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "window",
+                    "seatPrice": 10,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Business Class",
+                    "seatNumber": "40C",
+                    "food": null,
+                    "extraLegroom": true
+                }
+            ]
+        },
+        {
+            "id": 142,
+            "seatRowNumber": 51,
+            "seats": [
+                {
+                    "seatType": "window",
+                    "seatPrice": 10,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "51A",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "middle",
+                    "seatPrice": 10,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "51B",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 10,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "51C",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 10,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "51D",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "middle",
+                    "seatPrice": 10,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "51E",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "window",
+                    "seatPrice": 10,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "51F",
+                    "food": null,
+                    "extraLegroom": false
+                }
+            ]
+        },
+        {
+            "id": 143,
+            "seatRowNumber": 52,
+            "seats": [
+                {
+                    "seatType": "window",
+                    "seatPrice": 10,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "52A",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "middle",
+                    "seatPrice": 10,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "52B",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 10,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "52C",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 10,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "52D",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "middle",
+                    "seatPrice": 10,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "52E",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "window",
+                    "seatPrice": 10,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "52F",
+                    "food": null,
+                    "extraLegroom": false
+                }
+            ]
+        },
+        {
+            "id": 144,
+            "seatRowNumber": 53,
+            "seats": [
+                {
+                    "seatType": "window",
+                    "seatPrice": 10,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "53A",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "middle",
+                    "seatPrice": 10,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "53B",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 10,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "53C",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 10,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "53D",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "middle",
+                    "seatPrice": 10,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "53E",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "window",
+                    "seatPrice": 10,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "53F",
+                    "food": null,
+                    "extraLegroom": false
+                }
+            ]
+        },
+        {
+            "id": 145,
+            "seatRowNumber": 54,
+            "seats": [
+                {
+                    "seatType": "window",
+                    "seatPrice": 10,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "54A",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "middle",
+                    "seatPrice": 10,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "54B",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 10,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "54C",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 10,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "54D",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "middle",
+                    "seatPrice": 10,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "54E",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "window",
+                    "seatPrice": 10,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "54F",
+                    "food": null,
+                    "extraLegroom": false
+                }
+            ]
+        },
+        {
+            "id": 146,
+            "seatRowNumber": 55,
+            "seats": [
+                {
+                    "seatType": "window",
+                    "seatPrice": 10,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "55A",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "middle",
+                    "seatPrice": 10,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "55B",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 10,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "55C",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 10,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "55D",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "middle",
+                    "seatPrice": 10,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "55E",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "window",
+                    "seatPrice": 10,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "55F",
+                    "food": null,
+                    "extraLegroom": false
+                }
+            ]
+        },
+        {
+            "id": 147,
+            "seatRowNumber": 56,
+            "seats": [
+                {
+                    "seatType": "window",
+                    "seatPrice": 10,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "56A",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "middle",
+                    "seatPrice": 10,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "56B",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 10,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "56C",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 10,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "56D",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "middle",
+                    "seatPrice": 10,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "56E",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "window",
+                    "seatPrice": 10,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "56F",
+                    "food": null,
+                    "extraLegroom": false
+                }
+            ]
+        },
+        {
+            "id": 148,
+            "seatRowNumber": 57,
+            "seats": [
+                {
+                    "seatType": "window",
+                    "seatPrice": 10,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "57A",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "middle",
+                    "seatPrice": 10,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "57B",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 10,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "57C",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 10,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "57D",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "middle",
+                    "seatPrice": 10,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "57E",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "window",
+                    "seatPrice": 10,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "57F",
+                    "food": null,
+                    "extraLegroom": false
+                }
+            ]
+        },
+        {
+            "id": 149,
+            "seatRowNumber": 58,
+            "seats": [
+                {
+                    "seatType": "window",
+                    "seatPrice": 10,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "58A",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "middle",
+                    "seatPrice": 10,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "58B",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 10,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "58C",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 10,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "58D",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "middle",
+                    "seatPrice": 10,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "58E",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "window",
+                    "seatPrice": 10,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "58F",
+                    "food": null,
+                    "extraLegroom": false
+                }
+            ]
+        },
+        {
+            "id": 150,
+            "seatRowNumber": 59,
+            "seats": [
+                {
+                    "seatType": "window",
+                    "seatPrice": 10,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "59A",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "middle",
+                    "seatPrice": 10,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "59B",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 10,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "59C",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 10,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "59D",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "middle",
+                    "seatPrice": 10,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "59E",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "window",
+                    "seatPrice": 10,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "59F",
+                    "food": null,
+                    "extraLegroom": false
+                }
+            ]
+        },
+        {
+            "id": 151,
+            "seatRowNumber": 60,
+            "seats": [
+                {
+                    "seatType": "window",
+                    "seatPrice": 10,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "60A",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "middle",
+                    "seatPrice": 10,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "60B",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 10,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "60C",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 10,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "60D",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "middle",
+                    "seatPrice": 10,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "60E",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "window",
+                    "seatPrice": 10,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "60F",
+                    "food": null,
+                    "extraLegroom": false
+                }
+            ]
+        },
+        {
+            "id": 152,
+            "seatRowNumber": 61,
+            "seats": [
+                {
+                    "seatType": "window",
+                    "seatPrice": 30,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "61A",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "middle",
+                    "seatPrice": 30,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "61B",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 30,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "61C",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 30,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "61D",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "middle",
+                    "seatPrice": 30,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "61E",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "window",
+                    "seatPrice": 30,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "61F",
+                    "food": null,
+                    "extraLegroom": true
+                }
+            ]
+        },
+        {
+            "id": 153,
+            "seatRowNumber": 62,
+            "seats": [
+                {
+                    "seatType": "window",
+                    "seatPrice": 30,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "62A",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "middle",
+                    "seatPrice": 30,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "62B",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 30,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "62C",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 30,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "62D",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "middle",
+                    "seatPrice": 30,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "62E",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "window",
+                    "seatPrice": 30,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "62F",
+                    "food": null,
+                    "extraLegroom": true
+                }
+            ]
+        },
+        {
+            "id": 154,
+            "seatRowNumber": 63,
+            "seats": [
+                {
+                    "seatType": "window",
+                    "seatPrice": 30,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "63A",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "middle",
+                    "seatPrice": 30,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "63B",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 30,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "63C",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 30,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "63D",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "middle",
+                    "seatPrice": 30,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "63E",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "window",
+                    "seatPrice": 30,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "63F",
+                    "food": null,
+                    "extraLegroom": true
+                }
+            ]
+        },
+        {
+            "id": 155,
+            "seatRowNumber": 64,
+            "seats": [
+                {
+                    "seatType": "window",
+                    "seatPrice": 30,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "64A",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "middle",
+                    "seatPrice": 30,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "64B",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 30,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "64C",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 30,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "64D",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "middle",
+                    "seatPrice": 30,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "64E",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "window",
+                    "seatPrice": 30,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "64F",
+                    "food": null,
+                    "extraLegroom": true
+                }
+            ]
+        },
+        {
+            "id": 156,
+            "seatRowNumber": 65,
+            "seats": [
+                {
+                    "seatType": "window",
+                    "seatPrice": 30,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "65A",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "middle",
+                    "seatPrice": 30,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "65B",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 30,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "65C",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 30,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "65D",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "middle",
+                    "seatPrice": 30,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "65E",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "window",
+                    "seatPrice": 30,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "65F",
+                    "food": null,
+                    "extraLegroom": true
+                }
+            ]
+        },
+        {
+            "id": 157,
+            "seatRowNumber": 66,
+            "seats": [
+                {
+                    "seatType": "window",
+                    "seatPrice": 30,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "66A",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "middle",
+                    "seatPrice": 30,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "66B",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 30,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "66C",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 30,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "66D",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "middle",
+                    "seatPrice": 30,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "66E",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "window",
+                    "seatPrice": 30,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "66F",
+                    "food": null,
+                    "extraLegroom": true
+                }
+            ]
+        },
+        {
+            "id": 158,
+            "seatRowNumber": 67,
+            "seats": [
+                {
+                    "seatType": "window",
+                    "seatPrice": 30,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "67A",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "middle",
+                    "seatPrice": 30,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "67B",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 30,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "67C",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 30,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "67D",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "middle",
+                    "seatPrice": 30,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "67E",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "window",
+                    "seatPrice": 30,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "67F",
+                    "food": null,
+                    "extraLegroom": true
+                }
+            ]
+        },
+        {
+            "id": 159,
+            "seatRowNumber": 68,
+            "seats": [
+                {
+                    "seatType": "window",
+                    "seatPrice": 30,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "68A",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "middle",
+                    "seatPrice": 30,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "68B",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 30,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "68C",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 30,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "68D",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "middle",
+                    "seatPrice": 30,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "68E",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "window",
+                    "seatPrice": 30,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "68F",
+                    "food": null,
+                    "extraLegroom": true
+                }
+            ]
+        },
+        {
+            "id": 160,
+            "seatRowNumber": 69,
+            "seats": [
+                {
+                    "seatType": "window",
+                    "seatPrice": 30,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "69A",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "middle",
+                    "seatPrice": 30,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "69B",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 30,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "69C",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 30,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "69D",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "middle",
+                    "seatPrice": 30,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "69E",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "window",
+                    "seatPrice": 30,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "69F",
+                    "food": null,
+                    "extraLegroom": true
+                }
+            ]
+        },
+        {
+            "id": 161,
+            "seatRowNumber": 70,
+            "seats": [
+                {
+                    "seatType": "window",
+                    "seatPrice": 30,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "70A",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "middle",
+                    "seatPrice": 30,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "70B",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 30,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "70C",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 30,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "70D",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "middle",
+                    "seatPrice": 30,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "70E",
+                    "food": null,
+                    "extraLegroom": true
+                },
+                {
+                    "seatType": "window",
+                    "seatPrice": 30,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "70F",
+                    "food": null,
+                    "extraLegroom": true
+                }
+            ]
+        },
+        {
+            "id": 162,
+            "seatRowNumber": 71,
+            "seats": [
+                {
+                    "seatType": "window",
+                    "seatPrice": 100,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "71A",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 100,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "71B",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 100,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "71C",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 100,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "71D",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 100,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "71E",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "window",
+                    "seatPrice": 100,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "71F",
+                    "food": null,
+                    "extraLegroom": false
+                }
+            ]
+        },
+        {
+            "id": 163,
+            "seatRowNumber": 72,
+            "seats": [
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 10,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "72A",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 10,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "72B",
+                    "food": null,
+                    "extraLegroom": false
+                }
+            ]
+        },
+        {
+            "id": 164,
+            "seatRowNumber": 73,
+            "seats": [
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 10,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "73A",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 10,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "73B",
+                    "food": null,
+                    "extraLegroom": false
+                }
+            ]
+        },
+        {
+            "id": 165,
+            "seatRowNumber": 74,
+            "seats": [
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 10,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "74A",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 10,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "74B",
+                    "food": null,
+                    "extraLegroom": false
+                }
+            ]
+        },
+        {
+            "id": 166,
+            "seatRowNumber": 75,
+            "seats": [
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 10,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "75A",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 10,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "75B",
+                    "food": null,
+                    "extraLegroom": false
+                }
+            ]
+        },
+        {
+            "id": 167,
+            "seatRowNumber": 76,
+            "seats": [
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 10,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "76A",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 10,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "76B",
+                    "food": null,
+                    "extraLegroom": false
+                }
+            ]
+        },
+        {
+            "id": 168,
+            "seatRowNumber": 77,
+            "seats": [
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 10,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "77A",
+                    "food": null,
+                    "extraLegroom": false
+                },
+                {
+                    "seatType": "aisle",
+                    "seatPrice": 10,
+                    "seatStatus": "Unoccupied",
+                    "seatClass": "Economy Class",
+                    "seatNumber": "77B",
+                    "food": null,
+                    "extraLegroom": false
+                }
+            ]
+        }
+    ],
+    "airline": {
+        "id": 1,
+        "airlineName": "United Airlines",
+        "airlineCode": "UA",
+        "data": null,
+        "description": "United Airlines, Inc. is a major American airline headquartered in Chicago, Illinois. It was founded in 1926 and has since grown to become one of the largest airlines in the world, offering domestic and international flights to numerous destinations. United Airlines is known for its broad network, fleet diversity, and partnerships with global airline alliances such as Star Alliance. It provides a wide range of services to passengers, including various classes of service, in-flight entertainment, and loyalty programs such as MileagePlus, offering frequent flyers the chance to earn miles for travel rewards.",
+        "discounts": []
+    },
+    "cabinClassList": {
+        "id": 3,
+        "aisles": 2,
+        "airline": {
+            "id": 1,
+            "airlineName": "United Airlines",
+            "airlineCode": "UA",
+            "data": null,
+            "description": "United Airlines, Inc. is a major American airline headquartered in Chicago, Illinois. It was founded in 1926 and has since grown to become one of the largest airlines in the world, offering domestic and international flights to numerous destinations. United Airlines is known for its broad network, fleet diversity, and partnerships with global airline alliances such as Star Alliance. It provides a wide range of services to passengers, including various classes of service, in-flight entertainment, and loyalty programs such as MileagePlus, offering frequent flyers the chance to earn miles for travel rewards.",
+            "discounts": []
+        },
+        "cabinClasses": [
+            {
+                "id": 9,
+                "cabinName": "First Class",
+                "cabinCode": "FIR",
+                "disabled": false,
+                "seating": [
+                    {
+                        "id": 15,
+                        "numberOfRows": 3,
+                        "startRow": 1,
+                        "endRow": 3,
+                        "aislePrice": 100,
+                        "middlePrice": 100,
+                        "windowPrice": 100,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            2,
+                            2,
+                            2
+                        ]
+                    },
+                    {
+                        "id": 16,
+                        "numberOfRows": 6,
+                        "startRow": 4,
+                        "endRow": 9,
+                        "aislePrice": 45,
+                        "middlePrice": 45,
+                        "windowPrice": 45,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            0,
+                            2,
+                            0
+                        ]
+                    },
+                    {
+                        "id": 17,
+                        "numberOfRows": 7,
+                        "startRow": 10,
+                        "endRow": 16,
+                        "aislePrice": 90,
+                        "middlePrice": 90,
+                        "windowPrice": 90,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            3,
+                            0,
+                            3
+                        ]
+                    },
+                    {
+                        "id": 18,
+                        "numberOfRows": 10,
+                        "startRow": 17,
+                        "endRow": 26,
+                        "aislePrice": 150,
+                        "middlePrice": 150,
+                        "windowPrice": 150,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            0,
+                            2,
+                            0
+                        ]
+                    },
+                    {
+                        "id": 19,
+                        "numberOfRows": 5,
+                        "startRow": 27,
+                        "endRow": 31,
+                        "aislePrice": 120,
+                        "middlePrice": 120,
+                        "windowPrice": 120,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            2,
+                            2,
+                            2
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 10,
+                "cabinName": "Business Class",
+                "cabinCode": "BUS",
+                "disabled": false,
+                "seating": [
+                    {
+                        "id": 20,
+                        "numberOfRows": 1,
+                        "startRow": 32,
+                        "endRow": 32,
+                        "aislePrice": 0,
+                        "middlePrice": 0,
+                        "windowPrice": 0,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            1,
+                            1,
+                            1
+                        ]
+                    },
+                    {
+                        "id": 21,
+                        "numberOfRows": 2,
+                        "startRow": 33,
+                        "endRow": 34,
+                        "aislePrice": 0,
+                        "middlePrice": 0,
+                        "windowPrice": 0,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            3,
+                            3,
+                            3
+                        ]
+                    },
+                    {
+                        "id": 22,
+                        "numberOfRows": 6,
+                        "startRow": 35,
+                        "endRow": 40,
+                        "aislePrice": 10,
+                        "middlePrice": 10,
+                        "windowPrice": 10,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            1,
+                            1,
+                            1
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 11,
+                "cabinName": "Premium Economy Class",
+                "cabinCode": "PRE",
+                "disabled": true,
+                "seating": [
+                    {
+                        "id": 23,
+                        "numberOfRows": 4,
+                        "startRow": 41,
+                        "endRow": 44,
+                        "aislePrice": 0,
+                        "middlePrice": 0,
+                        "windowPrice": 0,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            0,
+                            2,
+                            0
+                        ]
+                    },
+                    {
+                        "id": 24,
+                        "numberOfRows": 6,
+                        "startRow": 45,
+                        "endRow": 50,
+                        "aislePrice": 30,
+                        "middlePrice": 30,
+                        "windowPrice": 30,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            1,
+                            1,
+                            1
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 12,
+                "cabinName": "Economy Class",
+                "cabinCode": "ECO",
+                "disabled": false,
+                "seating": [
+                    {
+                        "id": 25,
+                        "numberOfRows": 10,
+                        "startRow": 51,
+                        "endRow": 60,
+                        "aislePrice": 10,
+                        "middlePrice": 10,
+                        "windowPrice": 10,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            3,
+                            0,
+                            3
+                        ]
+                    },
+                    {
+                        "id": 26,
+                        "numberOfRows": 10,
+                        "startRow": 61,
+                        "endRow": 70,
+                        "aislePrice": 30,
+                        "middlePrice": 30,
+                        "windowPrice": 30,
+                        "extraLegroom": true,
+                        "seatSeating": [
+                            3,
+                            0,
+                            3
+                        ]
+                    },
+                    {
+                        "id": 27,
+                        "numberOfRows": 1,
+                        "startRow": 71,
+                        "endRow": 71,
+                        "aislePrice": 100,
+                        "middlePrice": 100,
+                        "windowPrice": 100,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            2,
+                            2,
+                            2
+                        ]
+                    },
+                    {
+                        "id": 28,
+                        "numberOfRows": 6,
+                        "startRow": 72,
+                        "endRow": 77,
+                        "aislePrice": 10,
+                        "middlePrice": 10,
+                        "windowPrice": 10,
+                        "extraLegroom": false,
+                        "seatSeating": [
+                            0,
+                            2,
+                            0
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "flightCabins": [
+        {
+            "flightCabinId": 1,
+            "cabinName": "First Class",
+            "cabinCode": "FIR",
+            "disabled": "false",
+            "startRow": 1,
+            "endRow": 2,
+            "price": 50000
+        },
+        {
+            "flightCabinId": 2,
+            "cabinName": "Premium Economy",
+            "cabinCode": "PRE",
+            "disabled": "false",
+            "startRow": 3,
+            "endRow": 5,
+            "price": 10000
+        },
+        {
+            "flightCabinId": 3,
+            "cabinName": "Economy Class",
+            "cabinCode": "ECO",
+            "disabled": "false",
+            "startRow": 6,
+            "endRow": 35,
+            "price": 5000
+        }
+    ]
+}

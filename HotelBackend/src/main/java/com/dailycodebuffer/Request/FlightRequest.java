@@ -22,6 +22,7 @@ public class FlightRequest{
     private String airportArrival;
     private String terminalDeparture;
     private String airportDeparture;
+    private Integer cabinClassListId;
 
     private LocalDateTime arrivalTime;
     private LocalDateTime departureTime;

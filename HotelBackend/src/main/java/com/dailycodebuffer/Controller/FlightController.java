@@ -1,12 +1,10 @@
 package com.dailycodebuffer.Controller;
 
-import com.dailycodebuffer.Model.Airline;
-import com.dailycodebuffer.Model.Row;
-import com.dailycodebuffer.Model.Seat;
+import com.dailycodebuffer.Model.*;
 import com.dailycodebuffer.Repository.AircraftModelRepo;
+import com.dailycodebuffer.Repository.CabinClassListRepo;
 import com.dailycodebuffer.Request.*;
 import com.dailycodebuffer.Response.Flight;
-import com.dailycodebuffer.Model.User;
 import com.dailycodebuffer.Repository.FlightRepo;
 import com.dailycodebuffer.Response.DefaultResponse;
 import com.dailycodebuffer.Response.FlightCabin;
@@ -46,6 +44,9 @@ public class FlightController {
     @Autowired
     private TerminalService terminalService;
 
+    @Autowired
+    private CabinClassListRepo cabinClassListRepo;
+
     private DefaultResponse messageMaker(String message, HttpStatus status, int statusCode) {
         DefaultResponse response = new DefaultResponse();
         response.setMessage(message);
@@ -54,30 +55,56 @@ public class FlightController {
         return response;
     }
 
-    private List<Row> flightSeats(List<Long> seats, Flight flight) {
+    private List<Row> flightSeats(Flight flight) {
         List<Row> rows = new ArrayList<>();
 
-        for (int i = 0; i < seats.size(); i++) {
-            Row row = new Row();
-            row.setFlight(flight);
-            row.setSeatRowNumber((long) i + 1);
+        long aisles = flight.getCabinClassList().getAisles();
 
-            List<Seat> seatsList = new ArrayList<>();
-
-            for (int j = 0; j < seats.get(i); j++) {
-                Seat seat = new Seat();
-                seat.setSeatNumber(row.getSeatRowNumber() + String.valueOf((char) (j + 65)));
-                seat.setSeatStatus("AVAILABLE");
-                seat.setSeatType("ECONOMY");
-                seat.setSeatPrice(100L);
-                seat.setSeatClass("AISLE");
-                seat.setFood("NONE");
-
-                seatsList.add(seat);
+        for (CabinClass cabinClass : flight.getCabinClassList().getCabinClasses()){
+            if (cabinClass.getDisabled()){
+                continue;
             }
+            else{
+                for (Seating seating : cabinClass.getSeating()){
+                    for (int i = seating.getStartRow(); i <= seating.getEndRow(); i++){
+                        Row row = new Row();
+                        List<Seat> seats = new ArrayList<>();
+                        char seatLetter = 'A';
 
-            row.setSeats(seatsList);
-            rows.add(row);
+                        row.setSeatRowNumber((long) i);
+                        row.setFlight(flight);
+
+                        for (int j = 0; j <= aisles; j++){
+                            for (int k = 0; k < seating.getSeatSeating()[j]; k++){
+                                Seat seat = new Seat();
+                                seat.setSeatNumber(i + String.valueOf(seatLetter));
+                                seatLetter += 1;
+
+                                if ((j == 0 && k == 0) || (j == aisles && k == seating.getSeatSeating()[j] - 1)){
+                                    seat.setSeatType("window");
+                                    seat.setSeatPrice(seating.getWindowPrice());
+                                }
+                                else if ((j != 0 && k == 0) || (j != aisles && k == seating.getSeatSeating()[j] - 1)){
+                                    seat.setSeatType("aisle");
+                                    seat.setSeatPrice(seating.getAislePrice());
+                                }
+                                else{
+                                    seat.setSeatType("middle");
+                                    seat.setSeatPrice(seating.getMiddlePrice());
+                                }
+
+                                seat.setSeatClass(cabinClass.getCabinName());
+                                seat.setSeatStatus("Unoccupied");
+                                seat.setExtraLegroom(seating.getExtraLegroom());
+                                seats.add(seat);
+                            }
+                        }
+                        row.setSeats(seats);
+//                        System.out.println(row);
+                        rows.add(row);
+                    }
+                }
+            }
         }
 
         return rows;
@@ -96,13 +123,18 @@ public class FlightController {
                 flight.setFlightNumber(flightRequest.getFlightNumber());
                 flight.setAircraftModel(flightRequest.getAircraftModel());
 
+                CabinClassList cabinClassList = cabinClassListRepo.findById(flightRequest.getCabinClassListId());
+                flight.setCabinClassList(cabinClassList);
+
+                List<Row> rows = flightSeats(flight);
+                flight.setRows(rows);
 
                 Airline airline = user.getAirline();
-                AircraftModel aircraftModel = aircraftModelService.getAircraftModelByName(flight.getAircraftModel());
-                if (aircraftModel == null) {
-                    DefaultResponse response = messageMaker("Aircraft model not found", HttpStatus.BAD_REQUEST, 400);
-                    return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
-                }
+//                AircraftModel aircraftModel = aircraftModelService.getAircraftModelByName(flight.getAircraftModel());
+//                if (aircraftModel == null) {
+//                    DefaultResponse response = messageMaker("Aircraft model not found", HttpStatus.BAD_REQUEST, 400);
+//                    return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
+//                }
 
                 List<FlightCabin> flightCabins = new ArrayList<>();
 
@@ -122,16 +154,16 @@ public class FlightController {
 
                 Terminal terminalArrival = terminalService.getTerminalByIataCodeAndTerminalName(flightRequest.getAirportArrival(), flightRequest.getTerminalArrival());
 
-                if (terminalArrival == null) {
-                    DefaultResponse response = messageMaker("Terminal arrival not found", HttpStatus.BAD_REQUEST, 400);
-                    return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
-                }
+//                if (terminalArrival == null) {
+//                    DefaultResponse response = messageMaker("Terminal arrival not found", HttpStatus.BAD_REQUEST, 400);
+//                    return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
+//                }
                 Terminal terminalDeparture = terminalService.getTerminalByIataCodeAndTerminalName(flightRequest.getAirportDeparture(), flightRequest.getTerminalArrival());
 
-                if (terminalDeparture == null) {
-                    DefaultResponse response = messageMaker("Terminal departure not found", HttpStatus.BAD_REQUEST, 400);
-                    return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
-                }
+//                if (terminalDeparture == null) {
+//                    DefaultResponse response = messageMaker("Terminal departure not found", HttpStatus.BAD_REQUEST, 400);
+//                    return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
+//                }
 
 //                List<Row> rows = flightSeats(aircraftModel.getSeats(), flight);
 
@@ -141,8 +173,6 @@ public class FlightController {
                 flight.setAirportDeparture(airportDeparture);
                 flight.setAirline(airline);
 
-                flight.setRows(null);
-
                 for (FlightCabinRequest flightCabinRequest : flightRequest.getFlightCabins()) {
                     FlightCabin flightCabin = getFlightCabin(flightCabinRequest, airline, flight);
                     flightCabin.setFlight(flight);
@@ -150,6 +180,7 @@ public class FlightController {
                 }
 
                 flight.setFlightCabins(flightCabins);
+                System.out.println(flight);
                 flightRepository.save(flight);
 
                 DefaultResponse response = messageMaker("Flight added", HttpStatus.OK, 200);
@@ -222,14 +253,14 @@ public class FlightController {
                 Terminal terminalDeparture = terminalService.getTerminalByIataCodeAndTerminalName(
                         flightRequest.getAirportDeparture(), flightRequest.getTerminalDeparture());
 
-//                List<Row> flightRows = flightSeats(aircraftModel.getSeats(), flight);
+                List<Row> rows = flightSeats(flight);
+                flight.setRows(rows);
 
                 flight.setTerminalDeparture(terminalDeparture);
                 flight.setTerminalArrival(terminalArrival);
                 flight.setAirportArrival(airportArrival);
                 flight.setAirportDeparture(airportDeparture);
                 flight.setAirline(airline);
-                flight.setRows(null);
 
                 flightRepository.save(flight);
             }
@@ -262,14 +293,15 @@ public class FlightController {
     public ResponseEntity<?> getFlights(@RequestHeader("Authorization") String jwt) {
         try {
             User user = userService.FindUserByJwt(jwt);
-//
-//            System.out.println(user);
             if (user.getRole().toString().equals("ROLE_AIRLINE")) {
                 Airline airline = user.getAirline();
 
                 List<Flight> flights = airline.getFlights();
-//                Flights flightResponse = new Flights();
-//                flightResponse.setFlights(flights);
+                for (Flight flight : flights) {
+                    List<Row> rows = new ArrayList<>();
+                    rows = flightRowService.getRowsByFlightId(flight.getId());
+                    flight.setRows(rows);
+                }
 
                 return new ResponseEntity<>(flights, HttpStatus.OK);
             }

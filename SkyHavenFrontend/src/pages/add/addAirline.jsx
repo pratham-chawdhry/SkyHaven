@@ -18,6 +18,31 @@ function AddAirline() {
         setOTP(value);
     };
 
+    const discounts = [
+        {
+            "discountName": "Armed Forces",
+            "discountPercentage": null,
+            "discountUpTo" : null
+        },
+        {
+            "discountName": "Senior Citizens",
+            "discountPercentage": null,
+            "discountUpTo" : null
+        },
+        {
+            "discountName": "Students",
+            "discountPercentage": null,
+            "discountUpTo" : null
+        },
+        {
+            "discountName": "Doctors & Nurses",
+            "discountPercentage": null,
+            "discountUpTo" : null
+        }
+    ]
+
+    const [discountDetails, setDiscountDetails] = useState(discounts);
+
     const formDetails = [
         {
             "attributeName": "Airline Name",
@@ -63,6 +88,7 @@ function AddAirline() {
             airlineCode: OTP,
             logo: onFileEncoded,
             description: description,
+            discounts: discountDetails,
         };
 
         form.map((attribute) => {
@@ -134,47 +160,133 @@ function AddAirline() {
             </div>
         </div>
         <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-            <div style={{width: "90%"}}>
-                <div style={{ display: "flex", alignItems: "center", gap: "30px", flexWrap: "wrap" }}>
-                    {
-                        form.map((attribute, index) => {
-                            return (
-                                <div key={index}>
-                                    <label
-                                        htmlFor="dropdown"
-                                        className="inline-flex items-center py-2 text-sm font-medium text-gray-700"
-                                    >
-                                        {attribute.attributeName}
-                                    </label>
-                                    {attribute.renderInput ? attribute.renderInput((value) =>{
-                                        handleInputChange(attribute.attributeId, value);
-                                        console.log(form);
-                                    }
-                                    ) : (<input
-                                        type={attribute.attributeType} 
-                                        id={attribute.attributeId} 
-                                        name={attribute.attributeName} 
-                                        value={attribute.attributeValue} 
-                                        required={attribute.attributeRequired} 
-                                        className="mt-1 block w-60 py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-                                        onChange={(e) => setAttributeValue(attribute.attributeId, e.target.value)}
-                                    />)}
-                                </div>
-                            )
-                        })
-                    }
+            <div style={{width: "90%", display: "flex", gap: "30px"}}>
+                <div>
+                    <div>
+                        <div style={{ display: "flex", alignItems: "center", gap: "30px", flexWrap: "wrap" }}>
+                            {
+                                form.map((attribute, index) => {
+                                    return (
+                                        <div key={index}>
+                                            <label
+                                                htmlFor="dropdown"
+                                                className="inline-flex items-center py-2 text-sm font-medium text-gray-700"
+                                            >
+                                                {attribute.attributeName}
+                                            </label>
+                                            {attribute.renderInput ? attribute.renderInput((value) =>{
+                                                handleInputChange(attribute.attributeId, value);
+                                                console.log(form);
+                                            }
+                                            ) : (<input
+                                                type={attribute.attributeType} 
+                                                id={attribute.attributeId} 
+                                                name={attribute.attributeName} 
+                                                value={attribute.attributeValue} 
+                                                required={attribute.attributeRequired} 
+                                                className="mt-1 block w-60 py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                                                onChange={(e) => setAttributeValue(attribute.attributeId, e.target.value)}
+                                            />)}
+                                        </div>
+                                    )
+                                })
+                            }
+                        </div>
+                    </div>
+                    <div style={{width: "100%"}}>
+                            <label
+                                htmlFor="dropdown"
+                                className="inline-flex items-center py-2 text-sm font-medium text-gray-700"
+                            >
+                                Description
+                            </label>
+                            <textarea style={{width: "100%"}} className="mt-1 mb-4 block py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" rows="5" placeholder="Enter description here..."
+                            onChange={(e) => setDescription(e.target.value)}>
+                            </textarea>
+                    </div>
                 </div>
-            </div>
-            <div style={{width: "90%"}}>
-                    <label
-                        htmlFor="dropdown"
-                        className="inline-flex items-center py-2 text-sm font-medium text-gray-700"
-                    >
-                        Description
-                    </label>
-                    <textarea style={{ width : "600px"}} className="mt-1 mb-4 block py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" rows="5" placeholder="Enter description here..."
-                    onChange={(e) => setDescription(e.target.value)}>
-                    </textarea>
+                <div>
+                    <div style={{display: "flex",flexDirection: "column", width: "110%"}}>
+                        <div>
+                            <label
+                                htmlFor="dropdown"
+                                className="inline-flex items-center py-2 text-sm font-medium text-gray-700"
+                            >
+                                Discounts
+                            </label>
+                        </div>
+                        <div style={{
+                            overflowX : "auto",
+                            overflowY : "auto",
+                            border : "2px solid #E2E2E2",
+                            height : "300px",
+                            marginTop : "5px",
+                        }}
+                        className="bg-white shadow-md rounded-lg mb-10"
+                        >
+                            <table style={{
+                                backgroundColor : "white",
+                                whiteSpace : "nowrap"
+                            }}>
+                                <thead>
+                                    <tr style={{fontStyle : "italic"}}>
+                                        <th className="px-4 py-2 text-center text-gray-700 font-medium">Discount Name</th>
+                                        <th className="px-4 py-2 text-center text-gray-700 font-medium">Discount Percentage</th>
+                                        <th className="px-4 py-2 text-center text-gray-700 font-medium">Discount Up To</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {
+                                    discounts.map((discount, index) => (
+                                        <tr key={index}>
+                                            <td className="px-4 py-2 text-left" style={{ textAlign: "center"}}>
+                                                {discount.discountName}
+                                            </td>
+                                            <td className="text-center">
+                                                <input 
+                                                type="number"
+                                                placeholder="Enter Discount Percentage"
+                                                id="discountPercentage" 
+                                                name="discountPercentage" 
+                                                value={discount.discountPercentage} 
+                                                required={true} 
+                                                className="mt-1 block w-60 py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                                                onChange={(e) => setDiscountDetails((prevDiscounts) => 
+                                                    prevDiscounts.map((discount, discountIndex) => {
+                                                        if (discountIndex === index) {
+                                                            return { ...discount, discountPercentage: Number(e.target.value) };
+                                                        }
+                                                        return discount;
+                                                    })
+                                                )}
+                                                />
+                                            </td>
+                                            <td className="text-center">
+                                                <input
+                                                type="number"
+                                                placeholder="Enter Discount Up To"
+                                                id="discountUpTo" 
+                                                name="discountUpTo" 
+                                                value={discount.discountUpTo} 
+                                                required={true} 
+                                                className="mt-1 block w-30 py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                                                onChange={(e) => setDiscountDetails((prevDiscounts) => 
+                                                    prevDiscounts.map((discount, discountIndex) => {
+                                                        if (discountIndex === index) {
+                                                            return { ...discount, discountUpTo: Number(e.target.value) };
+                                                        }
+                                                        return discount;
+                                                    })
+                                                )}
+                                                />
+                                            </td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

@@ -45,6 +45,9 @@ public class Airline {
     @JsonIgnore
     private List<CabinClassList> cabinClassLists;
 
+    @OneToMany(mappedBy = "airline", cascade = CascadeType.ALL)
+    private List<Discount> discounts;
+
     @Override
     public String toString() {
         return "Airline [id=" + id + ", airlineName=" + airlineName + ", airlineCode=" + airlineCode + "]";
