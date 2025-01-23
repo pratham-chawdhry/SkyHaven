@@ -70,4 +70,28 @@ public class AirlineController {
             return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+
+    @DeleteMapping("/deleteAirline/{id}")
+    public ResponseEntity<?> deleteAirline(@RequestHeader("Authorization") String jwt, @PathVariable Long id) {
+        try {
+            User user = userService.FindUserByJwt(jwt);
+
+            if (user == null) {
+                DefaultResponse response = messageMaker("User not Found", HttpStatus.UNAUTHORIZED, 401);
+                return new ResponseEntity<>(response, HttpStatus.UNAUTHORIZED);
+            }
+            else if (user.getRole().toString().equals("ROLE_ADMIN")) {
+                airlineRepo.deleteById(id);
+                return ResponseEntity.status(200).body(airlineRepo.findAll());
+            }
+            else {
+                DefaultResponse response = messageMaker("Forbidden", HttpStatus.FORBIDDEN, 403);
+                return new ResponseEntity<>(response, HttpStatus.FORBIDDEN);
+            }
+        }
+        catch (Exception e) {
+            DefaultResponse response = messageMaker("Internal Server Error", HttpStatus.INTERNAL_SERVER_ERROR, 500);
+            return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
 }

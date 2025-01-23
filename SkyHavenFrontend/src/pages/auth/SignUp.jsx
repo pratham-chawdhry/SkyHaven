@@ -6,16 +6,33 @@ import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import { Plane } from 'lucide-react';
 import { UserCog } from 'lucide-react';
+import { useGlobalContext } from '../../context.jsx';
 
 const SignUp = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [name, setName] = useState('');
-  const [accountType, setAccountType] = useState('USER_ROLE');
+  const [accountType, setAccountType] = useState('ROLE_USER');
+  const { signUp, setjwt, setRole } = useGlobalContext();
 
-  const handleSubmit = (e) => {
+  async function handleSubmit(e) {
     e.preventDefault();
-    // Handle sign in logic
+    
+    const data = {
+      "email" : email,
+      "password" : password,
+      "role" : accountType,
+    }
+
+    try {
+      const result = await signUp(data); 
+      localStorage.setItem("jwt", result.token);
+      localStorage.setItem("role", result.role);
+      setjwt(result.token);
+      setRole(result.role);
+    } catch (error) {
+      console.error("Error during sign-up:", error);
+    }
   };
 
   const [showPassword, setShowPassword] = useState(false);
@@ -101,13 +118,13 @@ const SignUp = () => {
                   onChange={(e) => setAccountType(e.target.value)}
                   startAdornment={<UserCog  className="w-4 h-4 mr-2" />}
                 >
-                    <MenuItem key={1} value={"USER_ROLE"}>
+                    <MenuItem key={1} value={"ROLE_USER"}>
                       Travellor
                     </MenuItem>
-                    <MenuItem key={2} value={"USER_AIRLINE"}>
+                    <MenuItem key={2} value={"ROLE_AIRLINE"}>
                       Airline Administrator
                     </MenuItem>
-                    <MenuItem key={3} value={"USER_ADMIN"}>
+                    <MenuItem key={3} value={"ROLE_ADMIN"}>
                       Admin
                     </MenuItem>
                 </Select>

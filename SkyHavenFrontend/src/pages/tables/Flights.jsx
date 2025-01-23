@@ -1,12 +1,13 @@
 import Table from '../../components/Table'
 import flights from '../JSONs/flights.json'
 import Pagination from '../../components/Pagination'
-import React, { useState } from 'react';
+import React, { useState, useEffect} from 'react';
 import { PlaneTakeoff } from 'lucide-react';
 import { MoveRight } from 'lucide-react';
 import { PlaneLanding } from 'lucide-react';
 import { ArrowRight } from 'lucide-react';
 import { format, parseISO } from 'date-fns';
+import { useGlobalContext } from '../../context';
 
 const getFormattedDate = (isoString) => {
     const date = parseISO(isoString.split('T')[0]);
@@ -368,6 +369,27 @@ export default function Flights() {
 
     const [currentPage, setCurrentPage] = useState(0);
     const rowsPerPage = 10; 
+    const [loading, setLoading] = useState(true);
+
+    const [flights, setFlights] = useState([]);
+
+    const {getFlights} = useGlobalContext();
+
+    useEffect(() => {
+        const fetchFlights = async () => {
+          try {
+            const result = await getFlights();
+            if (result) {
+              setFlights(result);
+              setLoading(false);
+            }
+          } catch (error) {
+            console.error("Error fetching flights:", error);
+          }
+        };
+      
+        fetchFlights();
+      }, []);
 
     const handlePageChange = (newPage) => {
       setCurrentPage(newPage);
@@ -386,6 +408,8 @@ export default function Flights() {
           currentPage={currentPage}
           rowsPerPage={rowsPerPage}
           handlePageChange={handlePageChange}
+          loading={loading}
+          deleteFlag={true}
         />
         <Pagination
           currentPage={currentPage}

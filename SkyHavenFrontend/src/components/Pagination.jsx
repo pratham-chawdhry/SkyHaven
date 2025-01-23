@@ -1,7 +1,7 @@
 import React from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
-const Pagination = ({ currentPage, totalPages, onPageChange }) => {
+const Pagination = ({ currentPage, totalPages, onPageChange, loading }) => {
   const handlePreviousPage = () => {
     if (currentPage > 0) {
       onPageChange(currentPage - 1);

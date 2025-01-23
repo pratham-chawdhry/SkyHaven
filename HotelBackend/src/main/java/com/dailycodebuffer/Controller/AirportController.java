@@ -167,4 +167,34 @@ public class AirportController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(messageMaker("Internal Server Error", HttpStatus.INTERNAL_SERVER_ERROR, 500));
         }
     }
+
+    @DeleteMapping("/deleteairport/{airportId}")
+    public ResponseEntity<?> deleteAirport(@RequestHeader("Authorization") String jwt, @PathVariable String airportId) {
+        try{
+            User user = userService.FindUserByJwt(jwt);
+
+            if(user == null) {
+                return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(messageMaker("Unauthorized", HttpStatus.UNAUTHORIZED, 401));
+            }
+            else{
+                if (user.getRole().toString().equals("ROLE_USER") || user.getRole().toString().equals("ROLE_AIRLINE")){
+                    return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(messageMaker("Unauthorized", HttpStatus.UNAUTHORIZED, 401));
+                }
+                else{
+                    Airport airport = airportRepo.findByIataCode(airportId);
+
+                    if (airport == null) {
+                        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(messageMaker("Airport not found", HttpStatus.NOT_FOUND, 404));
+                    }
+                    else {
+                        airportRepo.delete(airport);
+                        return ResponseEntity.status(HttpStatus.OK).body(airportRepo.findAll());
+                    }
+                }
+            }
+        }
+        catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(messageMaker("Internal Server Error", HttpStatus.INTERNAL_SERVER_ERROR, 500));
+        }
+    }
 }

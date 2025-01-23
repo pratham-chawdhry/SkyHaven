@@ -8,7 +8,7 @@ const getNestedValue = (obj, attribute) => {
   return attribute.split('.').reduce((acc, part) => acc && acc[part], obj);
 };
 
-export default function Table({ data, columnName, currentPage, rowsPerPage, handlePageChange }) {
+export default function Table({ data, columnName, currentPage, rowsPerPage, handlePageChange, loading, deletefunc, deleteFlag, id}) {
   const slicedData = data.slice(currentPage * rowsPerPage, (currentPage + 1) * rowsPerPage);
 
   console.log(data, slicedData);
@@ -45,50 +45,77 @@ export default function Table({ data, columnName, currentPage, rowsPerPage, hand
               </th>
             ))}
             <th className="py-2 justify-center">Edit</th>
+            {
+              deleteFlag &&
+              <th className="py-2 justify-center">Delete</th>
+            }
           </tr>
         </thead>
         <tbody>
-          {slicedData.map((row, index) => {
-            console.log(row);
-            return(
-            <tr className="flex-col justify-center" key={index}>
-              <td
-                className="py-2 justify-center ml-10"
-                style={{
-                  paddingLeft: "2rem",
-                  paddingRight: "1rem",
-                }}
-              >
-                <div className="text-center">
-                  <input type="checkbox" className="w-3 h-3" />
-                </div>
-              </td>
-              {columnName.map((column, columnIndex) => {
-                console.log(column);
-                return (
-                <td key={columnIndex} className="py-2 justify-center text-center">
-                  <div style={column.cellStyle} className={column.cellClassName}>
-                    {column.renderCell ? (
-                      column.renderCell(row)
-                    ) : (
-                      column.attributes.map((attribute, index) => (
-                        <div style={attribute.attributeStyles} className={attribute.attributeClassName} key={index}>
-                          {getNestedValue(row, attribute.name)}
-                        </div>
-                      ))
-                    )}
-                  </div>
-                </td>
-              )})}
-              <td className="py-2 px-2 justify-center">
-                <div className="text-center">
-                  <button className="bg-blue-600 text-white py-2 px-2 rounded-lg text-lg font-semibold hover:bg-blue-700 transition-colors transform hover:scale-[1.02] duration-200 shadow-lg hover:shadow-xl">
-                    <PencilLine className="w-3 h-3" />
-                  </button>
+        {loading ? (
+            <tr>
+              <td colSpan={columnName.length + 2} className="text-center py-5">
+                <div className="flex justify-center items-center">
+                  <div className="loader animate-spin rounded-full h-10 w-10 border-t-2 border-b-2 border-blue-600"></div>
                 </div>
               </td>
             </tr>
-          )})}
+          ) : (
+              slicedData.map((row, index) => {
+                console.log(row);
+                return(
+                <tr className="flex-col justify-center" key={index}>
+                  <td
+                    className="py-2 justify-center ml-10"
+                    style={{
+                      paddingLeft: "2rem",
+                      paddingRight: "1rem",
+                    }}
+                  >
+                    <div className="text-center">
+                      <input type="checkbox" className="w-3 h-3" />
+                    </div>
+                  </td>
+                  {columnName.map((column, columnIndex) => {
+                    console.log(column);
+                    return (
+                    <td key={columnIndex} className="py-2 justify-center text-center">
+                      <div style={column.cellStyle} className={column.cellClassName}>
+                        {column.renderCell ? (
+                          column.renderCell(row)
+                        ) : (
+                          column.attributes.map((attribute, index) => (
+                            <div style={attribute.attributeStyles} className={attribute.attributeClassName} key={index}>
+                              {getNestedValue(row, attribute.name)}
+                            </div>
+                          ))
+                        )}
+                      </div>
+                    </td>
+                  )})}
+                  <td className="py-2 px-2 justify-center">
+                    <div className="text-center">
+                      <button className="bg-blue-600 text-white py-2 px-2 rounded-lg text-lg font-semibold hover:bg-blue-700 transition-colors transform hover:scale-[1.02] duration-200 shadow-lg hover:shadow-xl">
+                        <PencilLine className="w-3 h-3" />
+                      </button>
+                    </div>
+                  </td>
+                  {
+                    deleteFlag &&
+                    <td className="py-2 px-2 justify-center">
+                      <div className="text-center">
+                        <button onClick={(e) => {
+                          let result = getNestedValue(row, id);
+                          deletefunc(result);
+                        }} className="bg-red-600 text-white py-2 px-2 rounded-lg text-lg font-semibold hover:bg-red-700 transition-colors transform hover:scale-[1.02] duration-200 shadow-lg hover:shadow-xl">
+                          <Trash2 className="w-3 h-3" />
+                        </button>
+                      </div>
+                    </td>
+                  }
+                </tr>
+              )})
+            )}
         </tbody>
       </table>
     </div>

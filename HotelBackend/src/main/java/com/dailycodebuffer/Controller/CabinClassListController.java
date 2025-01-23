@@ -152,7 +152,9 @@ public class CabinClassListController {
             if (user.getRole().toString().equals("ROLE_AIRLINE")) {
                 Airline airline = user.getAirline();
 
-                return ResponseEntity.status(HttpStatus.OK).body(cabinClassListRepo.findAll());
+                System.out.println(cabinClassListRepo.findByAirline(airline));
+
+                return ResponseEntity.status(HttpStatus.OK).body(cabinClassListRepo.findByAirline(airline));
             }
             else if (user.getRole().toString().equals("ROLE_ADMIN")) {
                 return ResponseEntity.status(HttpStatus.OK).body(cabinClassListRepo.findAll());
@@ -161,6 +163,31 @@ public class CabinClassListController {
                 return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(messageMaker("Unauthorized", HttpStatus.UNAUTHORIZED, 401));
             }
         } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(messageMaker("Internal Server Error", HttpStatus.INTERNAL_SERVER_ERROR, 500));
+        }
+    }
+
+    @DeleteMapping("/cabinclasslist/delete/{id}")
+    public ResponseEntity<?> deleteCabinClassList(@RequestHeader("Authorization") String jwt,
+                                                  @PathVariable Long id) {
+        try {
+            User user = userService.FindUserByJwt(jwt);
+
+            if (user.getRole().toString().equals("ROLE_AIRLINE")) {
+                Airline airline = user.getAirline();
+                cabinClassListRepo.deleteById(id);
+
+                return ResponseEntity.status(HttpStatus.OK).body(cabinClassListRepo.findByAirline(airline));
+            }
+            else if (user.getRole().toString().equals("ROLE_ADMIN")) {
+                cabinClassListRepo.deleteById(id);
+                return ResponseEntity.status(HttpStatus.OK).body(cabinClassListRepo.findAll());
+            }
+            else {
+                return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(messageMaker("Unauthorized", HttpStatus.UNAUTHORIZED, 401));
+            }
+        }
+        catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(messageMaker("Internal Server Error", HttpStatus.INTERNAL_SERVER_ERROR, 500));
         }
     }

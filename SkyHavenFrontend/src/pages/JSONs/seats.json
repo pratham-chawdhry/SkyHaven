@@ -76,7 +76,7 @@
                 {
                     "seatType": "aisle",
                     "seatPrice": 100,
-                    "seatStatus": "Unoccupied",
+                    "seatStatus": "Occupied",
                     "seatClass": "First Class",
                     "seatNumber": "1C",
                     "food": null,
@@ -103,10 +103,10 @@
                 {
                     "seatType": "window",
                     "seatPrice": 100,
-                    "seatStatus": "Unoccupied",
+                    "seatStatus": "Occupied",
                     "seatClass": "First Class",
                     "seatNumber": "1F",
-                    "food": null,
+                    "food": "Dal Makhani",
                     "extraLegroom": true
                 }
             ]
@@ -118,7 +118,7 @@
                 {
                     "seatType": "window",
                     "seatPrice": 100,
-                    "seatStatus": "Unoccupied",
+                    "seatStatus": "Occupied",
                     "seatClass": "First Class",
                     "seatNumber": "2A",
                     "food": null,

@@ -6,6 +6,158 @@ import SeatingForm from "../../components/SeatingForm";
 import Seat from "../../components/Seat";
 import Modal from "../../components/Modal";
 import { Sofa } from 'lucide-react';
+import { useGlobalContext } from '../../context';
+
+// const initialCabinClasses = [
+//   {
+//     cabinName: "First Class",
+//     cabinCode: "FIR",
+//     disabled: false,
+//     seating: [
+//       {
+//         numberOfRows: 1,
+//         startRow: null,
+//         endRow: null,
+//         aislePrice: 150,
+//         middlePrice: 150,
+//         windowPrice: 150,
+//         extraLegroom: true,
+//         seatSeating : [1,1,1]
+//       },
+//       {
+//         numberOfRows: 1,
+//         startRow: null,
+//         endRow: null,
+//         aislePrice: 100,
+//         middlePrice: 100,
+//         windowPrice: 100,
+//         extraLegroom: false,
+//         seatSeating : [1,1,1]
+//       }
+//     ],
+//   },
+//   {
+//     cabinName: "Business Class",
+//     cabinCode: "BUS",
+//     disabled: false,
+//     seating: [
+//       {
+//         numberOfRows: 1,
+//         startRow: null,
+//         endRow: null,
+//         aislePrice: 90,
+//         middlePrice: 90,
+//         windowPrice: 90,
+//         extraLegroom: true,
+//         seatSeating : [2,2,2]
+//       },
+//       {
+//         numberOfRows: 3,
+//         startRow: null,
+//         endRow: null,
+//         aislePrice: 75,
+//         middlePrice: 75,
+//         windowPrice: 75,
+//         extraLegroom: false,
+//         seatSeating : [2,2,2]
+//       }
+//     ],
+//   },
+//   {
+//     cabinName: "Premium Economy Class",
+//     cabinCode: "PRE",
+//     disabled: false,
+//     seating: [
+//       {
+//         numberOfRows: 1,
+//         startRow: null,
+//         endRow: null,
+//         aislePrice: 60,
+//         middlePrice: 60,
+//         windowPrice: 60,
+//         extraLegroom: true,
+//         seatSeating : [0,2,0]
+//       },
+//       {
+//         numberOfRows: 1,
+//         startRow: null,
+//         endRow: null,
+//         aislePrice: 60,
+//         middlePrice: 60,
+//         windowPrice: 60,
+//         extraLegroom: true,
+//         seatSeating : [3,0,3]
+//       },
+//       {
+//         numberOfRows: 5,
+//         startRow: null,
+//         endRow: null,
+//         aislePrice: 45,
+//         middlePrice: 45,
+//         windowPrice: 45,
+//         extraLegroom: false,
+//         seatSeating : [3,3,3]
+//       },
+//     ],
+//   },
+//   {
+//     cabinName: "Economy Class",
+//     cabinCode: "ECO",
+//     disabled: false,
+//     seating: [
+//       {
+//         numberOfRows: 3,
+//         startRow: null,
+//         endRow: null,
+//         aislePrice: 15,
+//         middlePrice: 15,
+//         windowPrice: 15,
+//         extraLegroom: false,
+//         seatSeating : [3,3,3]
+//       },
+//       {
+//         numberOfRows: 2,
+//         startRow: null,
+//         endRow: null,
+//         aislePrice: 30,
+//         middlePrice: 30,
+//         windowPrice: 30,
+//         extraLegroom: true,
+//         seatSeating : [3,3,3]
+//       },
+//       {
+//         numberOfRows: 10,
+//         startRow: null,
+//         endRow: null,
+//         aislePrice: 15,
+//         middlePrice: 15,
+//         windowPrice: 15,
+//         extraLegroom: false,
+//         seatSeating : [3,3,3]
+//       },
+//       {
+//         numberOfRows: 4,
+//         startRow: null,
+//         endRow: null,
+//         aislePrice: 10,
+//         middlePrice: 0,
+//         windowPrice: 10,
+//         extraLegroom: false,
+//         seatSeating : [3,3,3]
+//       },
+//       {
+//         numberOfRows: 6,
+//         startRow: null,
+//         endRow: null,
+//         aislePrice: 0,
+//         middlePrice: 0,
+//         windowPrice: 0,
+//         extraLegroom: false,
+//         seatSeating : [3,3,3]
+//       },
+//     ],
+//   },
+// ];
 
 const initialCabinClasses = [
   {
@@ -14,25 +166,15 @@ const initialCabinClasses = [
     disabled: false,
     seating: [
       {
-        numberOfRows: 1,
+        numberOfRows: null,
         startRow: null,
         endRow: null,
-        aislePrice: 150,
-        middlePrice: 150,
-        windowPrice: 150,
-        extraLegroom: true,
-        seatSeating : [1,1,1]
-      },
-      {
-        numberOfRows: 1,
-        startRow: null,
-        endRow: null,
-        aislePrice: 100,
-        middlePrice: 100,
-        windowPrice: 100,
+        aislePrice: null,
+        middlePrice: null,
+        windowPrice: null,
         extraLegroom: false,
-        seatSeating : [1,1,1]
-      }
+        seatSeating : [0,0,0]
+      },
     ],
   },
   {
@@ -41,25 +183,15 @@ const initialCabinClasses = [
     disabled: false,
     seating: [
       {
-        numberOfRows: 1,
+        numberOfRows: null,
         startRow: null,
         endRow: null,
-        aislePrice: 90,
-        middlePrice: 90,
-        windowPrice: 90,
-        extraLegroom: true,
-        seatSeating : [2,2,2]
-      },
-      {
-        numberOfRows: 3,
-        startRow: null,
-        endRow: null,
-        aislePrice: 75,
-        middlePrice: 75,
-        windowPrice: 75,
+        aislePrice: null,
+        middlePrice: null,
+        windowPrice: null,
         extraLegroom: false,
-        seatSeating : [2,2,2]
-      }
+        seatSeating : [0,0,0]
+      },
     ],
   },
   {
@@ -68,35 +200,15 @@ const initialCabinClasses = [
     disabled: false,
     seating: [
       {
-        numberOfRows: 1,
+        numberOfRows: null,
         startRow: null,
         endRow: null,
-        aislePrice: 60,
-        middlePrice: 60,
-        windowPrice: 60,
-        extraLegroom: true,
-        seatSeating : [0,2,0]
-      },
-      {
-        numberOfRows: 1,
-        startRow: null,
-        endRow: null,
-        aislePrice: 60,
-        middlePrice: 60,
-        windowPrice: 60,
-        extraLegroom: true,
-        seatSeating : [3,0,3]
-      },
-      {
-        numberOfRows: 5,
-        startRow: null,
-        endRow: null,
-        aislePrice: 45,
-        middlePrice: 45,
-        windowPrice: 45,
+        aislePrice: null,
+        middlePrice: null,
+        windowPrice: null,
         extraLegroom: false,
-        seatSeating : [3,3,3]
-      },
+        seatSeating : [0,0,0]
+      }
     ],
   },
   {
@@ -105,64 +217,42 @@ const initialCabinClasses = [
     disabled: false,
     seating: [
       {
-        numberOfRows: 3,
+        numberOfRows: null,
         startRow: null,
         endRow: null,
-        aislePrice: 15,
-        middlePrice: 15,
-        windowPrice: 15,
+        aislePrice: null,
+        middlePrice: null,
+        windowPrice: null,
         extraLegroom: false,
-        seatSeating : [3,3,3]
-      },
-      {
-        numberOfRows: 2,
-        startRow: null,
-        endRow: null,
-        aislePrice: 30,
-        middlePrice: 30,
-        windowPrice: 30,
-        extraLegroom: true,
-        seatSeating : [3,3,3]
-      },
-      {
-        numberOfRows: 10,
-        startRow: null,
-        endRow: null,
-        aislePrice: 15,
-        middlePrice: 15,
-        windowPrice: 15,
-        extraLegroom: false,
-        seatSeating : [3,3,3]
-      },
-      {
-        numberOfRows: 4,
-        startRow: null,
-        endRow: null,
-        aislePrice: 10,
-        middlePrice: 0,
-        windowPrice: 10,
-        extraLegroom: false,
-        seatSeating : [3,3,3]
-      },
-      {
-        numberOfRows: 6,
-        startRow: null,
-        endRow: null,
-        aislePrice: 0,
-        middlePrice: 0,
-        windowPrice: 0,
-        extraLegroom: false,
-        seatSeating : [3,3,3]
-      },
+        seatSeating : [0,0,0]
+      }
     ],
   },
 ];
 
+
 function AddFlight() {
   const [cabinClasses, setCabinClasses] = useState(initialCabinClasses);
-  const [aisles, setAisles] = useState(2);
+  const [aisles, setAisles] = useState(1);
   const [renderArray, setRenderArray] = useState([]);
   const [cabinClassTemp, setCabinClassTemp] = useState(initialCabinClasses);
+
+  const {addAirplaneConfigurations} = useGlobalContext();
+
+  const handleSubmit = async () => {
+    setRowNumber();
+    try {
+      let object = {
+        "aisles" : aisles,
+        "cabinClasses" : cabinClasses,
+      }
+      const result = await addAirplaneConfigurations(object);
+      console.log(result);
+    }
+    catch (error) {
+      console.error("Error submitting airplane configurations:", error);
+    }
+  }
 
   const setRowNumber = () => {
     let rowNumber = 1;
@@ -323,34 +413,34 @@ function AddFlight() {
     };
   
     const renderFreeSeatsDetails = (seat) => {
-      if (seat.windowPrice === 0 && seat.middlePrice === 0 && seat.aislePrice === 0) {
+      if (!seat.windowPrice && !seat.middlePrice && !seat.aislePrice) {
         return `follows the order ${seat.seatSeating.slice(0, aisles + 1).join("-")}, and all seats are free.`;
       }
-      if (seat.windowPrice === 0 && seat.middlePrice !== 0 && seat.aislePrice !== 0 && seat.middlePrice !== seat.aislePrice) {
+      if (!seat.windowPrice && seat.middlePrice !== 0 && seat.aislePrice !== 0 && seat.middlePrice !== seat.aislePrice) {
         return `follows the order ${seat.seatSeating.slice(0, aisles + 1).join("-")}, and the price is $${seat.middlePrice} for middle seats and $${seat.aislePrice} for aisle seats, while window seats are free.`;
       }
-      if (seat.windowPrice !== 0 && seat.middlePrice === 0 && seat.aislePrice !== 0 && seat.windowPrice !== seat.aislePrice) {
+      if (seat.windowPrice !== 0 && !seat.middlePrice && seat.aislePrice !== 0 && seat.windowPrice !== seat.aislePrice) {
         return `follows the order ${seat.seatSeating.slice(0, aisles + 1).join("-")}, and the price is $${seat.windowPrice} for window seats and $${seat.aislePrice} for aisle seats, while middle seats are free.`;
       }
-      if (seat.windowPrice !== 0 && seat.middlePrice !== 0 && seat.aislePrice === 0 && seat.windowPrice !== seat.middlePrice) {
+      if (seat.windowPrice !== 0 && seat.middlePrice !== 0 && !seat.aislePrice && seat.windowPrice !== seat.middlePrice) {
         return `follows the order ${seat.seatSeating.slice(0, aisles + 1).join("-")}, and the price is $${seat.windowPrice} for window seats and $${seat.middlePrice} for middle seats, while aisle seats are free.`;
       }
-      if (seat.windowPrice === seat.middlePrice && seat.aislePrice === 0) {
+      if (seat.windowPrice === seat.middlePrice && !seat.aislePrice) {
         return `follows the order ${seat.seatSeating.slice(0, aisles + 1).join("-")}, and the price is $${seat.windowPrice} for window and middle seats, while aisle seats are free.`;
       }
-      if (seat.windowPrice === seat.aislePrice && seat.middlePrice === 0) {
+      if (seat.windowPrice === seat.aislePrice && !seat.middlePrice) {
         return `follows the order ${seat.seatSeating.slice(0, aisles + 1).join("-")}, and the price is $${seat.windowPrice} for window and aisle seats, while middle seats are free.`;
       }
-      if (seat.windowPrice === 0 && seat.middlePrice === seat.aislePrice) {
+      if (!seat.windowPrice && seat.middlePrice === seat.aislePrice) {
         return `follows the order ${seat.seatSeating.slice(0, aisles + 1).join("-")}, and the price is $${seat.middlePrice} for middle and aisle seats, while window seats are free.`;
       }
-      if (seat.windowPrice !== 0 && seat.middlePrice === 0 && seat.aislePrice === 0) {
+      if (seat.windowPrice !== 0 && !seat.middlePrice && !seat.aislePrice) {
         return `follows the order ${seat.seatSeating.slice(0, aisles + 1).join("-")}, and the price is $${seat.windowPrice} for window seats, while middle and aisle seats are free.`;
       }
-      if (seat.windowPrice === 0 && seat.middlePrice !== 0 && seat.aislePrice === 0) {
+      if (!seat.windowPrice && seat.middlePrice !== 0 && !seat.aislePrice) {
         return `follows the order ${seat.seatSeating.slice(0, aisles + 1).join("-")}, and the price is $${seat.middlePrice} for middle seats, while window and aisle seats are free.`;
       }
-      if (seat.windowPrice === 0 && seat.middlePrice === 0 && seat.aislePrice !== 0) {
+      if (!seat.windowPrice && !seat.middlePrice && seat.aislePrice !== 0) {
         return `follows the order ${seat.seatSeating.slice(0, aisles + 1).join("-")}, and the price is $${seat.aislePrice} for aisle seats, while window and middle seats are free.`;
       }
     };
@@ -365,10 +455,10 @@ function AddFlight() {
     return (
       <li key={seatIndex}>
         {seat.startRow !== seat.endRow
-          ? (seat.windowPrice !== 0 && seat.middlePrice !== 0 && seat.aislePrice !== 0
+          ? (seat.windowPrice && seat.middlePrice&& seat.aislePrice
               ? `${renderRowRange(seat.startRow, seat.endRow)} ${renderPricingDetails(seat)} ${extraLegroomDetails(seat)}`
               : `${renderRowRange(seat.startRow, seat.endRow)} ${renderFreeSeatsDetails(seat)} ${extraLegroomDetails(seat)}`)
-          : (seat.windowPrice !== 0 && seat.middlePrice !== 0 && seat.aislePrice !== 0
+          : (seat.windowPrice && seat.middlePrice && seat.aislePrice
               ? `${renderSingleRow(seat.startRow)} ${renderPricingDetails(seat)} ${extraLegroomDetails(seat)}`
               : `${renderSingleRow(seat.startRow)} ${renderFreeSeatsDetails(seat)} ${extraLegroomDetails(seat)}`)}
       </li>
@@ -376,7 +466,6 @@ function AddFlight() {
   }
 
   const modalContent = () => {
-
     let cabinClassNumber = 0;
     let rowNumber = 0;
 
@@ -420,7 +509,7 @@ function AddFlight() {
             lineHeight: "16.8px", textAlign: "left", textUnderlinePosition: "from-font",
             textDecorationSkipInk: "none", marginTop: "5px"
           }}>
-            {`The seating plan is generated based on the number of rows, seating arrangement in a sequential order as filled in the form, and the aisles. The number of aisles is set to ${aisles} and the seats are arranged in ${cabinClassNumber} cabin classes. The classes are as follows:`}
+            {`The seating plan is generated based on the number of rows, seating arrangement in a sequential order as filled in the form, and the aisles. The number of aisles is set to ${aisles} and the seats are arranged in ${cabinClassNumber} enabled cabin classes. The classes are as follows:`}
           </div>
           {
               cabinClasses.map((cabinClass, cabinIndex) => {
@@ -429,52 +518,64 @@ function AddFlight() {
                   seatsArray.push(cabinClass)
                   let cabinClassArray = seatingFormCabins(seatsArray, cabinClass.seating[0].startRow - 1, aisles);
                   return (
-                    <div key={cabinIndex}>
-                      <div className="mt-5 mb-5" style = {{color: "#1B273A", fontSize: "20px", fontWeight: 600, lineHeight: "28.8px", textAlign: "left", textUnderlinePosition: "from-font", textDecorationSkipInk: "none"}}>
-                        <div style={{display: "flex", gap: "10px", alignItems: "center"}}>
-                          <div>
-                            {cabinClass.cabinName}
-                          </div>
-                          <div style = {{
-                              display: "inline-block",
-                              backgroundColor: "#E8F5FF",
-                              whiteSpace: "nowrap",
-                              color: "#036FE3",
-                              fontWeight: 600,
-                              padding: "4px 10px",
-                              borderRadius: "12px",
-                              fontSize: "11px",
-                              lineHeight: "17px",
-                          }}>
-                            {cabinClass.cabinCode}
+                    cabinClassArray.length > 0 && (
+                      <div key={cabinIndex}>
+                        {/* Cabin Header */}
+                        <div
+                          className="mt-5 mb-5"
+                          style={{
+                            color: "#1B273A",
+                            fontSize: "20px",
+                            fontWeight: 600,
+                            lineHeight: "28.8px",
+                            textAlign: "left",
+                            textUnderlinePosition: "from-font",
+                            textDecorationSkipInk: "none",
+                          }}
+                        >
+                          <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
+                            <div>{cabinClass.cabinName}</div>
+                            <div
+                              style={{
+                                display: "inline-block",
+                                backgroundColor: "#E8F5FF",
+                                whiteSpace: "nowrap",
+                                color: "#036FE3",
+                                fontWeight: 600,
+                                padding: "4px 10px",
+                                borderRadius: "12px",
+                                fontSize: "11px",
+                                lineHeight: "17px",
+                              }}
+                            >
+                              {cabinClass.cabinCode}
+                            </div>
                           </div>
                         </div>
+                  
+                        {/* Cabin Details */}
+                        <ul
+                          style={{
+                            listStyleType: "inherit",
+                            fontSize: "14px",
+                            lineHeight: "20px",
+                            fontStyle: "italic",
+                            marginBottom: "10px",
+                          }}
+                        >
+                          <li>{`The number of rows is ${cabinClassArray.length}.`}</li>
+                          {cabinClass.seating.map((seat, seatIndex) => (
+                            <React.Fragment key={seatIndex}>{renderSeatPricing(seat, seatIndex)}</React.Fragment>
+                          ))}
+                        </ul>
+                  
+                        {/* Seat Component */}
+                        <div>
+                          <Seat seats={cabinClassArray} />
+                        </div>
                       </div>
-                          <ul style = {{
-                            listStyleType : "inherit",
-                            fontSize : "14px",
-                            lineHeight : "20px",
-                            fontStyle : "italic",
-                            marginBottom : "10px",
-                          }}>
-                            <li>{`The number of rows is ${cabinClassArray.length}.`}</li>
-                            {
-                              cabinClass.seating.map((seat, seatIndex) => {
-                                return (
-                                  <>
-                                    {renderSeatPricing(seat, seatIndex)}
-                                  </>
-                                )
-                              })
-                            }
-                          </ul>
-                      <div>
-                      </div>
-                      <div>
-                        <Seat seats={cabinClassArray} />
-                      </div>
-                    </div>
-                  );
+                    )
+                  );                  
                 }
                 return null; 
               })
@@ -523,13 +624,9 @@ function AddFlight() {
           <div style={{ display: 'flex', alignItems: 'center', gap: "10px" }}>
             <div>
               <button onClick={() => {
-                setRowNumber();
-                setRenderArray(seatingFormCabins(cabinClasses))
-              }} className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700">Save</button>
+                handleSubmit();
+              }} className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700">Submit</button>
             </div>
-            {renderArray && renderArray.length > 0 && (<div>
-              <Modal content={modalContent()} width={"800px"} />
-            </div>)}
           </div>
         </div>
         <div className="flex gap-4 items-center" style={{width: "90%"}}>
@@ -555,8 +652,27 @@ function AddFlight() {
             </select>
           </div>
         </div>
-        <div className="px-4 py-2 text-sm font-medium text-gray-700" style={{width: "90%"}}>
-            Fill the form to complete the seating arrangement:
+        <div className="px-4 py-2 text-sm font-medium text-gray-700" style={{
+          width: "90%",
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          }}>
+            <div>
+              Fill the form to complete the seating arrangement:
+            </div>
+
+            <div style={{ display: 'flex', alignItems: 'center', gap: "10px" }}>
+            <div>
+              <button onClick={() => {
+                setRowNumber();
+                setRenderArray(seatingFormCabins(cabinClasses))
+              }} className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700">Generate Modal</button>
+            </div>
+            {renderArray && renderArray.length > 0 && (<div>
+              <Modal content={modalContent()} width={"800px"} />
+            </div>)}
+          </div>
         </div>
       </div>
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}

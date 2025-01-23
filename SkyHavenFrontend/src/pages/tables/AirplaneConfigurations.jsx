@@ -1,11 +1,11 @@
-import airplane_configurations from "../JSONs/airplane_configurations.json"
 import Pagination from '../../components/Pagination';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Modal from '../../components/Modal';
 import Table from "../../components/Table";
 import { roRO } from "@mui/x-date-pickers";
 import { Sofa } from 'lucide-react';
 import Seat from "../../components/Seat";
+import { useGlobalContext } from '../../context.jsx';
 
 const seatingFormCabins = (cabinClasses, startRowNumber,aisles) => {
     const seats = [];
@@ -588,12 +588,48 @@ const columnName = [
 function AirplaneConfigurations() {
     const [currentPage, setCurrentPage] = useState(0);
     const rowsPerPage = 10; 
+    const [loading, setLoading] = useState(true);
+    let totalPages = 0;
+
+    const [airplaneConfigurations, setAirplaneConfigurations] = useState([]);
+
+    const { getAirplaneConfigurations, deleteAirplaneConfiguration } = useGlobalContext();
+
+    const deleteObject = async (id) => {
+        try {
+            const result = await deleteAirplaneConfiguration(id);
+            if (result){
+                setAirplaneConfigurations(result);
+            }
+        } catch (error) {
+            console.error("Error deleting airplane configuration:", error);
+        }
+    };
+
+    useEffect(() => {
+        const fetchAirplaneConfigurations = async () => {
+            try {
+                const result = await getAirplaneConfigurations();
+                if (result){
+                    setAirplaneConfigurations(result);
+                    setLoading(false);
+                    console.log(result);
+                }
+            } catch (error) {
+                console.error("Error fetching airplane configurations:", error);
+            }
+        };
+    
+        fetchAirplaneConfigurations();
+    }, []);
+
+    if (!loading) {
+      totalPages = Math.ceil(airplaneConfigurations.length / rowsPerPage);
+    }
 
     const handlePageChange = (newPage) => {
       setCurrentPage(newPage);
     };
-  
-    const totalPages = Math.ceil(airplane_configurations.length / rowsPerPage);
   
     return (
       <div
@@ -601,11 +637,15 @@ function AirplaneConfigurations() {
         className="mt-10"
       >
         <Table
-          data={airplane_configurations}
+          data={airplaneConfigurations}
           columnName={columnName}
           currentPage={currentPage}
           rowsPerPage={rowsPerPage}
           handlePageChange={handlePageChange}
+          loading={loading}
+          deletefunc={deleteObject}
+          deleteFlag = {true}
+          id = {"id"}
         />
         <Pagination
           currentPage={currentPage}

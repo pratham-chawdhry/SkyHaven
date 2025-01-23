@@ -28,15 +28,15 @@ public class Airport {
     private String timezone;
     private String dst;
 
-    @OneToMany(mappedBy = "airportArrival")
+    @OneToMany(mappedBy = "airportArrival", cascade = CascadeType.ALL)
     @JsonIgnore
     private List<Flight> flightsArrival = new ArrayList<>();
 
-    @OneToMany(mappedBy = "airportDeparture")
+    @OneToMany(mappedBy = "airportDeparture", cascade = CascadeType.ALL)
     @JsonIgnore
     private List<Flight> flightsDeparture = new ArrayList<>();
 
-    @OneToMany(mappedBy = "airport")
+    @OneToMany(mappedBy = "airport", cascade = CascadeType.ALL)
     @JsonManagedReference("airport-terminals")
     private List<Terminal> terminals = new ArrayList<>();
 

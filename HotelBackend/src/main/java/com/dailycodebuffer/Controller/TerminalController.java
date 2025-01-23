@@ -1,6 +1,8 @@
 package com.dailycodebuffer.Controller;
 
 import com.dailycodebuffer.Model.User;
+import com.dailycodebuffer.Repository.AirportRepo;
+import com.dailycodebuffer.Repository.FlightRepo;
 import com.dailycodebuffer.Repository.TerminalRepo;
 import com.dailycodebuffer.Request.Airport;
 import com.dailycodebuffer.Request.TerminalRequest;
@@ -28,6 +30,9 @@ public class TerminalController {
 
     @Autowired
     private TerminalRepo terminalRepo;
+
+    @Autowired
+    private AirportRepo airportRepo;
 
     private DefaultResponse messageMaker(String message, HttpStatus status, int statusCode) {
         DefaultResponse response = new DefaultResponse();
@@ -148,4 +153,23 @@ public class TerminalController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(messageMaker(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR, 500));
         }
     }
+
+    @DeleteMapping("/deleteterminal/{terminalId}")
+    public ResponseEntity<?> deleteTerminal(@RequestHeader("Authorization") String jwt, @PathVariable Long terminalId){
+        try{
+            User user = userService.FindUserByJwt(jwt);
+
+            if(user == null) {
+                return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(messageMaker("Unauthorized", HttpStatus.UNAUTHORIZED, 401));
+            }
+            else{
+                terminalRepo.deleteById(terminalId);
+                return new ResponseEntity<>(airportRepo.findAll(), HttpStatus.OK);
+            }
+        }
+        catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(messageMaker(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR, 500));
+        }
+    }
+
 }

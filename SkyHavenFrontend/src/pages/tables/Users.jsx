@@ -1,11 +1,11 @@
-import users from "../JSONs/user.json"
 import Pagination from '../../components/Pagination';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Modal from '../../components/Modal';
 import Table from "../../components/Table";
 import { LockKeyhole } from 'lucide-react';
 import { Send } from 'lucide-react';
 import { User } from 'lucide-react';
+import { useGlobalContext } from '../../context.jsx';
 
 const columnName = [
     {
@@ -303,7 +303,7 @@ const columnName = [
             return (
                 <>
                 { !row.active &&
-                    <button 
+                    <button
                         style = {{
                         border : "1px solid #E2E2E2",
                         }}
@@ -329,12 +329,37 @@ const columnName = [
 function Users() {
     const [currentPage, setCurrentPage] = useState(0);
     const rowsPerPage = 10; 
+    const [users, setUsers] = useState([]);
+    const { getUsers } = useGlobalContext();
+    let totalPages = 0;
+
+    const [loading, setLoading] = useState(true);
 
     const handlePageChange = (newPage) => {
       setCurrentPage(newPage);
     };
-  
-    const totalPages = Math.ceil(users.length / rowsPerPage);
+
+    useEffect(() => {
+        const fetchUsers = async () => {
+            try {
+                const result = await getUsers();
+                if (result){
+                    setUsers(result);
+                    setLoading(false);
+                    console.log(result);
+                }
+            } catch (error) {
+                console.error("Error fetching users:", error);
+            }
+        };
+    
+        fetchUsers();
+    }, []);
+
+    if (!loading) {
+        console.log(users);
+        totalPages = Math.ceil(users.length / rowsPerPage);
+    }
   
     return (
       <div
@@ -347,11 +372,13 @@ function Users() {
           currentPage={currentPage}
           rowsPerPage={rowsPerPage}
           handlePageChange={handlePageChange}
+          loading={loading}
         />
         <Pagination
           currentPage={currentPage}
           totalPages={totalPages}
           onPageChange={handlePageChange}
+          loading={loading}
         />
       </div>
     );

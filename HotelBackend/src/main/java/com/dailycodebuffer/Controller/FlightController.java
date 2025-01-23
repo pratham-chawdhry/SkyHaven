@@ -299,7 +299,7 @@ public class FlightController {
                 List<Flight> flights = airline.getFlights();
                 for (Flight flight : flights) {
                     List<Row> rows = new ArrayList<>();
-                    rows = flightRowService.getRowsByFlightId(flight.getId());
+//                    rows = flightRowService.getRowsByFlightId(flight.getId());
                     flight.setRows(rows);
                 }
 
@@ -320,7 +320,7 @@ public class FlightController {
         try {
             User user = userService.FindUserByJwt(jwt);
 
-            if (user.getRole().toString().equals("ROLE_AIRLINE")) {
+            if (user.getRole().toString().equals("ROLE_AIRLINE") || user.getRole().toString().equals("ROLE_ADMIN")) {
                 Optional<Flight> flight = flightRepository.findById(id);
 
                 if (flight.isEmpty()) {
@@ -328,6 +328,11 @@ public class FlightController {
                     return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
                 }
                 else{
+                    if (flight.get().getAirline().getId() != user.getAirline().getId() && user.getRole().toString().equals("ROLE_AIRLINE")) {
+                        DefaultResponse response = messageMaker("Unauthorized", HttpStatus.UNAUTHORIZED, 401);
+                        return new ResponseEntity<>(response, HttpStatus.UNAUTHORIZED);
+                    }
+
                     List<Row> rows = new ArrayList<>();
                     rows = flightRowService.getRowsByFlightId(flight.get().getId());
                     flight.get().setRows(rows);
@@ -375,6 +380,47 @@ public class FlightController {
                 }
             }
             else{
+                DefaultResponse response = messageMaker("Unauthorized", HttpStatus.UNAUTHORIZED, 401);
+                return new ResponseEntity<>(response, HttpStatus.UNAUTHORIZED);
+            }
+        }
+        catch(Exception e) {
+            DefaultResponse response = messageMaker(e.getMessage(), HttpStatus.BAD_REQUEST, 400);
+            return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
+        }
+    }
+
+    @DeleteMapping("/deleteflight/{id}")
+    public ResponseEntity<?> deleteFlight(@RequestHeader("Authorization") String jwt , @PathVariable Long id){
+        try {
+            User user = userService.FindUserByJwt(jwt);
+
+            if (user.getRole().toString().equals("ROLE_AIRLINE") || user.getRole().toString().equals("ROLE_ADMIN")) {
+                Optional<Flight> flight = flightRepository.findById(id);
+
+                if (flight.isEmpty()) {
+                    DefaultResponse response = messageMaker("Flight not found", HttpStatus.BAD_REQUEST, 400);
+                }
+                else{
+                    flightRepository.deleteById(id);
+                }
+
+                if (user.getRole().toString().equals("ROLE_AIRLINE")) {
+                    Airline airline = user.getAirline();
+
+                    List<Flight> flights = airline.getFlights();
+                    for (Flight flight1 : flights) {
+                        List<Row> rows = new ArrayList<>();
+                        flight1.setRows(rows);
+                    }
+
+                    return new ResponseEntity<>(flights, HttpStatus.OK);
+                }
+                else{
+                    return new ResponseEntity<>(flightRepository.findAll(), HttpStatus.OK);
+                }
+            }
+            else {
                 DefaultResponse response = messageMaker("Unauthorized", HttpStatus.UNAUTHORIZED, 401);
                 return new ResponseEntity<>(response, HttpStatus.UNAUTHORIZED);
             }

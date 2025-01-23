@@ -29,7 +29,7 @@ public class Airline {
     @Column(length = 65535, columnDefinition = "TEXT")
     private String description;
 
-    @OneToMany(mappedBy = "airline")
+    @OneToMany(mappedBy = "airline", cascade = CascadeType.ALL)
     @JsonIgnore
     private List<User> users;
 

@@ -1,5 +1,4 @@
-import React, {useState} from 'react'
-import flight from '../JSONs/seats.json'
+import React, {useState, useEffect} from 'react'
 import Pagination from '../../components/Pagination'
 import Table from '../../components/Table'
 import AddRoadTwoToneIcon from '@mui/icons-material/AddRoadTwoTone';
@@ -9,6 +8,8 @@ import { Group } from 'lucide-react';
 import Modal from '../../components/Modal';
 import Seat from "../../components/Seat";
 import { Sofa } from 'lucide-react';
+import { useSearchParams } from "react-router-dom";
+import { useGlobalContext } from '../../context';
 
 const seatingFormCabins = (cabinClasses, startRowNumber,aisles) => {
     const seats = [];
@@ -712,37 +713,61 @@ const columnName = [
 ]
 
 function Seats() {
-    const [currentPage, setCurrentPage] = useState(0);
-    const rowsPerPage = 10; 
-    let seats = 0;
+  const [currentPage, setCurrentPage] = useState(0);
+  const rowsPerPage = 10;
 
-    const data = flight.rows;
-    const allSeats = data.flatMap(row => row.seats);
+  const [loading, setLoading] = useState(true);
+  const [allSeats, setAllSeats] = useState([]);
+  const [flight, setFlight] = useState({});
+  const [totalPages, setTotalPages] = useState(0);
 
-    const handlePageChange = (newPage) => {
-      setCurrentPage(newPage);
+  const { getFlight } = useGlobalContext();
+  const [searchParams] = useSearchParams();
+  const flightId = searchParams.get("flightId");
+
+  useEffect(() => {
+    const getFlightData = async () => {
+      try {
+        const response = await getFlight(flightId);
+        if (response) {
+          setFlight(response);
+          const data = response.rows;
+          const allSeatsArray = data.flatMap((row) => row.seats);
+          setAllSeats(allSeatsArray);
+
+          // Calculate seats and total pages
+          const totalSeats = data.reduce((sum, row) => sum + row.seats.length, 0);
+          setTotalPages(Math.ceil(totalSeats / rowsPerPage));
+
+          setLoading(false);
+        }
+      } catch (error) {
+        console.error("Error fetching flight data", error);
+        setLoading(false);
+      }
     };
 
-    flight.rows.map((row) => {
-        seats += row.seats.length;
-    });
-  
-    const totalPages = Math.ceil(seats / rowsPerPage);
+    getFlightData();
+  }, [flightId, getFlight]);
 
-    console.log(totalPages);
+  const handlePageChange = (newPage) => {
+    setCurrentPage(newPage);
+  };
   
     return (
       <div
         style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}
         className="mt-10"
       >
-        <Modal content={modalContent(flight.cabinClassList)} width={"800px"} />
+        {/* {loading &&
+        <Modal content={modalContent(flight.cabinClassList)} width={"800px"} />} */}
         <Table
           data={allSeats}
           columnName={columnName}
           currentPage={currentPage}
           rowsPerPage={rowsPerPage}
           handlePageChange={handlePageChange}
+          loading={loading}
         />
         <Pagination
           currentPage={currentPage}

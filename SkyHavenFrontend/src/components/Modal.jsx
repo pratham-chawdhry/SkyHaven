@@ -2,8 +2,7 @@ import React from 'react';
 import Modal from 'react-modal';
 import './Modal.css';
 
-// Make sure to bind modal to your appElement
-Modal.setAppElement('#root'); // Change to the actual root element ID of your app
+Modal.setAppElement('#root'); 
 
 export default function Example({content, width}) {
   let subtitle;
@@ -14,7 +13,7 @@ export default function Example({content, width}) {
   }
 
   function afterOpenModal() {
-    subtitle.style.color = '#f00'; // Change subtitle text color to red
+    subtitle.style.color = '#f00';
   }
 
   function closeModal() {
@@ -57,7 +56,7 @@ export default function Example({content, width}) {
           right: "15px",
           marginTop: "15px",
         }}>
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="0.5" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
         </button>
         <div className='mt-7'>
           {content}

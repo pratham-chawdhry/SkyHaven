@@ -5,14 +5,30 @@ import { FormControl, InputLabel, InputAdornment, IconButton, OutlinedInput } fr
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import { Plane } from 'lucide-react';
+import { useGlobalContext } from '../../context.jsx';
 
 const SignIn = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const { signIn, setjwt, setRole } = useGlobalContext();
 
-  const handleSubmit = (e) => {
+  async function handleSubmit(e) {
     e.preventDefault();
-    // Handle sign in logic
+
+    const data = {
+      "email" : email,
+      "password" : password,
+    }
+
+    try {
+      const result = await signIn(data); 
+      localStorage.setItem("jwt", result.token);
+      localStorage.setItem("role", result.role);
+      setjwt(result.token);
+      setRole(result.role);
+    } catch (error) {
+      console.error("Error during sign-in:", error);
+    }
   };
 
   const [showPassword, setShowPassword] = useState(false);

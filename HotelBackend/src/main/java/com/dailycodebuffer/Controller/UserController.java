@@ -34,13 +34,21 @@ public class UserController {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
         }
     }
-    @PostMapping("/activate")
-    public ResponseEntity<?> activateUser(@RequestHeader("Authorization") String jwt) {
+
+    @PostMapping("/action")
+    public ResponseEntity<?> actionUser(@RequestHeader("Authorization") String jwt) {
         try {
             User user = userService.FindUserByJwt(jwt);
-            user.setActive(true);
+            user.setActive(!user.isActive());
             User saved_user = userRepository.save(user);
-            return new ResponseEntity<>(saved_user, HttpStatus.OK);
+
+            if (user.getRole().equals(USER_ROLE.ROLE_ADMIN)) {
+                return new ResponseEntity<>(userRepository.findAll(), HttpStatus.OK);
+            } else if (user.getRole().equals(USER_ROLE.ROLE_AIRLINE)) {
+                return new ResponseEntity<>(userRepository.findByAirlineCode(user.getAirlineCode()), HttpStatus.UNAUTHORIZED);
+            } else {
+                return new ResponseEntity<>("Unauthorized", HttpStatus.UNAUTHORIZED);
+            }
         } catch (Exception e) {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
         }
@@ -54,7 +62,7 @@ public class UserController {
             if (user.getRole().equals(USER_ROLE.ROLE_ADMIN)) {
                 return new ResponseEntity<>(userRepository.findAll(), HttpStatus.OK);
             } else if (user.getRole().equals(USER_ROLE.ROLE_AIRLINE)) {
-                return new ResponseEntity<>(userRepository.findByAirlineCode(user.getAirlineCode()), HttpStatus.UNAUTHORIZED);
+                return new ResponseEntity<>(userRepository.findByAirlineCode(user.getAirlineCode()), HttpStatus.OK);
             } else {
                 return new ResponseEntity<>("Unauthorized", HttpStatus.UNAUTHORIZED);
             }
