@@ -108,7 +108,7 @@ public class CabinClassListController {
     }
 
     @GetMapping("/cabinclasslist/get/{id}")
-    public ResponseEntity<?> getCabinClassList(@RequestHeader("Authorization") String jwt, @RequestParam Long id) {
+    public ResponseEntity<?> getCabinClassList(@RequestHeader("Authorization") String jwt, @PathVariable Long id) {
         try {
             User user = userService.FindUserByJwt(jwt);
 
@@ -121,9 +121,10 @@ public class CabinClassListController {
                     return ResponseEntity.status(HttpStatus.NOT_FOUND).body(messageMaker("Cabin Class List not found", HttpStatus.NOT_FOUND, 404));
                 }
 
-//                if (cabinClassList.getAirline().getId().equals(airline.getId())) {
-//                    return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(messageMaker("Unauthorized", HttpStatus.UNAUTHORIZED, 401));
-//                }
+                if (!cabinClassList.getAirline().getId().equals(airline.getId())) {
+                    return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
+                            .body(messageMaker("Unauthorized", HttpStatus.UNAUTHORIZED, 401));
+                }
 
                 return ResponseEntity.status(HttpStatus.OK).body(cabinClassList);
             }
@@ -163,6 +164,43 @@ public class CabinClassListController {
                 return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(messageMaker("Unauthorized", HttpStatus.UNAUTHORIZED, 401));
             }
         } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(messageMaker("Internal Server Error", HttpStatus.INTERNAL_SERVER_ERROR, 500));
+        }
+    }
+
+    @PutMapping("/cabinclasslist/update/{id}")
+    public ResponseEntity<?> updateCabinClassList(@RequestHeader("Authorization") String jwt,
+                                                  @PathVariable Long id, @RequestBody CabinClassList cabinClassListRequest){
+        try{
+            User user = userService.FindUserByJwt(jwt);
+
+            System.out.println(cabinClassListRequest);
+            if (user.getRole().toString().equals("ROLE_AIRLINE")) {
+                Airline airline = user.getAirline();
+                CabinClassList cabinClassList = cabinClassListRepo.findById(id).orElse(null);
+
+                if (cabinClassList == null) {
+                    return ResponseEntity.status(HttpStatus.NOT_FOUND).body(messageMaker("Cabin Class List not found", HttpStatus.NOT_FOUND, 404));
+                }
+
+                return ResponseEntity.status(HttpStatus.OK).body(cabinClassList);
+            }
+            else if (user.getRole().toString().equals("ROLE_ADMIN")) {
+                CabinClassList cabinClassList = cabinClassListRepo.findById(id).orElse(null);
+
+                if (cabinClassList == null) {
+                    return ResponseEntity.status(HttpStatus.NOT_FOUND).body(messageMaker("Cabin Class List not found", HttpStatus.NOT_FOUND, 404));
+                }
+
+                cabinClassListRepo.save(cabinClassListRequest);
+
+                return ResponseEntity.status(HttpStatus.OK).body(cabinClassList);
+            }
+            else {
+                return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(messageMaker("Unauthorized", HttpStatus.UNAUTHORIZED, 401));
+            }
+        }
+        catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(messageMaker("Internal Server Error", HttpStatus.INTERNAL_SERVER_ERROR, 500));
         }
     }

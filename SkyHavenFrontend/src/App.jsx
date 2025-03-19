@@ -16,6 +16,9 @@ import AddAirport from './pages/add/addAirport'
 import AddAirline from './pages/add/addAirline'
 import Users from './pages/tables/Users'
 import Seats from './pages/tables/Seats'
+import EditAirport from './pages/add/addAirport'
+import EditAirline from './pages/add/addAirline'
+import EditAirplaneConfigurations from './pages/add/addAirplaneConfigurations'
 
 function App() {
   return (
@@ -27,7 +30,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/auth/signin" element={<SignIn />} />
-              <Route path="/auth/signup" element={<SignUp />} />
+              <Route path="/auth/signup" element={<SignUp />} />  
               <Route path="/airlines/table" element={<Airlines />} />
               <Route path="/flights/table" element={<Flights />} />
               <Route path="/airports/table" element={<Airports />} />
@@ -37,6 +40,9 @@ function App() {
               <Route path="/airplaneConfigurations/add" element={<AddAirplaneConfigurations />} />
               <Route path="/airports/add" element={<AddAirport />} />
               <Route path="/airlines/add" element={<AddAirline />} />
+              <Route path="/airports/edit" element={<EditAirport />} />
+              <Route path="/airlines/edit" element={<EditAirline />} />
+              <Route path="/airplaneConfigurations/edit" element={<EditAirplaneConfigurations />} />
             </Routes>
           </div>
           <Footer/>
@@ -45,5 +51,18 @@ function App() {
     </LocalizationProvider>
   );
 }
+
+// Done:
+// - Add Airplane Configurations
+// - Add Airports
+// - Add Airlines
+// - Add Users
+// - Edit Airports
+// - Edit Airlines
+
+// To be Done
+// - Add Flights
+// - Edit Airplane Configurations
+// - Edit Flights
 
 export default App;

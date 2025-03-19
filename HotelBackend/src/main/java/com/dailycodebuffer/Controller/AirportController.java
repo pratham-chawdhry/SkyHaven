@@ -11,6 +11,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Optional;
+
 @RestController
 public class AirportController {
 
@@ -54,6 +56,72 @@ public class AirportController {
         }
     }
 
+    @PutMapping("/updateairport/{airportId}")
+    public ResponseEntity<?> updateAirport(
+            @RequestHeader("Authorization") String jwt,
+            @PathVariable String airportId,
+            @RequestBody Airport airport) {
+        try {
+            User user = userService.FindUserByJwt(jwt);
+
+            if (user == null) {
+                return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
+                        .body(messageMaker("Unauthorized", HttpStatus.UNAUTHORIZED, 401));
+            }
+
+            if (user.getRole().toString().equals("ROLE_USER")) {
+                return ResponseEntity.status(HttpStatus.FORBIDDEN)
+                        .body(messageMaker("Forbidden", HttpStatus.FORBIDDEN, 403));
+            }
+
+            Optional<Airport> existingAirportOpt = airportRepo.findByIataCode(airportId);
+            if (existingAirportOpt.isEmpty()) {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                        .body(messageMaker("Airport not found", HttpStatus.NOT_FOUND, 404));
+            }
+
+            Airport existingAirport = getAirport(airport, existingAirportOpt);
+
+            if (airport.getTerminals() != null) {
+                existingAirport.getTerminals().clear();
+                existingAirport.getTerminals().addAll(airport.getTerminals());
+            }
+
+            airportRepo.save(existingAirport);
+
+            return ResponseEntity.status(HttpStatus.OK)
+                    .body(messageMaker("Airport updated successfully", HttpStatus.OK, 200));
+        }
+        catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body(messageMaker("Internal Server Error", HttpStatus.INTERNAL_SERVER_ERROR, 500));
+        }
+    }
+
+    private static Airport getAirport(Airport airport, Optional<Airport> existingAirportOpt) {
+        Airport existingAirport = existingAirportOpt.get();
+
+        if (airport.getAirportName() != null) {
+            existingAirport.setAirportName(airport.getAirportName());
+        }
+        if (airport.getCity() != null) {
+            existingAirport.setCity(airport.getCity());
+        }
+        if (airport.getState() != null) {
+            existingAirport.setState(airport.getState());
+        }
+        if (airport.getCountry() != null) {
+            existingAirport.setCountry(airport.getCountry());
+        }
+        if (airport.getTimezone() != null) {
+            existingAirport.setTimezone(airport.getTimezone());
+        }
+        if (airport.getDst() != null) {
+            existingAirport.setDst(airport.getDst());
+        }
+        return existingAirport;
+    }
+
     @PostMapping("/addairports")
     public ResponseEntity<?> addAirports(@RequestHeader("Authorization") String jwt, @RequestBody Airport[] airports) {
         try{
@@ -88,9 +156,9 @@ public class AirportController {
                 return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(messageMaker("Unauthorized", HttpStatus.UNAUTHORIZED, 401));
             }
             else{
-                Airport airport = airportRepo.findByIataCode(airportId);
+                Optional<Airport> airport = airportRepo.findByIataCode(airportId);
 
-                if (airport == null) {
+                if (airport.isEmpty()) {
                     return ResponseEntity.status(HttpStatus.NOT_FOUND).body(messageMaker("Airport not found", HttpStatus.NOT_FOUND, 404));
                 }
                 else {
@@ -129,13 +197,13 @@ public class AirportController {
                 return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(messageMaker("Unauthorized", HttpStatus.UNAUTHORIZED, 401));
             }
             else{
-                Airport airport = airportRepo.findByIataCode(airportId);
+                Optional<Airport> airport = airportRepo.findByIataCode(airportId);
 
-                if (airport == null) {
+                if (airport.isEmpty()) {
                     return ResponseEntity.status(HttpStatus.NOT_FOUND).body(messageMaker("Airport not found", HttpStatus.NOT_FOUND, 404));
                 }
                 else {
-                    return ResponseEntity.status(HttpStatus.OK).body(airport.getFlightsArrival());
+                    return ResponseEntity.status(HttpStatus.OK).body(airport.get().getFlightsArrival());
                 }
             }
         }
@@ -153,13 +221,13 @@ public class AirportController {
                 return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(messageMaker("Unauthorized", HttpStatus.UNAUTHORIZED, 401));
             }
             else{
-                Airport airport = airportRepo.findByIataCode(airportId);
+                Optional<Airport> airport = airportRepo.findByIataCode(airportId);
 
-                if (airport == null) {
+                if (airport.isEmpty()) {
                     return ResponseEntity.status(HttpStatus.NOT_FOUND).body(messageMaker("Airport not found", HttpStatus.NOT_FOUND, 404));
                 }
                 else {
-                    return ResponseEntity.status(HttpStatus.OK).body(airport.getFlightsDeparture());
+                    return ResponseEntity.status(HttpStatus.OK).body(airport.get().getFlightsDeparture());
                 }
             }
         }
@@ -181,13 +249,13 @@ public class AirportController {
                     return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(messageMaker("Unauthorized", HttpStatus.UNAUTHORIZED, 401));
                 }
                 else{
-                    Airport airport = airportRepo.findByIataCode(airportId);
+                    Optional<Airport> airport = airportRepo.findByIataCode(airportId);
 
-                    if (airport == null) {
+                    if (airport.isEmpty()) {
                         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(messageMaker("Airport not found", HttpStatus.NOT_FOUND, 404));
                     }
                     else {
-                        airportRepo.delete(airport);
+                        airportRepo.delete(airport.get());
                         return ResponseEntity.status(HttpStatus.OK).body(airportRepo.findAll());
                     }
                 }

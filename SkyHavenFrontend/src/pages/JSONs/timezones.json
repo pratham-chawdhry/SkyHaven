@@ -35,6 +35,11 @@
     "name": "Arizona"
     },
     {
+    "zone": "America/New_York",
+    "gmt": "(GMT-07:00)",
+    "name": "Phoenix"
+    },
+    {
     "zone": "US/Mountain",
     "gmt": "(GMT-07:00)",
     "name": "Mountain Time (US &amp; Canada)"

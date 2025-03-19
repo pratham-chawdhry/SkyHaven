@@ -10,6 +10,7 @@ export default function seatingForm({cabinClasses, setCabinClasses, aisles}) {
             if (index === cabinIndex) {
               const updatedSeating = [...cabinClass.seating]; 
               const newRow = {
+                id : undefined, 
                 numberOfRows: null,
                 startRow: null,
                 endRow: null,
@@ -95,6 +96,7 @@ export default function seatingForm({cabinClasses, setCabinClasses, aisles}) {
     };
     
     const updatePrice = (cabinIndex, rowIndex, price, attribute) => {
+        console.log(cabinClasses);
         setCabinClasses((prevClasses) => {
             const updatedClasses = prevClasses.map((cabinClass, index) => {
             if (index === cabinIndex) {

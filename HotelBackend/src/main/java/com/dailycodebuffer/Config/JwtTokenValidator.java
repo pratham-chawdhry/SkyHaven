@@ -1,5 +1,6 @@
 package com.dailycodebuffer.Config;
 
+import java.io.IOException;
 import java.util.List;
 
 import javax.crypto.SecretKey;
@@ -14,58 +15,56 @@ import org.springframework.web.filter.OncePerRequestFilter;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.io.IOException;
 import io.jsonwebtoken.security.Keys;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-public class JwtTokenValidator extends OncePerRequestFilter{
+public class JwtTokenValidator extends OncePerRequestFilter {
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
         String jwt = request.getHeader(JwtConstant.JWT_HEADER);
-        if (request.getRequestURI().equals("/auth/signup") && (jwt == null || jwt.isEmpty())) {
-            try{
-                filterChain.doFilter(request, response);
-            } catch (Exception e){
-                throw new BadCredentialsException("Invalid request");
 
-            }// Allow the request to proceed without authentication
+        // Allow signup and signin requests without JWT
+        String requestURI = request.getRequestURI();
+        if (requestURI.equals("/auth/signup") || requestURI.equals("/auth/signin")) {
+            filterChain.doFilter(request, response);
             return;
         }
-        if (request.getRequestURI().equals("/auth/signin")) {
-            try{
-                filterChain.doFilter(request, response);
-            } catch (Exception e){
-                throw new BadCredentialsException("Invalid request");
-            }// Allow the request to proceed without authentication
-            return;
-        }
-        if (jwt != null){
-            jwt = jwt.substring(7);
-            try {
-                SecretKey secretKey = Keys.hmacShaKeyFor(JwtConstant.SECRET_KEY.getBytes()); // This line is used to create a secret key.
-                System.out.println(secretKey);
-                Claims claims = Jwts.parserBuilder()
-                        .setSigningKey(secretKey)
-                        .build()
-                        .parseClaimsJws(jwt)
-                        .getBody(); // This line is used to parse the JWT and get the claims.
-                String email = String.valueOf(claims.get("email"));
-                System.out.println(email);
-                String authorities=String.valueOf(claims.get("authorities"));
-                System.out.println(authorities);
-                List<GrantedAuthority> authorityList = AuthorityUtils.commaSeparatedStringToAuthorityList(authorities);
-                Authentication authentication = new UsernamePasswordAuthenticationToken(email, null, authorityList);
-                SecurityContextHolder.getContext().setAuthentication(authentication); // This line is used to set the authentication in the security context. //oh then this authentication is used in the controller to get the user details.
-                filterChain.doFilter(request, response); // is this required? // Yes, this line is used to allow the request to proceed. but authentication is already set in the security context. //then also we need to call this line? // Yes, this line is used to allow the request to proceed.
-            } catch (Exception e) {
-            throw new RuntimeException(e.getMessage(), e);
-        }
-    }
-        else{
+
+        // If JWT is missing, reject the request
+        if (jwt == null || jwt.isEmpty()) {
             throw new BadCredentialsException("Token not found");
+        }
+
+        try {
+            // Extract token (remove "Bearer " prefix)
+            jwt = jwt.substring(7);
+
+            SecretKey secretKey = Keys.hmacShaKeyFor(JwtConstant.SECRET_KEY.getBytes());
+
+            Claims claims = Jwts.parserBuilder()
+                    .setSigningKey(secretKey)
+                    .build()
+                    .parseClaimsJws(jwt)
+                    .getBody();
+
+            // Extract user details
+            String email = claims.get("email", String.class);
+            String authorities = claims.get("authorities", String.class);
+
+            List<GrantedAuthority> authorityList = AuthorityUtils.commaSeparatedStringToAuthorityList(authorities);
+
+            // Set authentication in SecurityContext
+            Authentication authentication = new UsernamePasswordAuthenticationToken(email, null, authorityList);
+            SecurityContextHolder.getContext().setAuthentication(authentication);
+
+            // Proceed with the filter chain
+            filterChain.doFilter(request, response);
+
+        } catch (Exception e) {
+            throw new BadCredentialsException("Invalid token: " + e.getMessage());
         }
     }
 }

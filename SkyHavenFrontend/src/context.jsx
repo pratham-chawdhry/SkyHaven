@@ -20,6 +20,14 @@ const object = {
     deleteFlight : "/deleteflight",
     deleteTerminal : "/deleteterminal",
     addAirplaneConfigurations : "/cabinclasslist/add",
+    airport : "/addairport",
+    getAirport : "/getairport",
+    updateAirport : "/updateairport",
+    getAirline : "/getAirline",
+    addAirline : "/addAirline",
+    updateAirline : "/updateAirline",
+    updateAirplaneConfiguration : "/cabinclasslist/update",
+    getAirplaneConfiguration : "/cabinclasslist/get",
 }
 
 const loginSignUpHeader = {
@@ -166,12 +174,41 @@ const AppProvider = ({ children }) => {
         }
     }
 
-    async function deleteRequest(url, header, id) {
+    async function deleteRequest(url, header, data) {
         try {
             let response = await fetch(url, {
                 method: 'DELETE',
                 headers: header,
-                body: JSON.stringify(id),
+                body: JSON.stringify(data),
+                mode: 'cors',
+                cache: 'no-cache',
+                credentials: 'same-origin',
+                redirect: 'follow',
+                referrer: 'no-referrer',
+            });
+    
+            if (!response.ok) {
+                throw new Error(`Request failed with status: ${response.status}`);
+            }
+    
+            const contentType = response.headers.get('Content-Type');
+            if (contentType && contentType.includes('application/json')) {
+                return await response.json();
+            }
+            return await response.text();
+        }
+        catch (error) {
+            throw error;
+        }
+    }
+
+
+    async function putRequest(url, header, data) {
+        try {
+            let response = await fetch(url, {
+                method: 'PUT',
+                headers: header,
+                body: JSON.stringify(data),
                 mode: 'cors',
                 cache: 'no-cache',
                 credentials: 'same-origin',
@@ -271,6 +308,91 @@ const AppProvider = ({ children }) => {
         return response;
     }
 
+    async function getStates(isoCode) {
+        if (!isoCode) {
+            throw new Error("ISO country code is required");
+        }
+    
+        const API_KEY = "WnZFbmNiQmN6WkpaWmZJVG42RFlkelQzUXVJbXYxR2huVWFuOHdaUw=="; // Move to server-side for security
+        const url = `https://api.countrystatecity.in/v1/countries/${isoCode}/states`;
+    
+        const requestOptions = {
+            method: "GET",
+            headers: {
+                "X-CSCAPI-KEY": API_KEY
+            }
+        };
+    
+        try {
+            const response = await fetch(url, requestOptions);
+    
+            if (!response.ok) {
+                throw new Error(`HTTP Error! Status: ${response.status}`);
+            }
+    
+            return await response.json();
+        } catch (error) {
+            console.error("Error fetching states:", error);
+            throw error;
+        }
+    }    
+
+    async function addAirportFunc(data) {
+        let header = await headerCreator(jwt);
+        let addAirportUrl = `${environment}${object.airport}`;
+        let response = await postRequest(addAirportUrl, header, data);
+        return response;
+    }
+
+    async function getAirport(id) {
+        let header = await headerCreator(jwt);
+        let getAirportUrl = `${environment}${object.getAirport}/${id}`;
+        let response = await getRequest(getAirportUrl, header);
+        return response;
+    }
+
+    async function updateAirport(data, id) {
+        let header = await headerCreator(jwt);
+        let updateAirportUrl = `${environment}${object.updateAirport}/${id}`;
+        let response = await putRequest(updateAirportUrl, header, data);
+        return response;
+    }
+
+    async function getAirline(id) {
+        let header = await headerCreator(jwt);
+        let getAirlineUrl = `${environment}${object.getAirline}/${id}`;
+        let response = await getRequest(getAirlineUrl, header);
+        return response;
+    }
+
+    async function updateAirline(data, id) {
+        let header = await headerCreator(jwt);
+        let updateAirlineUrl = `${environment}${object.updateAirline}/${id}`;
+        let response = await putRequest(updateAirlineUrl, header, data);
+        return response;
+    }
+
+    async function addAirline(data, id) {
+        let header = await headerCreator(jwt);
+        let addAirlineUrl = `${environment}${object.addAirline}`;
+        let response = await postRequest(addAirlineUrl, header, data);
+        return response;
+    }
+
+    async function updateAirplaneConfiguration(data, id) {
+        let header = await headerCreator(jwt);
+        let updateAirplaneConfigurationUrl = `${environment}${object.updateAirplaneConfiguration}/${id}`;
+        let response = await putRequest(updateAirplaneConfigurationUrl, header, data);
+        return response;
+    }
+
+    async function getAirplaneConfiguration(id) {
+        let header = await headerCreator(jwt);
+        let getAirplaneConfigurationUrl = `${environment}${object.getAirplaneConfiguration}/${id}`;
+        let response = await getRequest(getAirplaneConfigurationUrl, header);
+        return response;
+    }
+
     return (
       <AppContext.Provider value={{ 
         jwt, 
@@ -289,7 +411,16 @@ const AppProvider = ({ children }) => {
         getFlights,
         deleteAirport,
         deleteTerminal,
-        addAirplaneConfigurations
+        addAirplaneConfigurations,
+        getStates,
+        addAirportFunc,
+        getAirport,
+        updateAirport,
+        getAirline,
+        updateAirline,
+        addAirline,
+        updateAirplaneConfiguration,
+        getAirplaneConfiguration
         }}>
         {children}
       </AppContext.Provider>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Checkbox from "../../components/Checkbox";
 import { Plus, Trash2 } from "lucide-react";
 import { set } from "date-fns";
@@ -7,6 +7,8 @@ import Seat from "../../components/Seat";
 import Modal from "../../components/Modal";
 import { Sofa } from 'lucide-react';
 import { useGlobalContext } from '../../context';
+import { use } from "react";
+import { useLocation } from "react-router-dom";
 
 // const initialCabinClasses = [
 //   {
@@ -231,28 +233,79 @@ const initialCabinClasses = [
 ];
 
 
-function AddFlight() {
+function AddorEditAirplaneConfigurations() {
   const [cabinClasses, setCabinClasses] = useState(initialCabinClasses);
   const [aisles, setAisles] = useState(1);
   const [renderArray, setRenderArray] = useState([]);
   const [cabinClassTemp, setCabinClassTemp] = useState(initialCabinClasses);
 
-  const {addAirplaneConfigurations} = useGlobalContext();
+  const {addAirplaneConfigurations, updateAirplaneConfiguration, getAirplaneConfiguration} = useGlobalContext();
+
+  const [isEditMode, setIsEditMode] = useState(true);
+  const [loading, setLoading] = useState(true);
+  const [airplaneConfigurationId, setAirplaneConfigurationId] = useState(null);
+
+  const location = useLocation();
+
+  useEffect(() => {
+    const searchParams = new URLSearchParams(location.search);
+    const id = searchParams.get("id");
+
+    if (id) {
+      setIsEditMode(true);
+      const fetchAirplaneConfiguration = async () => {
+        try {
+          const result = await getAirplaneConfiguration(id);
+          setCabinClassTemp(result.cabinClasses);
+          setCabinClasses(result.cabinClasses);
+          if (result) {
+            setAirplaneConfigurationId(result.id);
+            console.log(result);
+          }
+        } catch (error) {
+          console.error("Error fetching airplane configuration:", error);
+        }
+      };
+      fetchAirplaneConfiguration();
+      setLoading(false);
+    } else {
+      setIsEditMode(false);
+      setLoading(false);
+    }
+  }, [location]);
+
+  const [render, setRender] = useState(false);
+
+  useEffect(() => {
+    setRender(true);
+  }, [loading]);
 
   const handleSubmit = async () => {
-    setRowNumber();
-    try {
-      let object = {
-        "aisles" : aisles,
-        "cabinClasses" : cabinClasses,
+    await new Promise((resolve) => {
+      setRowNumber();
+      setRenderArray(seatingFormCabins(cabinClasses));
+      resolve();
+    }).then(async () => {
+      try {
+        console.log(cabinClassTemp);
+        setCabinClasses(cabinClassTemp);
+        let object = {
+          aisles: aisles,
+          cabinClasses: cabinClassTemp,
+        };
+        if (isEditMode) {
+          const result = await updateAirplaneConfiguration(object, airplaneConfigurationId);
+          console.log(result);
+        } else {
+          const result = await addAirplaneConfigurations(object);
+          console.log(result);
+        }
+      } catch (error) {
+        console.error("Error submitting airplane configurations:", error);
       }
-      const result = await addAirplaneConfigurations(object);
-      console.log(result);
-    }
-    catch (error) {
-      console.error("Error submitting airplane configurations:", error);
-    }
-  }
+    });
+  };
+  
 
   const setRowNumber = () => {
     let rowNumber = 1;
@@ -368,7 +421,6 @@ function AddFlight() {
                         });
                     }
 
-                    console.log("sectionIndex: " + sectionIndex, " aisles: " + aisles);
                     if (sectionIndex < seatSeating.length - 1 && sectionIndex < aisles) {
                         if (seatSeating[sectionIndex] && seatSeating[sectionIndex + 1]) {
                             row.push(null);
@@ -474,6 +526,8 @@ function AddFlight() {
         cabinClassNumber = cabinClassNumber + 1;
       }
     });
+
+    console.log(cabinClasses);
     return (
       <div>
         <div className="flex flex-col pl-10" style={{
@@ -594,7 +648,7 @@ function AddFlight() {
   }
 
   return (
-    <div style={{display: 'flex', flexDirection: 'column'}}>
+    (!isEditMode || render) && (<div style={{display: 'flex', flexDirection: 'column'}}>
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}
               className="mt-3">
         <div className="flex justify-between items-center" style={{
@@ -679,8 +733,8 @@ function AddFlight() {
               className="mt-3">
         <SeatingForm cabinClasses={cabinClassTemp} setCabinClasses={setCabinClassTemp} aisles={aisles} />
       </div>
-    </div>
+    </div>)
   );
 }
 
-export default AddFlight;
+export default AddorEditAirplaneConfigurations;
