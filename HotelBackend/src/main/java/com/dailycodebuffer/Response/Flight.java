@@ -22,6 +22,11 @@ public class Flight{
     @GeneratedValue
     private Long id;
 
+    private Integer firstClassPrice;
+    private Integer businessClassPrice;
+    private Integer economyClassPrice;
+    private Integer premiumEconomyClassPrice;
+
     @ManyToOne
     @JoinColumn(name = "terminalArrivalId", referencedColumnName = "terminalId", nullable = true)
     private Terminal terminalArrival;
@@ -45,6 +50,7 @@ public class Flight{
 
     @Setter
     @OneToMany(mappedBy = "flight", cascade = CascadeType.ALL)
+    @JsonManagedReference
     private List<Row> rows = new ArrayList<>();
 
     @ManyToOne
@@ -57,6 +63,10 @@ public class Flight{
 
     @OneToMany(mappedBy = "flight", cascade = CascadeType.ALL)
     private List<FlightCabin> flightCabins = new ArrayList<>();
+
+    @OneToMany(mappedBy = "flight", cascade = CascadeType.ALL)
+    @JsonIgnore
+    private List<Booking> bookings;
 
     @Override
     public String toString() {

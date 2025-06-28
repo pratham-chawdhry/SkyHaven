@@ -19,6 +19,9 @@ import Seats from './pages/tables/Seats'
 import EditAirport from './pages/add/addAirport'
 import EditAirline from './pages/add/addAirline'
 import EditAirplaneConfigurations from './pages/add/addAirplaneConfigurations'
+import CustomerFlights from './pages/customer/flightSearch'
+import AddFlight from './pages/add/addFlight'
+import EditFlight from './pages/add/addFlight'
 
 function App() {
   return (
@@ -43,6 +46,9 @@ function App() {
               <Route path="/airports/edit" element={<EditAirport />} />
               <Route path="/airlines/edit" element={<EditAirline />} />
               <Route path="/airplaneConfigurations/edit" element={<EditAirplaneConfigurations />} />
+              <Route path="/customer/flights" element={<CustomerFlights />} />
+              <Route path="/flights/add" element={<AddFlight />} />
+              <Route path="/flights/edit" element={<EditFlight />} />
             </Routes>
           </div>
           <Footer/>

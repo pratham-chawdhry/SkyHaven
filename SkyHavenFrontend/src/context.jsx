@@ -393,6 +393,10 @@ const AppProvider = ({ children }) => {
         return response;
     }
 
+    async function getTerminals() {
+        return [];
+    }
+
     return (
       <AppContext.Provider value={{ 
         jwt, 
@@ -420,7 +424,8 @@ const AppProvider = ({ children }) => {
         updateAirline,
         addAirline,
         updateAirplaneConfiguration,
-        getAirplaneConfiguration
+        getAirplaneConfiguration,
+        getTerminals
         }}>
         {children}
       </AppContext.Provider>

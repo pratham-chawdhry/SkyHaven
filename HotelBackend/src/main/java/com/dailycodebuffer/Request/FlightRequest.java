@@ -30,4 +30,8 @@ public class FlightRequest{
     private String aircraftModel;
 
     private List<FlightCabinRequest> flightCabins = new ArrayList<>();
+    private Integer firstClassPrice;
+    private Integer businessClassPrice;
+    private Integer economyClassPrice;
+    private Integer premiumEconomyClassPrice;
 }

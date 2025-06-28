@@ -28,7 +28,7 @@ const users= require('../JSONs/sign_in.json');
 const aircraft_models = require('../JSONs/aircraft_models.json');
 const airlines = require('../JSONs/airlines.json');
 const airports = require('../JSONs/airports.json');
-const flights = require('../JSONs/flight_requests.json');
+const flights = require('../JSONs/updated_flight_requests.json');
 const terminals = require('../JSONs/complete_terminals.json');
 const airline_cabins = require('../JSONs/airline_cabins.json');
 const airplane_configurations = require('../JSONs/airplane_configurations.json');
@@ -261,20 +261,20 @@ async function main() {
     await processSignUpsSignIns(signUpUrl, signInUrl, userHeader, adminArray);
     header = await headerCreator(token[0].token);
     console.log(header);
-    await processAirlines(airlineUrl, header, airlines);
-    await processAirports(airportUrl, header, airports);
-    await processTerminals(terminalUrl, header, terminals);
+    // await processAirlines(airlineUrl, header, airlines);
+    // await processAirports(airportUrl, header, airports);
+    // await processTerminals(terminalUrl, header, terminals);
     // await processAircraftModels(aircraftUrl, header, aircraft_models);
 
     await processSignUpsSignIns(signUpUrl, signInUrl, userHeader, userArray);
 
-    console.log(token);
+    // console.log(token);
 
-    await processAirPlaneConfigurations(airplaneConfigUrl, token, airplane_configurations);
+    // await processAirPlaneConfigurations(airplaneConfigUrl, token, airplane_configurations);
     // await processAirlineCabins(airlineCabinUrl, token, airline_cabins);
 
-    // console.log(flights);
-    // await processFlightRequests(flightUrl, token, flights);
+    console.log(flights);
+    await processFlightRequests(flightUrl, token, flights);
 }
 
 main().catch((error) => console.error('Error:', error));

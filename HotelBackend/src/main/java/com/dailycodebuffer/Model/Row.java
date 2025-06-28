@@ -1,7 +1,9 @@
 package com.dailycodebuffer.Model;
 
 import com.dailycodebuffer.Response.Flight;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -18,14 +20,16 @@ public class Row {
 
     @ManyToOne
     @JoinColumn(name = "flight_id")
-    @JsonIgnore
+    @JsonBackReference
     private Flight flight;
 
     @Column(name = "seat_row_number")
     private Long seatRowNumber;
 
-    @ElementCollection
-    @CollectionTable(name = "seats", joinColumns = @JoinColumn(name = "row_id"))
+    @OneToMany(mappedBy = "row",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true)
+    @JsonManagedReference
     private List<Seat> seats = new ArrayList<>();
 
     public String toString() {

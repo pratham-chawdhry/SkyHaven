@@ -1,10 +1,14 @@
 package com.dailycodebuffer.Model;
 
+import com.dailycodebuffer.Response.Booking;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Data;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Data
 @Entity
@@ -23,4 +27,8 @@ public class User {
     @ManyToOne
     @JoinColumn(name = "airline_id", nullable = true)
     private Airline airline;
+
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnore
+    private List<Booking> bookings;
 }
